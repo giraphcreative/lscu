@@ -1,3 +1,3 @@
-## NWCUA's Strategic Link
+## LSCU's Website
 
-&copy; 2015 NWCUA. All rights reserved.
+&copy; 2015 LSCU. All rights reserved.
