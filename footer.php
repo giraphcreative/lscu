@@ -18,19 +18,14 @@
 		<div class="wrap">
 			<div class="column first">
 				<h3>Connect With Us</h3>
-				<p>800.995.9064 Phone<br>
-					877.928.6397 Fax<br>
-					<a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
-
-				<p><strong>Oregon Office:</strong>
-					13221 SW 68th Pkwy,<br>
-					Suite 400<br>
-					Tigard, OR 97223</p>
-
-				<p><strong>Washington Office:</strong><br>
-					18000 International Blvd,<br>
-					Suite 350<br>
-					Seattle, WA 98188</p>
+				<p>22 Inverness Cntr Pky, #200<br>
+					Birmingham, Alabama</p>
+				<p>3692 Coolidge Court<br>
+					Tallahassee, Florida 32311</p>
+				<p><a href="tel:8662310545">866.231.0545</a></p>
+				<div class="social">
+					<a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-twitter.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-facebook.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-google.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-youtube.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-pinterest.png"></a>
+				</div>
 			</div>
 			<div class="column">
 				<h3>Links</h3>
@@ -40,19 +35,13 @@
 						'menu_class' => 'nav-menu' ) 
 					); ?>
 				</nav>
-				<div class="social">
-					<a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-twitter.png"></a>
-					<a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-facebook.png"></a>
-				</div>
 			</div>
 			<div class="column">
 				<h3>Resources</h3>
-				<nav role="navigation">
-					<?php wp_nav_menu( array( 
-						'theme_location' => 'footer-resources', 
-						'menu_class' => 'nav-menu' ) 
-					); ?>
-				</nav>
+				<form action="#" method="post">
+					<input type="text" name="email" value="">
+					<input type="submit" name="submit" value="Subscribe">
+				</form>
 			</div>
 		</div>
 	</footer><!-- #colophon -->
