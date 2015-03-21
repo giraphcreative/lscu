@@ -6,7 +6,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<title><?php wp_title( '|', true, 'right' ); ?> NWCUA's Strategic Link</title>
+<title><?php wp_title( '|', true, 'right' ); ?> LSCU</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -34,8 +34,10 @@
 	</div>
 
 	<nav role="navigation">
-		<button class="menu-toggle"><i class="fa fa-bars"></i></button>
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
+		<div class="wrap">
+			<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
+		</div>
 	</nav>
 
 	<div class="search">
