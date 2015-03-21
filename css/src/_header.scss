@@ -50,6 +50,14 @@ header {
 				border-right: 1px solid white;
 			}
 
+			& > li:nth-child( 1 ) {
+				background: $navy;
+			}
+
+			& > li:nth-child( 10 ) {
+				background: $green;
+			}
+
 			li {
 				box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3);
 
@@ -193,6 +201,10 @@ header {
 
 		@include respond-to( $menu-bp ) {
 			margin-left: 250px;
+		}
+
+		@include respond-to( 1220px ) {
+			margin-left: 320px;
 		}
 	}
 
