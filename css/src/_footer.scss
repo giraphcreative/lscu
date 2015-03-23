@@ -14,13 +14,13 @@ footer {
 
 		@include respond-to( 768px ) {
 			float: left;
-			width: 33%;
+			width: 30%;
 			border-left: 6px solid white;
 			min-height: 300px;
 			padding: 15px 25px;
 
 			&.first {
-				width: 32%;
+				width: 40%;
 				border-left: 0;
 			}
 		}
