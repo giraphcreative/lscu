@@ -90,13 +90,14 @@ header {
 					color: white;
 					text-decoration: none;
 					text-transform: uppercase;
-					text-align: left;
+					text-align: center;
 
 					@include respond-to( 600px ) {
 						padding: 10px;
 						height: 50px;
 						border-left: 1px solid white;
 						border-top: 1px solid white;
+						text-align: left;
 					}
 
 					@include respond-to( $menu-bp ) {
