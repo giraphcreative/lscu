@@ -17,7 +17,6 @@ get_header();
 	<div class="wrap group">
 
 		<div class="featured-products">
-			<h2>Featured Products</h2>
 			<div class="products">
 				<div class="product-list">
 					<?php the_product_list( '', true ); ?>
@@ -77,19 +76,6 @@ get_header();
 			</div>
 
 		</div>
-
-	</div>
-	
-	<div class="solutions">
-		<div class="wrap">
-			<h2>Partner Solutions</h2>
-		</div>
-		<?php the_product_category_list() ?>
-	</div>
-
-	<div class="showcase bottom">
-
-		<?php the_showcase(); ?>
 
 	</div>
 <?php 
