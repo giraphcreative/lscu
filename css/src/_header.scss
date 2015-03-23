@@ -76,7 +76,7 @@ header {
 					width: 10%;
 
 					&:nth-child( 5 ) ul.sub-menu, &:nth-child( 10 ) ul.sub-menu {
-						left: -1px;
+						left: 0;
 					}
 				}
 
@@ -118,6 +118,7 @@ header {
 				ul.sub-menu {
 					display: none;
 					border: 1px solid white;
+					border-left: 0;
 					border-top: 0;
 					margin-bottom: 3px;
 
