@@ -13,3 +13,6 @@
 [submodule "js/lib/magnific"]
 	path = js/lib/magnific
 	url = git@github.com:dimsemenov/Magnific-Popup.git
+[submodule "css/lib/mathsass"]
+	path = css/lib/mathsass
+	url = git@github.com:terkel/mathsass.git
