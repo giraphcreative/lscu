@@ -31,7 +31,7 @@
 				<h3>Links</h3>
 				<nav role="navigation">
 					<?php wp_nav_menu( array( 
-						'theme_location' => 'footer-links', 
+						'theme_location' => 'footer', 
 						'menu_class' => 'nav-menu' ) 
 					); ?>
 				</nav>
