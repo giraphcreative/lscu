@@ -54,6 +54,7 @@ $icon-width: 70px;
 			padding: 30px 15px 20px;
 			color: white;
 			text-transform: uppercase;
+			border-bottom: 3px solid white;
 
 			&:before {
 				content: "";
@@ -97,6 +98,7 @@ $icon-width: 70px;
 			text-transform: uppercase;
 			color: white;
 			cursor: pointer;
+			border-top: 3px solid white;
 		}
 	}
 }
