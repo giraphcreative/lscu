@@ -54,7 +54,6 @@
 	background-position: center center;
 	border-left: $border;
 	border-right: $border;
-	transform: rotate(90deg);
 
 	.hex1,
 	.hex2 {
@@ -62,21 +61,21 @@
 		overflow: hidden;
 		width: $size/sqrt(2);
 		height: $size/sqrt(2);
-		left: $sideLength/4 - $borderWidth + 1px; /*for some reason this 1px correction is needed */
+		left: $sideLength/4 - $borderWidth;
 		background: inherit;
-		transform: scaleY(#{$scaleFactor}) rotate(-135deg);
+		transform: scaleY(#{$scaleFactor}) rotate(-45deg);
 
 		&:after {
 			/*counter rotate and un-scale the bg image*/
 			content: "";
 			position: absolute;
-			left: -($sideLength/4 + 1px); /*same correction as up above */
+			left: -($sideLength/4);
 			width: $size;
 			height: $size/sqrt(2);
 			top: 0;
 			background: inherit;
 
-			transform: rotate(135deg) scaleY(#{$inverseScale});
+			transform: rotate(45deg) scaleY(#{$inverseScale});
 		}
 	}
 
@@ -98,7 +97,7 @@
 
 		&:after {
 			background-position: center 83%;
-			margin-left: - $scaledBorderWidth + 1px; /*that pesky single pixel correction again*/
+			margin-left: - $scaledBorderWidth; /*that pesky single pixel correction again*/
 		}
 	}
 
