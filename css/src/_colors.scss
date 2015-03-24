@@ -4,8 +4,6 @@
 .bg-teal-light { background-color: lighten( $teal, 7.5% ); }
 .bg-teal-lighter { background-color: lighten( $teal, 15% ); }
 .bg-teal-lightest { background-color: lighten( $teal, 22.5% ); }
-.bg-river { background-color: $river; }
-.bg-river-light { background-color: lighten( $river, 7.5% ); }
 .bg-navy { background-color: $navy; }
 .bg-navy-light { background-color: lighten( $navy, 7.5% ); }
 .bg-orange { background-color: $orange; }
@@ -20,7 +18,6 @@
 .bg-grey-dark-light { background-color: lighten( darken( $grey, 30% ), 7.5% ); }
 
 .text-teal { color: $teal; }
-.text-river { color: $river; }
 .text-navy { color: $navy; }
 .text-orange { color: $orange; }
 .text-lime { color: $lime; }
