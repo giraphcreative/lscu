@@ -48,7 +48,7 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'Color',
         'id'   => CMB_PREFIX . 'large-title-color',
         'type' => 'select',
-        'default' => 'teal',
+        'default' => 'navy',
         'options' => $colors
     ) );
 
@@ -81,12 +81,6 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $showcase_metabox->add_group_field( $showcase_metabox_group, array(
-        'name' => 'Subtitle',
-        'id'   => 'subtitle',
-        'type' => 'text',
-    ) );
-
-    $showcase_metabox->add_group_field( $showcase_metabox_group, array(
         'name' => 'Link',
         'id'   => 'link',
         'type' => 'text',
@@ -96,12 +90,67 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'Image/Video',
         'id'   => 'image',
         'type' => 'file',
-        'preview_size' => array( 200, 100 )
+        'preview_size' => array( 200, 80 )
     ) );
 
 
 
-    // showcase metabox
+    // thumb showcase metabox
+    $thumb_showcase_metabox = new_cmb2_box( array(
+        'id' => 'thumb_showcase_metabox',
+        'title' => 'The Hive',
+        'object_types' => array( 'page' ), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $thumb_showcase_metabox_group = $thumb_showcase_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'thumb_showcase',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Thumb', 'cmb2'),
+            'remove_button' => __('Remove Thumb', 'cmb2'),
+            'group_title'   => __( 'Thumb {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $thumb_showcase_metabox->add_group_field( $thumb_showcase_metabox_group, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ) );
+
+    $thumb_showcase_metabox->add_group_field( $thumb_showcase_metabox_group, array(
+        'name' => 'Subtitle',
+        'id'   => 'subtitle',
+        'type' => 'text',
+    ) );
+
+    $thumb_showcase_metabox->add_group_field( $thumb_showcase_metabox_group, array(
+        'name' => 'Link',
+        'id'   => 'link',
+        'type' => 'text',
+    ) );
+
+    $thumb_showcase_metabox->add_group_field( $thumb_showcase_metabox_group, array(
+        'name' => 'Image/Video',
+        'id'   => 'image',
+        'type' => 'file',
+        'preview_size' => array( 200, 100 )
+    ) );
+
+    $thumb_showcase_metabox->add_group_field( $thumb_showcase_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'navy',
+        'options' => $colors
+    ) );
+
+
+
+    // left column metabox
     $left_metabox = new_cmb2_box( array(
         'id' => 'left_metabox',
         'title' => 'Left Column',
@@ -121,7 +170,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
-
+    /*
     // select all products
     $args = array( 'post_type' => 'product', 'posts_per_page' => -1 );
     $loop = new WP_Query( $args );
@@ -133,7 +182,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
-    // accordion metabox
+    // product accordion metabox
     $prod_accordion_metabox = new_cmb2_box( array(
         'id' => 'prod_accordion_metabox',
         'title' => 'Product Accordion',
@@ -152,7 +201,7 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'Color',
         'id'   => CMB_PREFIX . 'prod_accordion_color',
         'type' => 'select',
-        'default' => 'teal',
+        'default' => 'navy',
         'options' => $colors
     ) );
 
@@ -184,7 +233,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
-    // accordion metabox
+    // partner accordion
     $part_accordion_metabox = new_cmb2_box( array(
         'id' => 'part_accordion_metabox',
         'title' => 'Partner Accordion',
@@ -203,7 +252,7 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'Color',
         'id'   => CMB_PREFIX . 'part_accordion_color',
         'type' => 'select',
-        'default' => 'teal',
+        'default' => 'navy',
         'options' => $colors
     ) );
 
@@ -219,67 +268,6 @@ function page_metaboxes( $meta_boxes ) {
         'id' => CMB_PREFIX . 'part_accordion_partners',
         'type' => 'multicheck',
         'options' => $partners,
-    ) );
-
-
-
-    // accordion metabox
-    $accordion_metabox = new_cmb2_box( array(
-        'id' => 'accordion_metabox',
-        'title' => 'General Accordions',
-        'object_types' => array( 'page' ), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-    ) );
-
-    $accordion_metabox_group = $accordion_metabox->add_field( array(
-        'id' => CMB_PREFIX . 'accordion',
-        'type' => 'group',
-        'options' => array(
-            'add_button' => __('Add Box', 'cmb'),
-            'remove_button' => __('Remove Box', 'cmb'),
-            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-            'sortable' => true, // beta
-        )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Title',
-        'id'   => 'title',
-        'type' => 'text',
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Icon',
-        'id'   => 'icon',
-        'type' => 'file',
-        'preview_size' => array( 30, 30 )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Color',
-        'id'   => 'color',
-        'type' => 'select',
-        'default' => 'teal',
-        'options' => $colors
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Default State',
-        'id'   => 'state',
-        'type' => 'select',
-        'default' => 'closed',
-        'options' => array(
-            'closed' => 'Closed',
-            'open' => 'Open',
-        )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Content',
-        'id'   => 'content',
-        'type' => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 7 )
     ) );
 
 
@@ -369,6 +357,68 @@ function page_metaboxes( $meta_boxes ) {
         'id' => CMB_PREFIX . 'partner_products',
         'type' => 'multicheck',
         'options' => $products,
+    ) );
+    */
+
+
+
+    // accordion metabox
+    $accordion_metabox = new_cmb2_box( array(
+        'id' => 'accordion_metabox',
+        'title' => 'Accordions',
+        'object_types' => array( 'page' ), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $accordion_metabox_group = $accordion_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'accordion',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Box', 'cmb'),
+            'remove_button' => __('Remove Box', 'cmb'),
+            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Icon',
+        'id'   => 'icon',
+        'type' => 'file',
+        'preview_size' => array( 30, 30 )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'navy',
+        'options' => $colors
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Default State',
+        'id'   => 'state',
+        'type' => 'select',
+        'default' => 'closed',
+        'options' => array(
+            'closed' => 'Closed',
+            'open' => 'Open',
+        )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Content',
+        'id'   => 'content',
+        'type' => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 7 )
     ) );
 
 }

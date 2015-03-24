@@ -1,8 +1,7 @@
 
 
 // set colors
-$teal: #0491C1;
-$river: #076E92;
+$teal: #15B0BF;
 $navy: #2C5871;
 $orange: #F99B1F;
 $green: #017A40;
@@ -38,6 +37,7 @@ $link-color: $teal;
 // general styles
 @import "title";
 @import "showcase";
+@import "thumbs";
 @import "content";
 @import "accordion";
 
@@ -52,11 +52,6 @@ $link-color: $teal;
 
 // home-specific styles
 @import "home";
-
-
-// partner styles
-@import "partners";
-
 
 
 // include magnific popup styles

@@ -22,7 +22,7 @@ function the_showcase() {
 				// check if it's an image or video
 				if ( p_is_image( $slide["image"] ) ) {
 					// it's an image, so resize it and generate an img tag.
-					$image = '<img src="' . $slide["image"] . '">';
+					$image = '<img src="' . $slide["image"] . '" alt="' . ( !empty( $slide['title'] ) ? $slide['title'] : '' ) . '">';
 				} else {
 					// it's a video, so oEmbed that stuffs, yo
 					$image = apply_filter( 'the_content', $slide["image"] );
@@ -33,13 +33,6 @@ function the_showcase() {
 				<?php if ( !empty( $link ) ) { ?><a href="<?php print $link ?>" class="<?php print ( stristr( $link, 'vimeo' ) || stristr( $link, 'youtube' ) || stristr( $link, 'google.com/maps' ) ? 'lightbox-iframe' : '' ) ?>"><?php } ?>
 				<?php print $image; ?>
 				<?php if ( !empty( $link ) ) { ?></a><?php } ?>
-				
-				<?php if ( !empty( $title ) || !empty( $subtitle ) ) { ?>
-				<div class="slide-content">
-					<?php if ( !empty( $title ) ) { ?><h1><?php print $title; ?></h1><?php } ?>
-					<?php if ( !empty( $subtitle ) ) { ?><h2><?php print $subtitle; ?></h2><?php } ?>
-				</div>
-				<?php } ?>
 			</div>
 				<?php
 				$count++;
@@ -59,6 +52,29 @@ function the_showcase() {
 		<?php
 	}
 }
+
+
+
+// Product listing
+function the_thumb_showcase() {
+
+	$thumbs = get_cmb_value( 'thumb_showcase' );
+
+    foreach ( $thumbs as $thumb ) {
+        ?><a href="<?php print $thumb['link'] ?>"><div class="thumb">
+				<div class="thumb-icon" style="background-image: url(<?php print p_image_resize( $thumb['image'], 300, 300, true ) ?>);">
+					<div class="hex1"></div>
+					<div class="hex2"></div>
+				</div>
+				<div class="thumb-text <?php print $thumb['color'] ?>">
+					<h3><?php print $thumb['title'] ?></h3>
+					<p><?php print $thumb['subtitle'] ?></p>
+				</div>
+			</div></a><?php
+    }
+
+}
+
 
 
 ?>

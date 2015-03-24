@@ -16,13 +16,13 @@ get_header();
 
 	<div class="wrap group">
 
-		<div class="featured-products">
-			<div class="products">
-				<div class="product-list">
-					<?php the_product_list( '', true ); ?>
+		<div class="thumb-showcase">
+			<div class="thumbs">
+				<div class="thumb-list">
+					<?php the_thumb_showcase(); ?>
 				</div>
-				<button class="product-nav previous">Previous</button>
-				<button class="product-nav next">Next</button>
+				<button class="thumb-nav previous">Previous</button>
+				<button class="thumb-nav next">Next</button>
 			</div>
 		</div>
 	
