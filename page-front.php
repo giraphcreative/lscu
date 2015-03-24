@@ -16,6 +16,7 @@ get_header();
 
 	<div class="wrap group">
 
+		<?php if ( has_cmb_value( 'thumb_showcase' ) ) { ?>
 		<div class="thumb-showcase">
 			<div class="thumbs">
 				<div class="thumb-list">
@@ -25,7 +26,7 @@ get_header();
 				<button class="thumb-nav next">Next</button>
 			</div>
 		</div>
-	
+		<?php } ?>
 
 		<div class="home-thirds">
 
