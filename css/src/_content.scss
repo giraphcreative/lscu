@@ -10,12 +10,6 @@ body {
 }
 
 .content {
-	padding: 30px 20px;
-
-	.home & {
-		padding: 0;
-	}
-
 	h1, h2, h3, h4, h5, h6 {
 		color: $navy;
 		padding: 6px 0;
