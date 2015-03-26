@@ -73,7 +73,11 @@ header {
 				}
 
 				@include respond-to( $menu-bp ) {
-					width: 10%;
+					width: 9.5%;
+
+					&:nth-child( 4 ), &:nth-child( 5 ) {
+						width: 12%;
+					}
 
 					&:nth-child( 5 ) ul.sub-menu, &:nth-child( 10 ) ul.sub-menu {
 						left: 0;
@@ -84,7 +88,7 @@ header {
 					display: block;
 					@include font;
 					padding: 14px 2px;
-					font-size: 11px;
+					font-size: 10px;
 					line-height: 15px;
 					width: 100%;
 					color: white;
