@@ -43,22 +43,18 @@ header {
 			z-index: 1000;
 			text-align: center;
 			box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3);
+			border-bottom: 1px solid white;
 			@include clearfix;
 			
 			@include respond-to( 600px ) {
 				display: block;
-				border-right: 1px solid white;
 			}
 
-			& > li:nth-child( 1 ) {
-				background: $navy;
-			}
+			& > li:nth-child( 1 ) { &, & > ul.submenu li { background: $navy; } }
 
-			& > li:nth-child( 10 ) {
-				background: $green;
-			}
+			& > li:nth-child( 10 ) { background: $green; }
 
-			li {
+			& > li {
 				box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3);
 
 				@include respond-to( 600px ) {
@@ -67,21 +63,23 @@ header {
 					float: left;
 					width: 20%;
 
-					&:nth-child( 5 ) ul.sub-menu, &:nth-child( 10 ) ul.sub-menu {
-						left: -100%;
-					}
+					&:nth-child( 5 ), &:nth-child( 10 ) { ul.sub-menu { left: -100%; } }
+
+					&:nth-child( 1 ), &:nth-child( 6 ) { a { border-left: 0; } }
 				}
 
 				@include respond-to( $menu-bp ) {
 					width: 9.5%;
 
-					&:nth-child( 4 ), &:nth-child( 5 ) {
-						width: 12%;
+					&:nth-child( 4 ), &:nth-child( 5 ) { width: 12%; }
+
+					&:nth-child( 5 ), &:nth-child( 10 ) {
+						ul.sub-menu {
+							left: 0;
+						}
 					}
 
-					&:nth-child( 5 ) ul.sub-menu, &:nth-child( 10 ) ul.sub-menu {
-						left: 0;
-					}
+					&:nth-child( 6 ) { a { border-left: 1px solid white; } }
 				}
 
 				a {
@@ -130,7 +128,7 @@ header {
 
 					@include respond-to( 600px ) {
 						position: absolute;
-						left: -1px;
+						left: 0;
 						top: 50px;
 						width: 201%;
 						z-index: 10;
