@@ -34,10 +34,10 @@
 	</div>
 
 	<nav role="navigation">
-		<div class="wrap">
+		<!--<div class="wrap">-->
 			<button class="menu-toggle"><i class="fa fa-bars"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
-		</div>
+		<!--</div>-->
 	</nav>
 
 	<div class="search">
