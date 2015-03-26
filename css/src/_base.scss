@@ -55,3 +55,6 @@ a {
 	}
 }
 
+input, textarea {
+	@include font;
+}

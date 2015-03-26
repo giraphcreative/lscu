@@ -38,10 +38,10 @@
 
 		h1 {
 			color: white;
-			font-style: italic;
 			line-height: 1.1em;
 			font-size: 20px;
 			border-bottom: 3px solid white;
+			text-transform: uppercase;
 
 			@include respond-to( 480px ) { font-size: 30px; }
 			@include respond-to( 768px ) { font-size: 40px; }
