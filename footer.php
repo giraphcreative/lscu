@@ -37,7 +37,7 @@
 				</nav>
 			</div>
 			<div class="column">
-				<h3>Resources</h3>
+				<h3>Sign Up For News</h3>
 				<form action="#" method="post">
 					<input type="text" name="email" value="">
 					<input type="submit" name="submit" value="Subscribe">

@@ -7,12 +7,8 @@ Template Name: Page - Home
 get_header();
 
 ?>
-
-	<div class="showcase">
 		
-		<?php the_showcase(); ?>
-
-	</div>
+	<?php the_showcase(); ?>
 
 	<div class="wrap group">
 
@@ -85,6 +81,9 @@ get_header();
 		</div>
 
 	</div>
+		
+	<?php the_footer_showcase(); ?>
+
 <?php 
 
 get_footer();

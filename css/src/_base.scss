@@ -48,6 +48,7 @@ strong {
 a {
 	color: $navy;
 	text-decoration: none;
+	transition: opacity 400ms ease-in-out;
 
 	&:hover {
 		text-decoration: underline;
