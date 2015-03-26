@@ -80,7 +80,7 @@ function the_thumb_showcase() {
 function the_footer_showcase() {
 
 	// get the slides
-	$slides = get_post_meta( get_the_ID(), CMB_PREFIX . "showcase_footer", 1 );
+	$slides = get_cmb_value( "showcase_footer" );
 
 	if ( !empty( $slides ) ) {
 		?>
@@ -95,6 +95,7 @@ function the_footer_showcase() {
 				$link = ( isset( $slide["link"] ) ? $slide["link"] : '' );
 				$icon = ( isset( $slide["icon"] ) ? $slide["icon"] : '' );
 
+				print $icon;
 				// check if it's an image or video
 				if ( p_is_image( $slide["image"] ) ) {
 					// it's an image, so resize it and generate an img tag.
@@ -110,9 +111,9 @@ function the_footer_showcase() {
 				<?php print $image; ?>
 				<?php if ( !empty( $link ) ) { ?></a><?php } ?>
 				
-				<?php if ( !empty( $title ) || !empty( $subtitle ) ) { ?>
-				<div class="slide-content">
-				<?php if ( !empty( $icon ) ) { ?><img src="<?php print $icon; ?>"><?php } ?>					
+				<?php if ( !empty( $title ) ) { ?>
+				<div class="slide-hexagon">
+					<?php if ( !empty( $icon ) ) { ?><img src="<?php print $icon; ?>"><?php } ?>					
 					<?php if ( !empty( $title ) ) { ?><h1><?php print $title; ?></h1><?php } ?>
 				</div>
 				<?php } ?>

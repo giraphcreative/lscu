@@ -60,6 +60,7 @@ get_header();
 							$num++;
 						} // end while
 					} // end if
+					wp_reset_query();
 					?>
 				</div>
 				<button class="home-third-button link-news"><span>All Link News</span></button>

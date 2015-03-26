@@ -26,6 +26,12 @@ body {
 	padding: 40px 20px;
 }
 
+.content-two-column {
+	@include respond-to( 768px ) {
+		padding: 30px 0;
+	}
+}
+
 
 .fluid-width-video-wrapper {
 	margin: 15px 0;

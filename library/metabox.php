@@ -276,6 +276,14 @@ function page_metaboxes( $meta_boxes ) {
         'preview_size' => array( 200, 80 )
     ) );
 
+    $showcase_footer_metabox->add_group_field( $showcase_footer_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'navy',
+        'options' => $colors
+    ) );
+
 
 }
 add_filter( 'cmb2_init', 'page_metaboxes' );

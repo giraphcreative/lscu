@@ -4,7 +4,7 @@
 jQuery(document).ready(function($){
 
 	// grab the showcase
-	$( '.showcase:not(.footer)' ).each(function(){
+	$( '.showcase.footer' ).each(function(){
 		var showcase = $( this );
 
 		// if it exists
@@ -111,7 +111,7 @@ jQuery(document).ready(function($){
 
 
 			// next/previous click
-			showcase.find( '.showcase-nav a' ).click(function(){
+			$( '.showcase.footer .showcase-nav a' ).click(function(){
 				if ( $(this).hasClass( 'previous' ) ) {
 					prev_slide();
 				} else {
@@ -121,14 +121,14 @@ jQuery(document).ready(function($){
 
 			// move slides to left if they mouse over the previous nav
 			// gives the illusion of infinite scrolling
-			showcase.find( '.showcase-nav a.previous' ).hover(function(){
-				showcase.find( '.slide:not(.visible)' ).attr( 'class', 'slide hide-left' );
+			$( '.showcase.footer .showcase-nav a.previous' ).hover(function(){
+				$( '.showcase.footer .slide:not(.visible)' ).attr( 'class', 'slide hide-left' );
 			});
 
 			// move slides to right (default) if they mouse over the next nav
 			// gives the illusion of infinite scrolling
-			showcase.find( '.showcase-nav a.next' ).hover(function(){
-				showcase.find( '.showcase .slide:not(.visible)' ).attr( 'class', 'slide' );
+			$( '.showcase.footer .showcase-nav a.next' ).hover(function(){
+				$( '.showcase.footer .slide:not(.visible)' ).attr( 'class', 'slide' );
 			});
 
 		}
