@@ -11,6 +11,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
     $colors = array(
+        'sky' => 'Sky',
         'teal' => 'Teal',
         'navy' => 'Navy',
         'forest' => 'Forest',
