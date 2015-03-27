@@ -17,6 +17,7 @@ function page_metaboxes( $meta_boxes ) {
         'forest' => 'Forest',
         'lime' => 'Lime',
         'orange' => 'Orange',
+        'yellow' => 'Yellow',
         'grey-light' => 'Grey - Light',
         'grey-dark' => 'Grey - Dark',
     );
