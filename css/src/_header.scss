@@ -191,28 +191,20 @@ header {
 
 				
 				@include respond-to( $menu-bp ) {
-					&:nth-child( 4 ) > ul.sub-menu, &:nth-child( 9 ) > ul.sub-menu, &:nth-child( 10 ) > ul.sub-menu {
-						left: -100%;
+					&:nth-child( 4 ) > ul.sub-menu, &:nth-child( 5 ) > ul.sub-menu {
+						left: 0;
 
 						& > li > ul.sub-menu {
-							top: 0;
-							left: -100%;
-							margin-left: 1px;
-						}
-					}
-
-					&:nth-child( 5 ) > ul.sub-menu {
-						left: -100%;
-
-						& > li > ul.sub-menu {
-							left: -100%;
+							top: 1px;
+							left: 100%;
+							margin-left: 0;
+							border-left: 0;
 						}
 					}
 
 					&:nth-child( 9 ) > ul.sub-menu {
 						& > li > ul.sub-menu {
 							left: -100%;
-							border-left: 0;
 						}
 					}
 
@@ -221,8 +213,6 @@ header {
 
 						& > li > ul.sub-menu {
 							left: -100%;
-							margin-left: 1px;
-							border-left: 0;
 						}
 					}
 				}
