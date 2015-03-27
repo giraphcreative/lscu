@@ -5,7 +5,10 @@ Home/catch-all template
 
 get_header(); ?>
 
+	<?php the_large_title(); ?>
+
 	<?php the_showcase(); ?>
+	
 	<div id="content" class="wrap groupcontent-two-column" role="main">
 		<div class="quarter">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?><!-- no sidebar --><?php endif; ?>

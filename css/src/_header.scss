@@ -137,6 +137,7 @@ header {
 
 					li {
 						box-shadow: inset 0px 5px 12px -10px rgba(100, 100, 100, 0.69);
+						position: relative;
 
 						@include respond-to( 600px ) {
 							float: none;
@@ -157,6 +158,20 @@ header {
 								&:hover {
 									background: lighten( $navy, 2% );
 								}
+							}
+						}
+
+						ul.sub-menu {
+							display: none;
+							left: 100%;
+							top: 1px;
+							width: 100%;
+							margin-left: 1px;
+						}
+
+						&:hover, &.open {
+							ul.sub-menu {
+								display: block;
 							}
 						}
 					}
