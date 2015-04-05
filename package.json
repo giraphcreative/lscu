@@ -1,9 +1,9 @@
 {
-    "name" : "ripon",
+    "name" : "lscu",
     "version" : "0.0.1",
     "devDependencies" : {
         "grunt" :                       "latest",
-        "grunt-contrib-sass":           "*",
+        "grunt-sass":                   "*",
         "grunt-contrib-uglify":         "*",
         "grunt-contrib-watch":          "*",
         "grunt-autoprefixer":           "*",

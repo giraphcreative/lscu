@@ -198,13 +198,6 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Icon',
-        'id'   => 'icon',
-        'type' => 'file',
-        'preview_size' => array( 30, 30 )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
         'name' => 'Color',
         'id'   => 'color',
         'type' => 'select',

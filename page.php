@@ -20,18 +20,10 @@ get_header();
 			endif;
 			?>
 			<?php
-			if ( !has_partner_or_product_accordion() ) {
-				the_accordion();
-			}
+			the_accordion();
 			?>
 		<?php if ( has_cmb_value( 'left_content' ) ) { ?></div><?php } ?>
 	</div><!-- #content -->
-
-	<?php if ( has_partner_or_product_accordion() ) { ?>
-	<div class="group">
-		<?php the_accordion(); ?>
-	</div>
-	<?php } ?>
 
 <?php
 
