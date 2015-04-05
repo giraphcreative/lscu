@@ -24,7 +24,7 @@ function the_accordion() {
 
 				?>
 			<div class="accordion-box<?php print ( $state == 'open' ? ' open' : '' ); ?> bg-<?php print $color ?>">
-				<div class="accordion-box-title">
+				<div class="accordion-box-title<?php print ( $state == 'open' ? ' open' : '' ); ?>">
 					<?php if ( $accordion_location == 'bottom' ) { ?><div class="wrap"><?php } ?>
 					<h4><?php print $title ?></h4>
 					<?php if ( $accordion_location == 'bottom' ) { ?></div><?php } ?>
