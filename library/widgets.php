@@ -45,6 +45,10 @@ class lscu_connect_widget extends WP_Widget {
 
 		$counter = 1;
 		while ( $counter <= $this->number_contacts ) {
+			if (   !empty( $instance[ 'name' . $counter ] ) 
+				|| !empty( $instance[ 'image' . $counter ] ) 
+				|| !empty( $instance[ 'email' . $counter ] ) 
+				|| !empty( $instance[ 'phone' . $counter ] ) ) {
 			?>
 			<div class="contact">
 				<?php if ( !empty( $instance[ 'image' . $counter ] ) ) { ?><img src="<?php print $instance[ 'image' . $counter ] ?>"><?php } ?>
@@ -55,6 +59,7 @@ class lscu_connect_widget extends WP_Widget {
 				?></p>
 			</div>
 			<?php
+			}
 			$counter++;
 		}
 

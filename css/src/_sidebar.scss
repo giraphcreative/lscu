@@ -3,7 +3,7 @@
 .sidebar {
 	.widget {
 		padding: 10px 0;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		font-size: 15px;
 
 		.widget-title {
@@ -60,7 +60,7 @@
 
 		&.widget_lscu_connect_widget {
 			.widget-title:before {
-				background-image: url(../img/icon-pointer.png);
+				background-image: url(../img/icon-connect.png);
 			}
 
 			.contact {
@@ -73,6 +73,29 @@
 					margin: 5px 15px 10px;
 					border: 1px solid $grey;
 				}
+			}
+		}
+
+		&.tribe-events-list-widget {
+			.widget-title:before {
+				background-image: url(../img/icon-events-small.png);
+			}
+
+			ol {
+				padding: 10px;
+				li {
+					padding: 10px 0;
+					margin-bottom: 0;
+
+					h4 {
+						font-size: 1.2em;
+					}
+				}
+			}
+
+			p.tribe-events-widget-link {
+				text-align: center;
+				padding: 10px;
 			}
 		}
 	}
