@@ -98,6 +98,20 @@
 				padding: 10px;
 			}
 		}
+
+		&.leverage {
+			.widget-title {
+				background-color: $forest;
+
+				h4 {
+					@include font-italic;
+				}
+
+				&:before {
+					background-image: url(../img/icon-leverage.png);
+				}
+			}
+		}
 	}
 
 }

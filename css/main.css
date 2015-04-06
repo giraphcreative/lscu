@@ -1224,6 +1224,13 @@ body {
   .sidebar .widget.tribe-events-list-widget p.tribe-events-widget-link {
     text-align: center;
     padding: 10px; }
+  .sidebar .widget.leverage .widget-title {
+    background-color: #007940; }
+    .sidebar .widget.leverage .widget-title h4 {
+      font-family: "Avenir Italic", sans-serif;
+      font-weight: normal; }
+    .sidebar .widget.leverage .widget-title:before {
+      background-image: url(../img/icon-leverage.png); }
 
 footer {
   background-color: #2C5871;
