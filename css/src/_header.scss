@@ -229,21 +229,21 @@ header {
 			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a { background: $forest; &:hover { background: lighten( $forest, 5% ); } } }
 		}
 	}
+	
 
 	.search {
 		position: relative;
-		padding: 10px;
 
 		@include respond-to( 768px ) {
 			position: absolute;
-			top: 80px;
+			top: 100px;
 			right: 30px;
-			width: 300px;
+			width: 280px;
 		}
 
 		input[type=text] {
 			display: block;
-			right: 26px;
+			right: 0;
 			left: 0;
 			width: 100%;
 			border: 2px solid $grey;
@@ -251,7 +251,6 @@ header {
 			padding: 0 25px 0 15px;
 			font-size: 15px;
 			line-height: 28px;
-			text-align: center;
 		}
 
 		input[type=submit] {

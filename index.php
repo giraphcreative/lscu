@@ -27,10 +27,6 @@ get_header(); ?>
 				</div>
 				<?php
 			endwhile;
-
-			if ( !has_partner_or_product_accordion() ) {
-				the_accordion();
-			}
 			?>
 		<?php if ( has_cmb_value( 'left_content' ) ) { ?></div><?php } ?>
 	</div><!-- #content -->
