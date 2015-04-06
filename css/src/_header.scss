@@ -234,6 +234,13 @@ header {
 		position: relative;
 		padding: 10px;
 
+		@include respond-to( 768px ) {
+			position: absolute;
+			top: 80px;
+			right: 30px;
+			width: 300px;
+		}
+
 		input[type=text] {
 			display: block;
 			right: 26px;
@@ -259,24 +266,6 @@ header {
 			text-indent: -400px;
 			cursor: pointer;
 			margin-top: -25px;
-		}
-
-		@include respond-to( 768px ) {
-			position: absolute;
-			top: 80px;
-			right: 30px;
-		}
-
-		@include respond-to( 1220px ) {
-			margin-left: 320px;
-		}
-	}
-
-	@include respond-to( 768px ) {
-		position: relative;
-
-		.wrap {
-			position: relative;
 		}
 	}
 }
