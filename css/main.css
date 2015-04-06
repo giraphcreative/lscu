@@ -1075,24 +1075,27 @@ body {
 .fluid-width-video-wrapper {
   margin: 15px 0; }
 
-.quarter, .third, .half, .two-third, .three-quarter {
+.quarter, .third {
+  padding: 20px 10px; }
+
+.half, .two-third, .three-quarter {
   padding: 20px; }
 
 @media only screen and (min-width: 768px) {
   .quarter, .third, .half, .two-third, .three-quarter {
     float: left; }
   .quarter {
-    width: 23%;
-    margin: 0 1%; }
+    width: 24%;
+    margin: 0 .5%; }
   .third {
-    width: 31%;
-    margin: 0 1%; }
+    width: 32%;
+    margin: 0 .5%; }
   .two-third {
-    width: 65%;
-    margin: 0 1%; }
+    width: 66%;
+    margin: 0 .5%; }
   .three-quarter {
-    width: 73%;
-    margin: 0 1%; } }
+    width: 74%;
+    margin: 0 .5%; } }
 
 .accordions-wide {
   padding: 0 20px; }
@@ -1165,7 +1168,8 @@ body {
   font-size: 15px; }
   .sidebar .widget .widget-title {
     position: relative;
-    padding: 10px 15px 10px 10px; }
+    padding: 10px 15px 10px 10px;
+    background-color: #2C5871; }
     .sidebar .widget .widget-title h4 {
       font-family: "Avenir", sans-serif;
       font-weight: normal;
@@ -1180,12 +1184,11 @@ body {
       height: 44px;
       margin-top: -22px;
       right: 5px;
-      top: 50%; }
-  .sidebar .widget.widget_nav_menu .widget-title {
-    background-color: #2C5871; }
-    .sidebar .widget.widget_nav_menu .widget-title:before {
-      background: url(../img/icon-pointer.png) center center no-repeat;
+      top: 50%;
+      background: center center no-repeat;
       background-size: contain; }
+  .sidebar .widget.widget_nav_menu .widget-title:before {
+    background-image: url(../img/icon-pointer.png); }
   .sidebar .widget.widget_nav_menu ul li a {
     display: block;
     padding: 5px 10px 3px;
@@ -1199,6 +1202,16 @@ body {
     .sidebar .widget.widget_nav_menu ul li a:hover {
       background-color: #939598;
       color: white; }
+  .sidebar .widget.widget_lscu_connect_widget .widget-title:before {
+    background-image: url(../img/icon-pointer.png); }
+  .sidebar .widget.widget_lscu_connect_widget .contact {
+    clear: left;
+    padding: 10px 0; }
+    .sidebar .widget.widget_lscu_connect_widget .contact img {
+      width: 25%;
+      float: left;
+      margin: 5px 15px 10px;
+      border: 1px solid #939598; }
 
 footer {
   background-color: #2C5871;

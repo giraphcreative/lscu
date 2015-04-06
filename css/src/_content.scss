@@ -38,7 +38,11 @@ body {
 }
 
 
-.quarter, .third, .half, .two-third, .three-quarter {
+.quarter, .third {
+	padding: 20px 10px;
+}
+
+.half, .two-third, .three-quarter {
 	padding: 20px;
 }
 
@@ -48,23 +52,23 @@ body {
 	}
 
 	.quarter {
-		width: 23%;
-		margin: 0 1%;
+		width: 24%;
+		margin: 0 .5%;
 	}
 
 	.third {
-		width: 31%;
-		margin: 0 1%;
+		width: 32%;
+		margin: 0 .5%;
 	}
 
 	.two-third {
-		width: 65%;
-		margin: 0 1%;
+		width: 66%;
+		margin: 0 .5%;
 	}
 
 	.three-quarter {
-		width: 73%;
-		margin: 0 1%;
+		width: 74%;
+		margin: 0 .5%;
 	}
 }
 

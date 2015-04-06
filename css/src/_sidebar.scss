@@ -9,6 +9,7 @@
 		.widget-title {
 			position: relative;
 			padding: 10px 15px 10px 10px;
+			background-color: $navy;
 
 			h4 {
 				@include font;
@@ -26,17 +27,14 @@
 				margin-top: -22px;
 				right: 5px;
 				top: 50%;
+				background: center center no-repeat;
+				background-size: contain;
 			}
 		}
 
 		&.widget_nav_menu {
-			.widget-title {
-				background-color: $navy;
-
-				&:before {
-					background: url(../img/icon-pointer.png) center center no-repeat;
-					background-size: contain;
-				}
+			.widget-title:before {
+				background-image: url(../img/icon-pointer.png);
 			}
 
 			ul {
@@ -56,6 +54,24 @@
 							color: white;
 						}
 					}
+				}
+			}
+		}
+
+		&.widget_lscu_connect_widget {
+			.widget-title:before {
+				background-image: url(../img/icon-pointer.png);
+			}
+
+			.contact {
+				clear: left;
+				padding: 10px 0;
+
+				img {
+					width: 25%;
+					float: left;
+					margin: 5px 15px 10px;
+					border: 1px solid $grey;
 				}
 			}
 		}
