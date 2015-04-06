@@ -9,20 +9,15 @@ body {
 	margin: 0 auto;
 }
 
-.content {
-	h1, h2, h3, h4, h5, h6 {
-		color: $navy;
-		padding: 6px 0;
-	}
-}
-
 .content-narrow {
+	@extend .content-style;
 	padding: 40px 20px;
 	max-width: 900px;
 	margin: 0 auto;
 }
 
 .content-wide {
+	@extend .content-style;
 	padding: 40px 20px;
 }
 
@@ -35,6 +30,11 @@ body {
 
 .fluid-width-video-wrapper {
 	margin: 15px 0;
+}
+
+
+.half, .two-third, .three-quarter {
+	@extend .content-style;
 }
 
 
