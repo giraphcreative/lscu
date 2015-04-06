@@ -60,6 +60,16 @@ footer {
 		ul {
 			list-style-type: disc;
 			padding: 10px 20px;
+	
+			@include respond-to( 1220px ) {
+				padding: 10px;
+
+				li {
+					width: 44%;
+					margin-left: 6%;
+					float: left;
+				}	
+			}
 		}
 	}
 
