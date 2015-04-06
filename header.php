@@ -35,9 +35,14 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 		<!--</div>-->
 	</nav>
-
-	<div class="search">
-		<?php get_search_form(); ?>
+	
+	<div class="aux">
+		<div class="search">
+			<?php get_search_form(); ?>
+		</div>
+		<p class="account-links">
+			<?php account_toolbox() ?>
+		</p>
 	</div>
 
 </header>

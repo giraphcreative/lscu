@@ -218,6 +218,7 @@ input, textarea {
   padding: 6px 0; }
 
 header {
+  position: relative;
   padding: 30px 0 0; }
   header .logo {
     margin-right: 60px;
@@ -414,36 +415,59 @@ header {
         background: #007940; }
         header nav ul.nav-menu > li:nth-child(10) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(10) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(10):hover a:hover, header nav ul.nav-menu > li:nth-child(10).open a:hover {
           background: #00934d; }
-  header .search {
+  header .aux {
     position: relative; }
     @media only screen and (min-width: 768px) {
-      header .search {
+      header .aux {
         position: absolute;
-        top: 100px;
-        right: 30px;
+        top: 80px;
+        right: 40px;
         width: 280px; } }
-    header .search input[type=text] {
-      display: block;
-      right: 0;
-      left: 0;
-      width: 100%;
-      border: 2px solid #939598;
-      background: white;
-      padding: 0 25px 0 15px;
-      font-size: 15px;
-      line-height: 28px; }
-    header .search input[type=submit] {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      bottom: 0;
-      width: 50px;
-      height: 50px;
-      border: 0;
-      background: url(../img/icon-small-search.png) center center no-repeat;
-      text-indent: -400px;
-      cursor: pointer;
-      margin-top: -25px; }
+    header .aux .search {
+      position: relative;
+      padding: 10px 0; }
+      @media only screen and (min-width: 768px) {
+        header .aux .search {
+          padding: 0; } }
+      header .aux .search input[type=text] {
+        display: block;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border: 2px solid #939598;
+        border-left: 0;
+        border-right: 0;
+        background: white;
+        padding: 0 25px 0 15px;
+        font-size: 15px;
+        line-height: 28px; }
+        @media only screen and (min-width: 768px) {
+          header .aux .search input[type=text] {
+            border: 2px solid #939598; } }
+      header .aux .search input[type=submit] {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        border: 0;
+        background: url(../img/icon-small-search.png) center center no-repeat;
+        text-indent: -400px;
+        cursor: pointer;
+        margin-top: -25px; }
+    header .aux p.account-links {
+      display: none; }
+      @media only screen and (min-width: 768px) {
+        header .aux p.account-links {
+          display: block;
+          padding: 15px 0 0 0;
+          font-size: .85em;
+          text-align: center;
+          color: #939598; }
+          header .aux p.account-links span {
+            color: #c7c8ca;
+            padding: 6px; } }
 
 .large-title {
   padding: 20px; }
