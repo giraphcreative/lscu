@@ -1269,13 +1269,20 @@ footer {
   @media only screen and (min-width: 768px) {
     footer .column {
       float: left;
-      width: 30%;
       border-left: 6px solid white;
       min-height: 300px;
-      padding: 15px 25px; }
+      padding: 15px 25px;
+      width: 28%; }
       footer .column.first {
-        width: 40%;
-        border-left: 0; } }
+        border-left: 0;
+        width: 45%; }
+      footer .column.last {
+        width: 27%; } }
+  @media only screen and (min-width: 1220px) {
+    footer .column .address {
+      float: left;
+      width: 50%;
+      padding: 20px 0; } }
   footer h3 {
     font-family: "Avenir", sans-serif;
     font-weight: normal;
