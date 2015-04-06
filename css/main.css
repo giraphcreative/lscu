@@ -1160,14 +1160,45 @@ body {
       background-color: #e1e2e3; }
 
 .sidebar .widget {
-  padding: 5px 0;
+  padding: 10px 0;
+  margin-bottom: 30px;
   font-size: 15px; }
-  .sidebar .widget h4 {
-    font-family: "Avenir Demi", sans-serif;
-    font-weight: normal;
-    color: #2C5871;
-    padding: 15px 0 7px;
-    font-size: 20px; }
+  .sidebar .widget .widget-title {
+    position: relative;
+    padding: 10px 15px 10px 10px; }
+    .sidebar .widget .widget-title h4 {
+      font-family: "Avenir", sans-serif;
+      font-weight: normal;
+      color: white;
+      border-bottom: 4px solid white;
+      text-transform: uppercase;
+      font-size: 1.1em; }
+    .sidebar .widget .widget-title:before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      margin-top: -22px;
+      right: 5px;
+      top: 50%; }
+  .sidebar .widget.widget_nav_menu .widget-title {
+    background-color: #2C5871; }
+    .sidebar .widget.widget_nav_menu .widget-title:before {
+      background: url(../img/icon-pointer.png) center center no-repeat;
+      background-size: contain; }
+  .sidebar .widget.widget_nav_menu ul li a {
+    display: block;
+    padding: 5px 10px 3px;
+    border-bottom: 1px solid #c7c8ca;
+    text-transform: uppercase;
+    -webkit-transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+            transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    color: #47494b;
+    font-size: .9em;
+    text-decoration: none; }
+    .sidebar .widget.widget_nav_menu ul li a:hover {
+      background-color: #939598;
+      color: white; }
 
 footer {
   background-color: #2C5871;
