@@ -54,6 +54,7 @@ class lscu_connect_widget extends WP_Widget {
 				<?php if ( !empty( $instance[ 'image' . $counter ] ) ) { ?><img src="<?php print $instance[ 'image' . $counter ] ?>"><?php } ?>
 				<p><?php 
 				print ( !empty( $instance[ 'name' . $counter ] ) ? '<strong>' . $instance[ 'name' . $counter ] . '</strong><br>' : '' ); 
+				print ( !empty( $instance[ 'title' . $counter ] ) ? $instance[ 'title' . $counter ] . '<br>' : '' ); 
 				print ( !empty( $instance[ 'email' . $counter ] ) ? '<a href="mailto:' . $instance[ 'email' . $counter ] . '">' . $instance[ 'email' . $counter ] . '</a><br>' : '' );
 				print ( !empty( $instance[ 'phone' . $counter ] ) ? '<a href="tel:' . $instance[ 'phone' . $counter ] . '">' . $instance[ 'phone' . $counter ] . '</a><br>' : '' );
 				?></p>
@@ -78,6 +79,10 @@ class lscu_connect_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' . $counter ); ?>"><?php _e( 'Name:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' . $counter ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'name' . $counter ] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' . $counter ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' . $counter ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'title' . $counter ] ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'image' . $counter ); ?>"><?php _e( 'Image:' ); ?></label> 
@@ -105,6 +110,7 @@ class lscu_connect_widget extends WP_Widget {
 		$counter = 1;
 		while ( $counter <= $this->number_contacts ) {
 			$instance[ 'name' . $counter ] = $new_instance[ 'name' . $counter ];
+			$instance[ 'title' . $counter ] = $new_instance[ 'title' . $counter ];
 			$instance[ 'image' . $counter ] = $new_instance[ 'image' . $counter ];
 			$instance[ 'email' . $counter ] = $new_instance[ 'email' . $counter ];
 			$instance[ 'phone' . $counter ] = $new_instance[ 'phone' . $counter ];
