@@ -78,8 +78,8 @@ get_header();
 					'consumer_secret'           => 'w2bmylGVQ2BGGlQb9CFJoI9xqQ3gacjie4UbiCp8wqoP0e7y4V',
 					'access_token'              => '29196496-zk653NF1sbj3mJR54Lkxcv4zmTSvm2GRTrJRf1mUA',
 					'access_token_secret'       => 'QeXhPPB9xYMUAHwhnAsN2BiyIi88G3YR4UFe4aWuDJyyB',
-					'cache_file'            	=> $upload_dir['basedir'] . '/cache/twitter-' . $twitter . '.txt', 
-					'cache_file_raw'        	=> $upload_dir['basedir'] . '/cache/twitter-' . $twitter . '-array.txt', 
+					'cache_file'            	=> $upload_dir['basedir'] . '/cache/twitter-home.txt', 
+					'cache_file_raw'        	=> $upload_dir['basedir'] . '/cache/twitter-home-array.txt', 
 					'twitter_screen_name'       => 'leagueofsecus',
 					'tweets_to_retrieve'     	=> 3, // Number of tweets to display
 					'tweets_to_display'     	=> 5, // Number of tweets to display
