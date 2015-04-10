@@ -18,7 +18,7 @@ if ( function_exists('register_sidebar') ) {
 // Creating the widget 
 class lscu_connect_widget extends WP_Widget {
 
-	public $number_contacts = 4;
+	public $number_contacts = 6;
 
 
 	function __construct() {
