@@ -95,7 +95,7 @@ get_header();
 				}
 				?>
 				</div>
-				<button class="home-third-button cu-match"><span>Find Your Match</span></button>
+				<button class="home-third-button twitter"><span>Read More Tweets</span></button>
 				<div class="clearfix"></div>
 			</div>
 
