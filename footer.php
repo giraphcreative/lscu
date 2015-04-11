@@ -23,7 +23,7 @@
 			Tallahassee, Florida 32311</p>
 		<p><a href="tel:8662310545">866.231.0545</a></p>
 		<div class="social">
-			<a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-twitter.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-facebook.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-google.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-youtube.png"></a><a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-pinterest.png"></a>
+			<a href="#" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-twitter.png"></a><a href="#" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-facebook.png"></a><a href="#" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-google.png"></a><a href="#" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png"></a><a href="https://www.youtube.com/user/LeagueofSECUs" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-youtube.png"></a><a href="#" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-pinterest.png"></a>
 		</div>
 	</div>
 	<div class="column">
