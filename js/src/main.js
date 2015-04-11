@@ -7,7 +7,9 @@ jQuery(document).ready(function($){
 	var menu = $( 'header nav' ),
 		menu_toggle = menu.find( 'button.menu-toggle' ),
 		menu_ul = menu.find( '.nav-menu' ),
-		fluid_images = $( '.content-area img' );
+		fluid_images = $( '.content-area img' ),
+		sidebar = $( '.sidebar' ),
+		large_title = $( '.large-title' );
 
 
 	// remove height and width from images inside
@@ -45,5 +47,9 @@ jQuery(document).ready(function($){
 	// fluid width videos that maintain aspect ratio
 	$( '.content' ).fitVids();
 	
+	if ( sidebar && large_title ) {
+		sidebar.find( '.widget:not(.leverage) .widget-title' ).css( 'background-color', large_title.css( 'background-color' ) );
+	}
+
 });
 
