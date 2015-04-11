@@ -38,15 +38,19 @@ jQuery(document).ready(function($){
 
 	});
 
-	// 
+
+	// accordion
 	$( '.accordion-box-title' ).click(function(){
 		$( this ).parent( '.accordion-box' ).children( '.accordion-box-content' ).slideToggle( 600 );
 		$( this ).toggleClass( 'open' );
 	});
 
+
 	// fluid width videos that maintain aspect ratio
 	$( '.content' ).fitVids();
 	
+
+	// sidebar title background colors.
 	if ( sidebar && large_title ) {
 		sidebar.find( '.widget:not(.leverage) .widget-title' ).css( 'background-color', large_title.css( 'background-color' ) );
 	}
