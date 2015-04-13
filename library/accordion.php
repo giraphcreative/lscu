@@ -20,7 +20,7 @@ function the_accordion() {
 				$title = ( isset( $box["title"] ) ? $box["title"] : '' );
 				$color = ( isset( $box["color"] ) ? $box["color"] : 'teal' );
 				$state = ( isset( $box["state"] ) ? $box["state"] : 'closed' );
-				$content = ( isset( $box["content"] ) ? $box["content"] : '' );
+				$content = ( isset( $box["content"] ) ? apply_filters( 'the_content', $box["content"] ) : '' );
 
 				?>
 			<div class="accordion-box<?php print ( $state == 'open' ? ' open' : '' ); ?> bg-<?php print $color ?>">
