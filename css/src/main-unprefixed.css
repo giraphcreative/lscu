@@ -926,6 +926,13 @@ body {
     width: 74%;
     margin: 0 .5%; } }
 
+img.alignright {
+  float: right;
+  margin: 0 0 15px 15px; }
+img.alignleft {
+  float: left;
+  margin: 0 15px 15px 0; }
+
 .accordions-wide {
   padding: 0 20px; }
 
