@@ -76,6 +76,16 @@
 			}
 		}
 
+		&.widget_text {
+			.widget-title:before {
+				background-image: url(../img/icon-text-widget.png);
+				margin-top: -24px;
+			}
+			.textwidget {
+				padding: 15px;
+			}
+		}
+
 		&.tribe-events-list-widget {
 			.widget-title:before {
 				background-image: url(../img/icon-events-small.png);

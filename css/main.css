@@ -1065,6 +1065,11 @@ img.alignleft {
       float: left;
       margin: 5px 15px 10px;
       border: 1px solid #939598; }
+  .sidebar .widget.widget_text .widget-title:before {
+    background-image: url(../img/icon-text-widget.png);
+    margin-top: -24px; }
+  .sidebar .widget.widget_text .textwidget {
+    padding: 15px; }
   .sidebar .widget.tribe-events-list-widget .widget-title:before {
     background-image: url(../img/icon-events-small.png); }
   .sidebar .widget.tribe-events-list-widget ol {
