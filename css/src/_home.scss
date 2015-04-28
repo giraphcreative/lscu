@@ -39,6 +39,7 @@ $icon-width: 70px;
 			background-color: lighten( $lime, 40% );
 			h2, button { background: $lime; }
 			h2:before { background-image: url(../img/icon-tweets.png); }
+			.third-content { padding-top: 15px; }
 		}
 
 		h2 {
@@ -71,7 +72,7 @@ $icon-width: 70px;
 		h4 {
 			font-size: 1.3em;
 			line-height: 1.3em;
-			padding-top: 10px;
+			padding-top: 15px;
 		}
 
 		.third-content {
