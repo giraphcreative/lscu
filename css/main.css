@@ -1182,6 +1182,8 @@ footer {
     position: relative; }
     .home-thirds .third.events {
       background-color: #b8d4e4; }
+      .home-thirds .third.events .tribe-events-widget-link {
+        display: none; }
       .home-thirds .third.events h2, .home-thirds .third.events button {
         background-color: #2C5871; }
       .home-thirds .third.events h2:before {
@@ -1204,13 +1206,11 @@ footer {
         width: 31%;
         margin-right: 2%;
         padding-bottom: 125px;
-        min-height: 580px; }
+        height: 500px;
+        overflow: auto; }
         .home-thirds .third.tweets {
           width: 33%;
           margin-right: 0; } }
-    @media only screen and (min-width: 1024px) {
-      .home-thirds .third {
-        min-height: 520px; } }
     .home-thirds .third h2 {
       font-family: "Avenir", sans-serif;
       font-weight: normal;
@@ -1235,7 +1235,8 @@ footer {
         border-bottom: 1px solid white; }
     .home-thirds .third h4 {
       font-size: 1.3em;
-      line-height: 1.3em; }
+      line-height: 1.3em;
+      padding-top: 10px; }
     .home-thirds .third .third-content {
       padding: 10px 15px; }
     .home-thirds .third button {
