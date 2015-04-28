@@ -423,6 +423,8 @@ header {
       @media only screen and (min-width: 768px) {
         header .aux .search {
           padding: 0; } }
+      header .aux .search form {
+        margin: 0; }
       header .aux .search input[type=text] {
         display: block;
         right: 0;
