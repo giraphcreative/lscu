@@ -55,5 +55,11 @@ jQuery(document).ready(function($){
 		sidebar.find( '.widget:not(.leverage) .widget-title' ).css( 'background-color', large_title.css( 'background-color' ) );
 	}
 
+
+	// button links (using the data-url attribute)
+	$( 'button[data-url]' ).click(function(){
+		window.location.href = $( this ).attr( 'data-url' );
+	});
+
 });
 
