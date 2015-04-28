@@ -36,8 +36,6 @@ $icon-width: 70px;
 			width: 31%;
 			margin-right: 2%;
 			padding-bottom: 125px;
-			height: 500px;
-			overflow: auto;
 
 			&.tweets {
 				width: 33%;
@@ -80,6 +78,8 @@ $icon-width: 70px;
 
 		.third-content {
 			padding: 10px 15px;
+			height: 500px;
+			overflow: auto;
 		}
 
 		button {

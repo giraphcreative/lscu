@@ -1205,9 +1205,7 @@ footer {
         float: left;
         width: 31%;
         margin-right: 2%;
-        padding-bottom: 125px;
-        height: 500px;
-        overflow: auto; }
+        padding-bottom: 125px; }
         .home-thirds .third.tweets {
           width: 33%;
           margin-right: 0; } }
@@ -1238,7 +1236,9 @@ footer {
       line-height: 1.3em;
       padding-top: 10px; }
     .home-thirds .third .third-content {
-      padding: 10px 15px; }
+      padding: 10px 15px;
+      height: 500px;
+      overflow: auto; }
     .home-thirds .third button {
       display: block;
       position: absolute;
