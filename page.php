@@ -19,8 +19,7 @@ get_header();
 					the_content();
 				endwhile;
 			endif;
-			?>
-			<?php
+
 			the_accordion();
 			?>
 		<?php if ( has_cmb_value( 'left_content' ) ) { ?></div><?php } ?>
