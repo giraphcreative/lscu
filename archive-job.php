@@ -8,7 +8,7 @@ get_header();
 ?>
 	<div class="large-title bg-grey-light">
 		<div class="wrap">
-			<div class="large-title-icon bg-grey-light" style="background-image: url(/wp-content/uploads/2015/03/h-300x300.jpg<?php //print p_image_resize( get_bloginfo('home') . '/wp-content/uploads/2015/03/h.jpg', 300, 300, true ) ?>);">
+			<div class="large-title-icon bg-grey-light" style="background-image: url(<?php print p_image_resize( get_bloginfo('home') . '/wp-content/uploads/2015/03/h.jpg', 300, 300, true ) ?>);">
 				<div class="hex1"></div>
 				<div class="hex2"></div>
 			</div>
