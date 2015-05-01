@@ -1,6 +1,8 @@
 
 
 .job-info {
+	padding: 0;
+	
 	@include respond-to( 768px ) {
 		padding: 0 20px;
 		border-left: 4px solid lighten( $grey, 25% );
@@ -20,7 +22,7 @@
 	.two-third {
 		margin: 0;
 		padding: 0;
-		
+
 		@include respond-to( 768px ) {
 			width: 60%;
 		}
