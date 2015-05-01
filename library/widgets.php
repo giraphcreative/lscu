@@ -12,6 +12,14 @@ if ( function_exists('register_sidebar') ) {
         'after_title' => '</h4></div>',
     ));
  	register_sidebar(array(
+		'name'=> 'Jobs Sidebar',
+		'id' => 'sidebar-404',
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="widget-title"><h4>',
+        'after_title' => '</h4></div>',
+    ));
+ 	register_sidebar(array(
 		'name'=> '404 Sidebar',
 		'id' => 'sidebar-404',
         'before_widget' => '<div class="widget %2$s">',

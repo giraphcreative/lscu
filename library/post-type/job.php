@@ -45,7 +45,7 @@ function strategic_post_types() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor' )
+			'supports' => array( 'title', 'editor', 'excerpt' )
 		) /* end of options */
 	); /* end of register post type */
 	

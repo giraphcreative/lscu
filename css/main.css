@@ -926,6 +926,8 @@ body {
 @media only screen and (min-width: 768px) {
   .quarter, .third, .half, .two-third, .three-quarter {
     float: left; }
+    .quarter.right, .third.right, .half.right, .two-third.right, .three-quarter.right {
+      float: right; }
   .quarter {
     width: 24%;
     margin: 0 .5%; }
@@ -1642,3 +1644,11 @@ img.mfp-img {
   top: 0;
   right: 0;
   padding-top: 0; }
+
+.job-info {
+  padding: 0 20px;
+  border-left: 4px solid #d4d5d6;
+  margin: 0 0 50px 30px; }
+  .job-info label {
+    font-family: "Avenir Demi", sans-serif;
+    font-weight: normal; }

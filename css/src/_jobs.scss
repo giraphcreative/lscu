@@ -1,0 +1,12 @@
+
+
+.job-info {
+	padding: 0 20px;
+	border-left: 4px solid lighten( $grey, 25% );
+	margin: 0 0 50px 30px;
+
+	label {
+		@include font-bold;
+	}	
+}
+
