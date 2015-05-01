@@ -1087,6 +1087,10 @@ img.alignleft {
       font-weight: normal; }
     .sidebar .widget.leverage .widget-title:before {
       background-image: url(../img/icon-leverage.png); }
+  .sidebar .widget.cat-post-widget .widget-title:before {
+    background-image: url(../img/icon-connect.png); }
+  .sidebar .widget.cat-post-widget ul {
+    padding: 10px; }
 
 footer {
   background-color: #2C5871;

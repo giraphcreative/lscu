@@ -122,6 +122,16 @@
 				}
 			}
 		}
+
+		&.cat-post-widget {
+			.widget-title:before {
+				background-image: url(../img/icon-connect.png);
+			}
+
+			ul {
+				padding: 10px;
+			}
+		}
 	}
 
 }
