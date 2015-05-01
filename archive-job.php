@@ -39,7 +39,8 @@ $job_count = wp_count_posts( 'job' )->publish;
 				'post_type' => 'job',
 				'orderby' => 'meta_value',
 				'order' => 'ASC',
-				'meta_key' => '_p_job_expires'
+				'meta_key' => '_p_job_expires',
+				'posts_per_page' => 100
 			) );
 			query_posts( $args );
 
