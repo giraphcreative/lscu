@@ -5,6 +5,8 @@
 
 get_header(); 
 
+$job_count = wp_count_posts( 'job' )->publish;
+
 ?>
 	<div class="large-title bg-grey-light">
 		<div class="wrap">
@@ -23,14 +25,25 @@ get_header();
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-jobs') ) : ?><!-- no sidebar --><?php endif; ?>
 		</div>
 		<div class="three-quarter">
+			<div class="entry-job"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count = 1 ? '' : 's' ) ?></strong></div>
 			<?php 
 			if ( have_posts() ) : 
 				// Start the Loop.
 				while ( have_posts() ) : the_post(); 
 					?>
-			<div class="entry-job">
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php the_excerpt(); ?>
+			<div class="entry-job group">
+				<div class="two-third no-margin">
+					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+					<?php the_excerpt(); ?>
+				</div>
+				<div class="third job-info">
+					<?php
+					print ( has_cmb_value( 'job_company' ) ? "<p><label>Credit Union:</label><br> " . get_cmb_value( 'job_company' ) . "</p>" : '' );
+					?>
+					<?php
+					print ( has_cmb_value( 'job_region' ) ? "<p><label>Region:</label><br> " . get_cmb_value( 'job_region' ) . "</p>" : '' );
+					?>
+				</div>
 			</div>
 					<?php
 				endwhile;

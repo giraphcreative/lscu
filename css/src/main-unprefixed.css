@@ -1636,3 +1636,13 @@ img.mfp-img {
   .job-info label {
     font-family: "Avenir Demi", sans-serif;
     font-weight: normal; }
+
+.entry-job {
+  border-bottom: 3px solid #d4d5d6;
+  padding: 20px 0; }
+  .entry-job .two-third {
+    margin: 0;
+    padding: 0;
+    width: 60%; }
+  .entry-job .job-info {
+    margin-bottom: 10px; }

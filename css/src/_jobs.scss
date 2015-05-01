@@ -10,3 +10,19 @@
 	}	
 }
 
+
+.entry-job {
+	border-bottom: 3px solid lighten( $grey, 25% );
+	padding: 20px 0;
+
+	.two-third {
+		margin: 0;
+		padding: 0;
+		width: 60%;
+	}
+
+	.job-info {
+		margin-bottom: 10px;
+	}
+}
+
