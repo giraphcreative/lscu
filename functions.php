@@ -29,4 +29,8 @@ include( "library/accordion.php" );
 include( "library/login.php" );
 
 
+// post types
+include( "library/post-type/job.php" );
+
+
 ?>

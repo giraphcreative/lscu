@@ -10,7 +10,7 @@ get_header();
 	<div id="content" class="wrap group content-two-column" role="main">
 		<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?><!-- no sidebar --><?php endif; ?>
-			<a href="http://leverage.giraphprojects.com/"><div class="widget leverage"><div class="widget-title"><h4>Leverage</h4></div></div></a>
+			<a href="http://myleverage.com/"><div class="widget leverage"><div class="widget-title"><h4>Leverage</h4></div></div></a>
 		</div>
 		<div class="three-quarter">
 			<?php 
