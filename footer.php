@@ -42,6 +42,7 @@
 				<input type="text" name="email" value="" placeholder="john@smith.com">
 				<input type="submit" name="submit" value="Subscribe">
 			</form>
+			<?php do_shortcode( '[gravityform id="1" title="false" description="false"]' ); ?>
 		</div>
 	</div>
 </footer><!-- #colophon -->
