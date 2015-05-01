@@ -13,7 +13,7 @@ if ( function_exists('register_sidebar') ) {
     ));
  	register_sidebar(array(
 		'name'=> 'Jobs Sidebar',
-		'id' => 'sidebar-404',
+		'id' => 'sidebar-jobs',
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<div class="widget-title"><h4>',
