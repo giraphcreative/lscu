@@ -17,14 +17,17 @@
 	border-bottom: 3px solid lighten( $grey, 25% );
 	padding: 20px 0;
 
-	@include respond-to( 768px ) {
-		.two-third {
-			margin: 0;
-			padding: 0;
+	.two-third {
+		margin: 0;
+		padding: 0;
+		
+		@include respond-to( 768px ) {
 			width: 60%;
 		}
+	}
 
-		.job-info {
+	.job-info {
+		@include respond-to( 768px ) {
 			margin-bottom: 10px;
 		}
 	}

@@ -1661,10 +1661,12 @@ img.mfp-img {
 .entry-job {
   border-bottom: 3px solid #d4d5d6;
   padding: 20px 0; }
+  .entry-job .two-third {
+    margin: 0;
+    padding: 0; }
+    @media only screen and (min-width: 768px) {
+      .entry-job .two-third {
+        width: 60%; } }
   @media only screen and (min-width: 768px) {
-    .entry-job .two-third {
-      margin: 0;
-      padding: 0;
-      width: 60%; }
     .entry-job .job-info {
       margin-bottom: 10px; } }
