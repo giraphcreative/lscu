@@ -1092,6 +1092,25 @@ img.alignleft {
   .sidebar .widget.cat-post-widget ul {
     padding: 10px; }
 
+.widget_multi_twitter .tweet {
+  padding: 10px; }
+  .widget_multi_twitter .tweet .twitter-avatar {
+    float: left;
+    margin: 0 5% 10px 0;
+    width: 20%; }
+  .widget_multi_twitter .tweet .tweet-userName {
+    float: left;
+    width: 75%;
+    color: #797b7f;
+    font-family: "Avenir Demi", sans-serif;
+    font-weight: normal; }
+  .widget_multi_twitter .tweet .tweet-time {
+    font-size: .8em;
+    line-height: 1em;
+    color: #adafb1; }
+  .widget_multi_twitter .tweet .tweet-message {
+    font-size: .9em; }
+
 footer {
   background-color: #2C5871;
   color: white;
