@@ -8,9 +8,12 @@ get_header();
 ?>
 	<div class="large-title bg-grey-light">
 		<div class="wrap">
-			<div class="large-title-icon">
-				<img src="/wp-content/uploads/2015/03/h.jpg">
+			<?php if ( has_cmb_value( 'large-title-icon' ) ) { ?>
+			<div class="large-title-icon bg-grey-light" style="background-image: url(<?php print p_image_resize( '/wp-content/uploads/2015/03/h.jpg', 300, 300, true ) ?>);">
+				<div class="hex1"></div>
+				<div class="hex2"></div>
 			</div>
+			<?php } ?>
 			<div class="large-title-text">
 				<h1>CU Job Center</h1>
 			</div>
