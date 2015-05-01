@@ -980,8 +980,8 @@ img.alignleft {
         content: '';
         background: url(../img/icon-accordion-arrow.png) center center no-repeat;
         background-size: contain;
-        -webkit-transition: -webkit-transform 400ms ease-in-out;
-                transition: transform 400ms ease-in-out; }
+        -webkit-transition: -webkit-transform 600ms ease-in-out;
+                transition: transform 600ms ease-in-out; }
         @media only screen and (min-width: 768px) {
           .accordion .accordion-box .accordion-box-title h4:before {
             width: 60px;
