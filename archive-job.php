@@ -27,6 +27,22 @@ $job_count = wp_count_posts( 'job' )->publish;
 		<div class="three-quarter">
 			<div class="entry-job"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count = 1 ? '' : 's' ) ?></strong></div>
 			<?php 
+			global $wp_query;
+			$args = array_merge( $wp_query->query_vars,  array(
+				'meta_query' => array(
+					array(
+							'key' => '_p_job_expires',
+							'value' => $today,
+							'compare' => '>='
+					)
+				),
+				'post_type' => 'job',
+				'orderby' => 'meta_value',
+				'order' => 'ASC',
+				'meta_key' => '_p_job_expires'
+			) );
+			query_posts( $args );
+
 			if ( have_posts() ) : 
 				// Start the Loop.
 				while ( have_posts() ) : the_post(); 
