@@ -1,9 +1,11 @@
 
 
 .job-info {
-	padding: 0 20px;
-	border-left: 4px solid lighten( $grey, 25% );
-	margin: 0 0 50px 30px;
+	@include respond-to( 768px ) {
+		padding: 0 20px;
+		border-left: 4px solid lighten( $grey, 25% );
+		margin: 0 0 50px 30px;
+	}
 
 	label {
 		@include font-bold;
@@ -15,14 +17,16 @@
 	border-bottom: 3px solid lighten( $grey, 25% );
 	padding: 20px 0;
 
-	.two-third {
-		margin: 0;
-		padding: 0;
-		width: 60%;
-	}
+	@include respond-to( 768px ) {
+		.two-third {
+			margin: 0;
+			padding: 0;
+			width: 60%;
+		}
 
-	.job-info {
-		margin-bottom: 10px;
+		.job-info {
+			margin-bottom: 10px;
+		}
 	}
 }
 

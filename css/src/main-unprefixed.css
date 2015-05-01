@@ -1633,20 +1633,22 @@ img.mfp-img {
   right: 0;
   padding-top: 0; }
 
-.job-info {
-  padding: 0 20px;
-  border-left: 4px solid #d4d5d6;
-  margin: 0 0 50px 30px; }
-  .job-info label {
-    font-family: "Avenir Demi", sans-serif;
-    font-weight: normal; }
+@media only screen and (min-width: 768px) {
+  .job-info {
+    padding: 0 20px;
+    border-left: 4px solid #d4d5d6;
+    margin: 0 0 50px 30px; } }
+.job-info label {
+  font-family: "Avenir Demi", sans-serif;
+  font-weight: normal; }
 
 .entry-job {
   border-bottom: 3px solid #d4d5d6;
   padding: 20px 0; }
-  .entry-job .two-third {
-    margin: 0;
-    padding: 0;
-    width: 60%; }
-  .entry-job .job-info {
-    margin-bottom: 10px; }
+  @media only screen and (min-width: 768px) {
+    .entry-job .two-third {
+      margin: 0;
+      padding: 0;
+      width: 60%; }
+    .entry-job .job-info {
+      margin-bottom: 10px; } }
