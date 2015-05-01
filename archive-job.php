@@ -21,7 +21,7 @@ $job_count = wp_count_posts( 'job' )->publish;
 	</div>
 
 	<div id="content" class="wrap groupcontent-two-column" role="main">
-		<div class="quarter">
+		<div class="sidebar quarter">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-jobs') ) : ?><!-- no sidebar --><?php endif; ?>
 		</div>
 		<div class="three-quarter">
