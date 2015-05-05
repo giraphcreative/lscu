@@ -73,7 +73,7 @@ class lscu_connect_widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		// before and after widget arguments are defined by themes
-		echo $args['before_title'] . "Connect With Us" . $args['after_title'];
+		echo $args['before_title'] . "Connect" . $args['after_title'];
 
 		$counter = 1;
 		while ( $counter <= $this->number_contacts ) {
