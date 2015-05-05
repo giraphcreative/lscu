@@ -59,7 +59,7 @@ class lscu_connect_widget extends WP_Widget {
 			'lscu_connect_widget', 
 
 			// Widget name will appear in UI
-			__('Connect With Us', 'lscu_widget_domain'), 
+			__('Connect', 'lscu_widget_domain'), 
 
 			// Widget description
 			array( 'description' => __( 'A custom widget to display contact information on LSCU.', 'lscu_widget_domain'), ) 
