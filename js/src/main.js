@@ -57,6 +57,7 @@ jQuery(document).ready(function($){
 	}
 
 
+	// remove annoying non-breaking spaces from twitter widget
 	if ( twitter_widget ) {
 		twitter_widget.find('.tweet-time').each(function(){
 			$(this).html( $(this).html().replace("&nbsp;-&nbsp;",'') );
