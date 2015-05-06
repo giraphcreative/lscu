@@ -953,6 +953,26 @@ img.alignleft {
   padding: 20px 0;
   border-bottom: 3px solid #d4d5d6; }
 
+.pagination {
+  padding: 15px 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: "Avenir Demi", sans-serif;
+  font-weight: normal; }
+  .pagination a {
+    padding: 7px 12px;
+    background: #939598;
+    color: white;
+    text-decoration: none;
+    display: inline-block; }
+    .pagination a:hover {
+      background: #a0a2a4; }
+  .pagination .current {
+    padding: 7px 12px;
+    display: inline-block;
+    background: #a0a2a4; }
+
 .accordions-wide {
   padding: 0 20px; }
 
