@@ -26,7 +26,7 @@ $category_info = Taxonomy_MetaData::get( $taxonomy, $term_id );
 
 	<div class="wrap group content-two-column" role="main">
 		<div class="quarter sidebar">
-			<?php print !empty( $term->description ) ? apply_filters( 'the_content', $term->description ) : " "; ?>
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('blog-sidebar')) : ?>[blog-sidebar]<?php endif; ?>
 		</div>
 		<div class="three-quarter post-list">
 
