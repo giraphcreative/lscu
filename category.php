@@ -41,7 +41,11 @@ $category_info = Taxonomy_MetaData::get( $taxonomy, $term_id );
 					</article>
 					<?php
 				endwhile;
-
+				?>
+				<div class="pagination">
+					<?php pagination(); ?>
+				</div>
+				<?php
 			else :
 				// If no content, include the "No posts found" template.
 				get_template_part( 'content', 'none' );
