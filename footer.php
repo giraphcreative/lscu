@@ -38,11 +38,7 @@
 	<div class="column last">
 		<h3>Sign Up For News</h3>
 		<div class="subscribe">
-			<form action="#" method="post">
-				<input type="text" name="email" value="" placeholder="john@smith.com">
-				<input type="submit" name="submit" value="Subscribe">
-			</form>
-			<?php gravity_form( 16, 0, 0, 0 ); ?>
+			<?php do_shortcodes( '[snippet slug="subscribe" /]' ); ?>
 		</div>
 	</div>
 </footer><!-- #colophon -->
