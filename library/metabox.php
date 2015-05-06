@@ -5,23 +5,23 @@
 require_once( 'cmb2/init.php' );
 
 
+$colors = array(
+    'sky' => 'Sky',
+    'teal' => 'Teal',
+    'navy' => 'Navy',
+    'forest' => 'Forest',
+    'lime' => 'Lime',
+    'orange' => 'Orange',
+    'yellow' => 'Yellow',
+    'grey-light' => 'Grey - Light',
+    'grey-dark' => 'Grey - Dark',
+);
+
 
 // add metabox(es)
 function page_metaboxes( $meta_boxes ) {
 
-
-    $colors = array(
-        'sky' => 'Sky',
-        'teal' => 'Teal',
-        'navy' => 'Navy',
-        'forest' => 'Forest',
-        'lime' => 'Lime',
-        'orange' => 'Orange',
-        'yellow' => 'Yellow',
-        'grey-light' => 'Grey - Light',
-        'grey-dark' => 'Grey - Dark',
-    );
-
+    global $colors;
 
     // showcase metabox
     $title_metabox = new_cmb2_box( array(
@@ -379,6 +379,9 @@ function cmb2_taxonomy_meta_initiate() {
 
     require_once( 'cmb2-taxonomy/Taxonomy_MetaData_CMB2.php' );
 
+    global $colors;
+
+
     /**
      * Semi-standard CMB2 metabox/fields array
      */
@@ -400,16 +403,7 @@ function cmb2_taxonomy_meta_initiate() {
                 'id'   => 'color',
                 'type' => 'select',
                 'default' => 'teal',
-                'options' => array(
-                    'teal' => 'Teal',
-                    'river' => 'River',
-                    'navy' => 'Navy',
-                    'forest' => 'Forest',
-                    'lime' => 'Lime',
-                    'orange' => 'Orange',
-                    'grey-light' => 'Grey - Light',
-                    'grey-dark' => 'Grey - Dark',
-                )
+                'options' => $colors
             ),
             array(
                 'name'    => 'Left Text/Ad',
@@ -417,19 +411,13 @@ function cmb2_taxonomy_meta_initiate() {
                 'type'    => 'wysiwyg',
                 'options' => array( 'textarea_rows' => 5, ),
             ),
-            array(
-                'name'    => 'Right Text',
-                'id'      => 'right',
-                'type'    => 'wysiwyg',
-                'options' => array( 'textarea_rows' => 10, ),
-            ),
         )
     );
 
     /**
      * Instantiate our taxonomy meta class
      */
-    $cats = new Taxonomy_MetaData_CMB2( 'product_cat', $meta_box, __( 'Category Settings', 'taxonomy-metadata' ) );
+    $cats = new Taxonomy_MetaData_CMB2( 'category', $meta_box, __( 'Category Settings', 'taxonomy-metadata' ) );
 
 }
 cmb2_taxonomy_meta_initiate();

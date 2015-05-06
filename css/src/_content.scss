@@ -27,16 +27,13 @@ body {
 	}
 }
 
-
 .fluid-width-video-wrapper {
 	margin: 15px 0;
 }
 
-
 .half, .two-third, .three-quarter {
 	@extend .content-style;
 }
-
 
 .quarter, .third {
 	padding: 20px 10px;
@@ -45,6 +42,8 @@ body {
 .half, .two-third, .three-quarter {
 	padding: 20px;
 }
+
+
 
 @include respond-to( 768px ) {
 	.quarter, .third, .half, .two-third, .three-quarter {
@@ -86,6 +85,15 @@ img {
 	&.alignleft {
 		float: left;
 		margin: 0 15px 15px 0;
+	}
+}
+
+
+
+.post-list {
+	article {
+		padding: 20px 0;
+		border-bottom: 3px solid lighten( $grey, 25% );
 	}
 }
 
