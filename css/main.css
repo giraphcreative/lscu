@@ -1045,9 +1045,9 @@ img.alignleft {
       top: 50%;
       background: center center no-repeat;
       background-size: contain; }
-  .sidebar .widget.widget_nav_menu .widget-title:before {
+  .sidebar .widget.widget_nav_menu .widget-title:before, .sidebar .widget.widget_categories .widget-title:before {
     background-image: url(../img/icon-pointer.png); }
-  .sidebar .widget.widget_nav_menu ul li a {
+  .sidebar .widget.widget_nav_menu ul li a, .sidebar .widget.widget_categories ul li a {
     display: block;
     padding: 5px 10px 3px;
     border-bottom: 1px solid #c7c8ca;
@@ -1057,7 +1057,7 @@ img.alignleft {
     color: #47494b;
     font-size: .9em;
     text-decoration: none; }
-    .sidebar .widget.widget_nav_menu ul li a:hover {
+    .sidebar .widget.widget_nav_menu ul li a:hover, .sidebar .widget.widget_categories ul li a:hover {
       background-color: #939598;
       color: white; }
   .sidebar .widget.widget_lscu_connect_widget .widget-title:before {
