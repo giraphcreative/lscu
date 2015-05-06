@@ -38,7 +38,7 @@
 	<div class="column last">
 		<h3>Sign Up For News</h3>
 		<div class="subscribe">
-			<?php do_shortcodes( '[snippet slug="subscribe" /]' ); ?>
+			<?php do_shortcode( '[snippet slug="subscribe" /]' ); ?>
 		</div>
 	</div>
 </footer><!-- #colophon -->
