@@ -36,6 +36,7 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'Title',
         'id'   => CMB_PREFIX . 'large-title',
         'type' => 'text',
+        'sanitization_cb' => false
     ) );
 
     $title_metabox->add_field( array(
