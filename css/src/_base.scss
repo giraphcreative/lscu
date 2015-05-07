@@ -90,7 +90,24 @@ input, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $navy;
-		padding: 6px 0;
+		padding: 10px 0 5px;
+	}
+
+	blockquote {
+		padding: 10px 25px;
+		@include font-italic;
+		font-size: 1.2em;
+		line-height: 1.5em;
+		color: $grey;
+		border-left: 3px solid lighten( $grey, 25% );
+		margin: 10px 0 10px 20px;
+	}
+
+	hr {
+		border: 0;
+		border-bottom: 1px solid lighten( $grey, 25% );
+		padding: 0;
+		margin: 25px 0;
 	}
 }
 
