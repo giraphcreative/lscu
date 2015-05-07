@@ -83,6 +83,10 @@ jQuery(document).ready(function($){
 	$( 'button[data-url]' ).click(function(){
 		window.location.href = $( this ).attr( 'data-url' );
 	});
+	
+	
+	// creep on links
+	$("a").creep();
 
 });
 
