@@ -7,7 +7,9 @@ get_header();
 	<?php the_large_title(); ?>
 
 	<?php the_showcase(); ?>
+
 	<div id="content" class="wrap group content-two-column" role="main">
+
 		<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?><!-- no sidebar --><?php endif; ?>
 			<a href="http://myleverage.com/"><div class="widget leverage"><div class="widget-title"><h4>Leverage</h4></div></div></a>
@@ -22,7 +24,8 @@ get_header();
 
 			the_accordion();
 			?>
-		<?php if ( has_cmb_value( 'left_content' ) ) { ?></div><?php } ?>
+		</div>
+
 	</div><!-- #content -->
 
 <?php
