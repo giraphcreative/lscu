@@ -89,13 +89,13 @@ img {
 }
 
 
-
 .post-list {
 	article {
 		padding: 20px 0;
 		border-bottom: 3px solid lighten( $grey, 25% );
 	}
 }
+
 
 .pagination {
 	padding: 15px 0;
@@ -120,6 +120,13 @@ img {
 		padding: 7px 12px;
 		display: inline-block;
 		background: lighten( $grey, 5% );
+	}
+}
+
+
+.tablepress-id-38 {
+	td {
+		width: 33.33%;
 	}
 }
 
