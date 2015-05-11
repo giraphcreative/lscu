@@ -31,14 +31,14 @@
 		a {
 			display: block;
 			@include clearfix;
-			
-			& > img {
-				width: 100%;
-				height: auto !important;
-				display: block;
-			}
 		}
 		
+		& > img, a > img {
+			width: 100%;
+			height: auto !important;
+			display: block;
+		}
+
 		.slide-content {
 			position: absolute;
 			top: 10%;
