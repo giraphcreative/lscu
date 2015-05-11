@@ -89,17 +89,7 @@ input, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: $navy;
 		padding: 10px 0 5px;
-
-		.teal & { color: $teal; }
-		.forest & { color: $forest; }
-		.green & { color: $green; }
-		.grey &, .grey-light & { color: $grey; }
-		.lime & { color: $lime; }
-		.navy & { color: $navy; }
-		.red & { color: $red; }
-		.yellow & { color: $yellow; }
 	}
 
 	blockquote {
@@ -128,6 +118,19 @@ input, textarea {
 		box-shadow: 4px 4px 10px lighten( $grey, 15% );
 		border-radius: 10px;
 	}
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: $navy;
+	.teal & { color: $teal; }
+	.forest & { color: $forest; }
+	.green & { color: $green; }
+	.grey &, .grey-light & { color: $grey; }
+	.lime & { color: $lime; }
+	.navy & { color: $navy; }
+	.red & { color: $red; }
+	.yellow & { color: $yellow; }
 }
 
 
