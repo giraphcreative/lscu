@@ -33,6 +33,13 @@ include( "library/login.php" );
 include( "library/post-type/job.php" );
 
 
+// [anchor] shortcode
+function p_anchor( $atts, $content = null, $code = "" ) {
+    return '<a name="'.$content.'"></a>';
+}
+add_shortcode('anchor' , 'p_anchor' );
+
+
 // enable oembed and shortcodes in text widgets
 add_filter( 'widget_text', array( $wp_embed, 'run_shortcode' ), 8 );
 add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
