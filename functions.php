@@ -33,6 +33,11 @@ include( "library/login.php" );
 include( "library/post-type/job.php" );
 
 
+// enable oembed and shortcodes in text widgets
+add_filter( 'widget_text', array( $wp_embed, 'run_shortcode' ), 8 );
+add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
+
+
 // pagination
 function pagination($prev = '&laquo;', $next = '&raquo;') {
     global $wp_query, $wp_rewrite;
