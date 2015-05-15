@@ -20,6 +20,12 @@ $job_count = wp_count_posts( 'job' )->publish;
 		</div>
 	</div>
 
+	<div class="showcase">
+		<div class="slide visible">
+			<img src="<?php bloginfo( 'template_url' ); ?>/img/hero-jobs.jpg">
+		</div>
+	</div>
+
 	<div id="content" class="wrap groupcontent-two-column" role="main">
 		<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-jobs') ) : ?><!-- no sidebar --><?php endif; ?>
