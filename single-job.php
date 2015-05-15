@@ -45,12 +45,12 @@ get_header();
 				<?php
 				if ( has_cmb_value( 'job_education' ) ) { 
 					print "<p><strong>Education/Experience Required:</strong></p>";
-					print "<p>" . get_cmb_value( 'job_education' ) . "</p><br>";
+					print apply_filters( 'the_content', get_cmb_value( 'job_education' ) ) . "<br>";
 				}
 
 				if ( has_cmb_value( 'job_comments' ) ) { 
 					print "<p><strong>Additional Comments:</strong></p>";
-					print "<p>" . get_cmb_value( 'job_comments' ) . "</p>";
+					print apply_filters( 'the_content', get_cmb_value( 'job_comments' ) ) . "<br>";
 				}
 
 			endwhile;
