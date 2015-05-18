@@ -6,18 +6,32 @@
 get_header(); 
 
 ?>
+	<?php if ( is_search() ) { ?>
 	<div class="large-title bg-teal">
 		<div class="wrap">
-			<?php if ( !empty( $category_info['icon'] ) ) { ?>
-			<div class="large-title-icon bg-teal">
-				<img src="<?php print $category_info['icon'] ?>">
+			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/leverage/img/hero-search.jpg);">
+				<div class="hex1"></div>
+				<div class="hex2"></div>
 			</div>
-			<?php } ?>
+			<div class="large-title-text">
+				<h1>Search: <?php print $_REQUEST['s']; ?></h1>
+			</div>
+		</div>
+	</div>
+	<div class="showcase">
+		<div class="slide visible">
+			<img src="/wp-content/themes/leverage/img/hero-search.jpg">
+		</div>
+	</div>
+	<?php } else { ?>
+	<div class="large-title bg-forest">
+		<div class="wrap">
 			<div class="large-title-text">
 				<h1>LSCU Blog</h1>
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 
 	<div class="wrap group content-two-column" role="main">
 		<div class="quarter sidebar">
