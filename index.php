@@ -20,7 +20,7 @@ get_header();
 	</div>
 	<div class="showcase">
 		<div class="slide visible">
-			<img src="/wp-content/themes/leverage/img/hero-search.jpg">
+			<img src="/wp-content/themes/lscu/img/hero-search.jpg">
 		</div>
 	</div>
 	<?php } else { ?>
