@@ -56,11 +56,9 @@ function login_form_shortcode( $atts, $content = null ) {
 	if ( isset( $_REQUEST['redirect_to'] ) ) {
 		$redirect = $_REQUEST['redirect_to'];
 	} else {
-		$redirect = get_bloginfo( 'home' );
+		$redirect = site_url();
 	}
  
- 	return $redirect;
-
 	if ( !is_user_logged_in() ) {
 		$form .= wp_login_form( array(
 			'echo' => 0, 
@@ -70,6 +68,8 @@ function login_form_shortcode( $atts, $content = null ) {
 
 	$form .= get_bloginfo('home') . '/log-in/?redirect_to=';
 	$form = str_replace( get_bloginfo('home') . '/log-in/?redirect_to=', '', $form );
+
+	print $form; die;
 
 	return $form;
 
