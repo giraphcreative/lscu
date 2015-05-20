@@ -37,7 +37,7 @@ jQuery(document).ready(function($){
 				submenu.show();
 			}
 		});
-
+ 
 	});
 
 
@@ -69,6 +69,12 @@ jQuery(document).ready(function($){
 	if ( sidebar && large_title ) {
 		sidebar.find( '.widget:not(.leverage) .widget-title' ).css( 'background-color', large_title.css( 'background-color' ) );
 	}
+
+
+	// search and replace leverage so it's italicized.
+	$(".content label, .tribe-events-event-categories").each(function(){
+		$(this).html( $(this).html().replace(/LEVERAGE/g,'<em>LEVERAGE</em>') );
+	});
 
 
 	// remove annoying non-breaking spaces from twitter widget
