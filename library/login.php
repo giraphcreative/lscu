@@ -59,11 +59,13 @@ function login_form_shortcode( $atts, $content = null ) {
 		$redirect = get_bloginfo( 'home' );
 	}
  
+ 	$form .= $redirect;
+
 	if ( !is_user_logged_in() ) {
 		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
 	} 
 
-	print get_bloginfo('home') . '/log-in/?redirect_to=';
+	$form .= get_bloginfo('home') . '/log-in/?redirect_to=';
 	$form = str_replace( get_bloginfo('home') . '/log-in/?redirect_to=', '', $form );
 
 	return $form;
