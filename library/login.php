@@ -56,15 +56,14 @@ function login_form_shortcode( $atts, $content = null ) {
 	if ( isset( $_REQUEST['redirect_to'] ) ) {
 		$redirect = $_REQUEST['redirect_to'];
 	} else {
-		$redirect = site_url();
+		$redirect = get_bloginfo( 'home' );
 	}
  
 	if ( !is_user_logged_in() ) {
-		$form .= wp_login_form( array(
-			'echo' => 0, 
-			'redirect' => $redirect 
-		) );
-	} 
+		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
+	}
+
+	$form = str_replace( get_bloginfo('home') . '/log-in/?redirect_to=', '', $form );
 
 	return $form;
 
