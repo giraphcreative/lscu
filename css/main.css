@@ -350,11 +350,15 @@ header {
               height: 50px;
               border-left: 1px solid white;
               border-top: 1px solid white;
-              text-align: left; } }
+              text-align: left;
+              font-size: 11px; } }
           @media only screen and (min-width: 1024px) {
             header nav ul.nav-menu > li a {
               height: 50px;
               margin-top: -1px; } }
+          @media only screen and (min-width: 1150px) {
+            header nav ul.nav-menu > li a {
+              font-size: 12px; } }
         header nav ul.nav-menu > li:hover a, header nav ul.nav-menu > li.open a {
           background: #2C5871; }
         header nav ul.nav-menu > li:hover ul.sub-menu, header nav ul.nav-menu > li.open ul.sub-menu {

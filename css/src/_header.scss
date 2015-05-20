@@ -99,11 +99,16 @@ header {
 						border-left: 1px solid white;
 						border-top: 1px solid white;
 						text-align: left;
+						font-size: 11px;
 					}
 
 					@include respond-to( $menu-bp ) {
 						height: 50px;
 						margin-top: -1px;
+					}
+
+					@include respond-to( 1150px ) {
+						font-size: 12px;
 					}
 				}
 
