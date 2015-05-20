@@ -16,7 +16,7 @@ body {
 	margin: 0 auto;
 }
 
-.content-wide, .tribe-events-single {
+.content-wide, #tribe-events-content {
 	@extend .content-style;
 	padding: 40px 20px;
 }

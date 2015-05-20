@@ -205,19 +205,19 @@ input, textarea {
   font-family: "Avenir", sans-serif;
   font-weight: normal; }
 
-.content-style ol, .content-narrow ol, .content-wide ol, .tribe-events-single ol, .half ol, .two-third ol, .three-quarter ol, .accordion .accordion-box .accordion-box-content ol, .content-style ul, .content-narrow ul, .content-wide ul, .tribe-events-single ul, .half ul, .two-third ul, .three-quarter ul, .accordion .accordion-box .accordion-box-content ul {
+.content-style ol, .content-narrow ol, .content-wide ol, #tribe-events-content ol, .half ol, .two-third ol, .three-quarter ol, .accordion .accordion-box .accordion-box-content ol, .content-style ul, .content-narrow ul, .content-wide ul, #tribe-events-content ul, .half ul, .two-third ul, .three-quarter ul, .accordion .accordion-box .accordion-box-content ul {
   padding: 5px 0 5px 35px; }
-  .content-style ol li, .content-narrow ol li, .content-wide ol li, .tribe-events-single ol li, .half ol li, .two-third ol li, .three-quarter ol li, .accordion .accordion-box .accordion-box-content ol li, .content-style ul li, .content-narrow ul li, .content-wide ul li, .tribe-events-single ul li, .half ul li, .two-third ul li, .three-quarter ul li, .accordion .accordion-box .accordion-box-content ul li {
+  .content-style ol li, .content-narrow ol li, .content-wide ol li, #tribe-events-content ol li, .half ol li, .two-third ol li, .three-quarter ol li, .accordion .accordion-box .accordion-box-content ol li, .content-style ul li, .content-narrow ul li, .content-wide ul li, #tribe-events-content ul li, .half ul li, .two-third ul li, .three-quarter ul li, .accordion .accordion-box .accordion-box-content ul li {
     padding: 3px 0; }
-  .content-style ol.gform_fields, .content-narrow ol.gform_fields, .content-wide ol.gform_fields, .tribe-events-single ol.gform_fields, .half ol.gform_fields, .two-third ol.gform_fields, .three-quarter ol.gform_fields, .accordion .accordion-box .accordion-box-content ol.gform_fields, .content-style ul.gform_fields, .content-narrow ul.gform_fields, .content-wide ul.gform_fields, .tribe-events-single ul.gform_fields, .half ul.gform_fields, .two-third ul.gform_fields, .three-quarter ul.gform_fields, .accordion .accordion-box .accordion-box-content ul.gform_fields {
+  .content-style ol.gform_fields, .content-narrow ol.gform_fields, .content-wide ol.gform_fields, #tribe-events-content ol.gform_fields, .half ol.gform_fields, .two-third ol.gform_fields, .three-quarter ol.gform_fields, .accordion .accordion-box .accordion-box-content ol.gform_fields, .content-style ul.gform_fields, .content-narrow ul.gform_fields, .content-wide ul.gform_fields, #tribe-events-content ul.gform_fields, .half ul.gform_fields, .two-third ul.gform_fields, .three-quarter ul.gform_fields, .accordion .accordion-box .accordion-box-content ul.gform_fields {
     padding: 5px 0; }
-.content-style ul, .content-narrow ul, .content-wide ul, .tribe-events-single ul, .half ul, .two-third ul, .three-quarter ul, .accordion .accordion-box .accordion-box-content ul {
+.content-style ul, .content-narrow ul, .content-wide ul, #tribe-events-content ul, .half ul, .two-third ul, .three-quarter ul, .accordion .accordion-box .accordion-box-content ul {
   list-style-type: disc; }
-.content-style ol, .content-narrow ol, .content-wide ol, .tribe-events-single ol, .half ol, .two-third ol, .three-quarter ol, .accordion .accordion-box .accordion-box-content ol {
+.content-style ol, .content-narrow ol, .content-wide ol, #tribe-events-content ol, .half ol, .two-third ol, .three-quarter ol, .accordion .accordion-box .accordion-box-content ol {
   list-style-type: decimal; }
-.content-style h1, .content-narrow h1, .content-wide h1, .tribe-events-single h1, .half h1, .two-third h1, .three-quarter h1, .accordion .accordion-box .accordion-box-content h1, .content-style h2, .content-narrow h2, .content-wide h2, .tribe-events-single h2, .half h2, .two-third h2, .three-quarter h2, .accordion .accordion-box .accordion-box-content h2, .content-style h3, .content-narrow h3, .content-wide h3, .tribe-events-single h3, .half h3, .two-third h3, .three-quarter h3, .accordion .accordion-box .accordion-box-content h3, .content-style h4, .content-narrow h4, .content-wide h4, .tribe-events-single h4, .half h4, .two-third h4, .three-quarter h4, .accordion .accordion-box .accordion-box-content h4, .content-style h5, .content-narrow h5, .content-wide h5, .tribe-events-single h5, .half h5, .two-third h5, .three-quarter h5, .accordion .accordion-box .accordion-box-content h5, .content-style h6, .content-narrow h6, .content-wide h6, .tribe-events-single h6, .half h6, .two-third h6, .three-quarter h6, .accordion .accordion-box .accordion-box-content h6 {
+.content-style h1, .content-narrow h1, .content-wide h1, #tribe-events-content h1, .half h1, .two-third h1, .three-quarter h1, .accordion .accordion-box .accordion-box-content h1, .content-style h2, .content-narrow h2, .content-wide h2, #tribe-events-content h2, .half h2, .two-third h2, .three-quarter h2, .accordion .accordion-box .accordion-box-content h2, .content-style h3, .content-narrow h3, .content-wide h3, #tribe-events-content h3, .half h3, .two-third h3, .three-quarter h3, .accordion .accordion-box .accordion-box-content h3, .content-style h4, .content-narrow h4, .content-wide h4, #tribe-events-content h4, .half h4, .two-third h4, .three-quarter h4, .accordion .accordion-box .accordion-box-content h4, .content-style h5, .content-narrow h5, .content-wide h5, #tribe-events-content h5, .half h5, .two-third h5, .three-quarter h5, .accordion .accordion-box .accordion-box-content h5, .content-style h6, .content-narrow h6, .content-wide h6, #tribe-events-content h6, .half h6, .two-third h6, .three-quarter h6, .accordion .accordion-box .accordion-box-content h6 {
   padding: 10px 0 5px; }
-.content-style blockquote, .content-narrow blockquote, .content-wide blockquote, .tribe-events-single blockquote, .half blockquote, .two-third blockquote, .three-quarter blockquote, .accordion .accordion-box .accordion-box-content blockquote {
+.content-style blockquote, .content-narrow blockquote, .content-wide blockquote, #tribe-events-content blockquote, .half blockquote, .two-third blockquote, .three-quarter blockquote, .accordion .accordion-box .accordion-box-content blockquote {
   padding: 10px 25px;
   font-family: "Avenir Italic", sans-serif;
   font-weight: normal;
@@ -226,12 +226,12 @@ input, textarea {
   color: #939598;
   border-left: 3px solid #d4d5d6;
   margin: 10px 0 10px 20px; }
-.content-style hr, .content-narrow hr, .content-wide hr, .tribe-events-single hr, .half hr, .two-third hr, .three-quarter hr, .accordion .accordion-box .accordion-box-content hr {
+.content-style hr, .content-narrow hr, .content-wide hr, #tribe-events-content hr, .half hr, .two-third hr, .three-quarter hr, .accordion .accordion-box .accordion-box-content hr {
   border: 0;
   border-bottom: 1px solid #d4d5d6;
   padding: 0;
   margin: 25px 0; }
-.content-style button, .content-narrow button, .content-wide button, .tribe-events-single button, .half button, .two-third button, .three-quarter button, .accordion .accordion-box .accordion-box-content button, .content-style input[type=submit], .content-narrow input[type=submit], .content-wide input[type=submit], .tribe-events-single input[type=submit], .half input[type=submit], .two-third input[type=submit], .three-quarter input[type=submit], .accordion .accordion-box .accordion-box-content input[type=submit], .content-style input[type=reset], .content-narrow input[type=reset], .content-wide input[type=reset], .tribe-events-single input[type=reset], .half input[type=reset], .two-third input[type=reset], .three-quarter input[type=reset], .accordion .accordion-box .accordion-box-content input[type=reset] {
+.content-style button, .content-narrow button, .content-wide button, #tribe-events-content button, .half button, .two-third button, .three-quarter button, .accordion .accordion-box .accordion-box-content button, .content-style input[type=submit], .content-narrow input[type=submit], .content-wide input[type=submit], #tribe-events-content input[type=submit], .half input[type=submit], .two-third input[type=submit], .three-quarter input[type=submit], .accordion .accordion-box .accordion-box-content input[type=submit], .content-style input[type=reset], .content-narrow input[type=reset], .content-wide input[type=reset], #tribe-events-content input[type=reset], .half input[type=reset], .two-third input[type=reset], .three-quarter input[type=reset], .accordion .accordion-box .accordion-box-content input[type=reset] {
   padding: 9px 45px 6px 12px;
   background: #2C5871 url(../img/icon-button-arrow.png) right center no-repeat;
   color: white;
@@ -966,7 +966,7 @@ body {
   max-width: 900px;
   margin: 0 auto; }
 
-.content-wide, .tribe-events-single {
+.content-wide, #tribe-events-content {
   padding: 40px 20px; }
 
 @media only screen and (min-width: 768px) {
