@@ -9,7 +9,7 @@ get_header();
 	<?php if ( is_search() ) { ?>
 	<div class="large-title bg-teal">
 		<div class="wrap">
-			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/leverage/img/hero-search.jpg);">
+			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/lscu/img/hero-search.jpg);">
 				<div class="hex1"></div>
 				<div class="hex2"></div>
 			</div>
