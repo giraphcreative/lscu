@@ -26,7 +26,7 @@ get_header();
 	<?php } else { ?>
 	<div class="large-title bg-teal">
 		<div class="wrap">
-			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/lscu/img/hex-blog.jpg);">
+			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/lscu/img/hex-blog.png);">
 				<div class="hex1"></div>
 				<div class="hex2"></div>
 			</div>
