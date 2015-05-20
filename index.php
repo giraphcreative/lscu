@@ -26,6 +26,10 @@ get_header();
 	<?php } else { ?>
 	<div class="large-title bg-teal">
 		<div class="wrap">
+			<div class="large-title-icon bg-teal" style="background-image: url(/wp-content/themes/lscu/img/hex-search.jpg);">
+				<div class="hex1"></div>
+				<div class="hex2"></div>
+			</div>
 			<div class="large-title-text">
 				<h1>LSCU Blog</h1>
 			</div>
