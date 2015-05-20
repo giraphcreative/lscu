@@ -59,7 +59,7 @@ function login_form_shortcode( $atts, $content = null ) {
 		$redirect = get_bloginfo( 'home' );
 	}
  
- 	$form .= $redirect;
+ 	return $redirect;
 
 	if ( !is_user_logged_in() ) {
 		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
