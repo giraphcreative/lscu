@@ -24,7 +24,7 @@ get_header();
 		</div>
 	</div>
 	<?php } else { ?>
-	<div class="large-title bg-forest">
+	<div class="large-title bg-teal">
 		<div class="wrap">
 			<div class="large-title-text">
 				<h1>LSCU Blog</h1>
