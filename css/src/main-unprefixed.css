@@ -509,10 +509,10 @@ header {
           padding: 10px 0 0 0;
           font-size: .85em;
           text-align: center;
-          color: #939598; }
-          header .aux p.account-links span {
-            color: #c7c8ca;
-            padding: 6px; } }
+          color: #939598; } }
+      header .aux p.account-links span.welcome {
+        display: block;
+        padding-top: 10px; }
       header .aux p.account-links .account-button {
         padding: 9px 45px 6px 12px;
         background: #2C5871 url(../img/icon-button-arrow-small.png) right center no-repeat;

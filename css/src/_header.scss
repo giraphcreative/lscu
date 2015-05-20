@@ -298,11 +298,11 @@ header {
 				font-size: .85em;
 				text-align: center;
 				color: $grey;
+			}
 
-				span {
-					color: lighten( $grey, 20% );
-					padding: 6px;
-				}
+			span.welcome {
+				display: block;
+				padding-top: 10px;
 			}
 
 			.account-button {
