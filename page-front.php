@@ -46,7 +46,7 @@ get_header();
 					wp_reset_query();
 					?>
 				</div>
-				<button class="home-third-button link-news" data-url="/press-room/press-room/"><span>All News</span></button>
+				<button class="home-third-button link-news" data-url="/press-room/press-room-archive/"><span>All News</span></button>
 				<div class="clearfix"></div>
 			</div>
 
