@@ -40,8 +40,7 @@ function p_image_resize( $url, $width, $height = null, $crop = null, $single = t
 
 	//check if $img_url is local
     if ( strpos( $url, $upload_url ) === false ) {
-        $url = $upload_url . $url;
-        return $url;
+        $url = get_bloginfo( 'home' ) . $url;
     }
 
 	//define path of image
