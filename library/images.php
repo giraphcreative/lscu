@@ -39,8 +39,9 @@ function p_image_resize( $url, $width, $height = null, $crop = null, $single = t
     $upload_url = $upload_info['baseurl'];
 
 	//check if $img_url is local
-    if (strpos($url, $upload_url) === false)
-        return false;
+    if ( strpos( $url, $upload_url ) === false ) {
+        $url = $upload_url . $url;
+    }
 
 	//define path of image
     $rel_path = str_replace($upload_url, '', $url);
