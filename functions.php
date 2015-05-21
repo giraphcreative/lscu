@@ -69,4 +69,12 @@ function pagination($prev = '&laquo;', $next = '&raquo;') {
 }
 
 
+
+function lost_password_redirect() {
+    wp_redirect( home_url() ); 
+    exit;
+}
+add_action( 'password_reset', 'lost_password_redirect' );
+
+
 ?>
