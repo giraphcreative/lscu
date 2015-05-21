@@ -1,5 +1,5 @@
 
-SET @wp_url_old = 'http://lscu.giraphprojects.com', @wp_url_new = 'http://lscu.coop';
+SET @wp_url_old = 'http://lscu.coop', @wp_url_new = 'http://www.lscu.coop';
 
 UPDATE lscu_options SET option_value = replace( option_value, @wp_url_old, @wp_url_new ) 
 	WHERE option_value LIKE CONCAT( '%', @wp_url_old, '%' );
