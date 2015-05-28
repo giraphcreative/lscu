@@ -5,18 +5,6 @@
 require_once( 'cmb2/init.php' );
 
 
-$colors = array(
-    'sky' => 'Sky',
-    'teal' => 'Teal',
-    'navy' => 'Navy',
-    'forest' => 'Forest',
-    'lime' => 'Lime',
-    'orange' => 'Orange',
-    'yellow' => 'Yellow',
-    'grey-light' => 'Grey - Light',
-    'grey-dark' => 'Grey - Dark',
-);
-
 
 // add metabox(es)
 function page_metaboxes( $meta_boxes ) {

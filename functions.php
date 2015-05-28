@@ -5,6 +5,22 @@
 define( "CMB_PREFIX", "_p_" );
 
 
+
+// define our color choices for all metaboxes.
+$colors = array(
+    'sky' => 'Sky',
+    'teal' => 'Teal',
+    'navy' => 'Navy',
+    'forest' => 'Forest',
+    'lime' => 'Lime',
+    'orange' => 'Orange',
+    'yellow' => 'Yellow',
+    'grey-light' => 'Grey - Light',
+    'grey-dark' => 'Grey - Dark',
+);
+
+
+
 // include some theme-related things
 include( "library/menus.php" );
 include( "library/scripts.php" );
@@ -17,6 +33,7 @@ include( "library/images.php" );
 
 // include our metaboxes library
 include( "library/metabox.php" );
+include( "library/metabox-theme.php" );
 
 
 // include quote metaboxes/functions

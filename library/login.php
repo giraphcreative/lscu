@@ -18,6 +18,13 @@ function account_toolbox() {
 	// current user information
 	get_currentuserinfo();
 
+	// get the referer
+	$referer = ( isset( $_SERVER['HTTPS'] ) ? 'https://' : 'http://' ) . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+
+	if ( stristr( $referer, '/log-in/' ) ) {
+		$referer = get_home_url();
+	}
+
 	// if the user is logged in.
 	if ( is_user_logged_in() ) { 
 		?>
@@ -26,7 +33,7 @@ function account_toolbox() {
 		<?php 
 	} else { 
 		?>
-		<a href="/log-in/?redirect_to=<?php print 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>" class='account-button'>Log In</a>
+		<a href="/log-in/?redirect_to=<?php print $referer ?>" class='account-button'>Log In</a>
 		<?php 
 	}
 
@@ -58,34 +65,6 @@ function lscu_signon( $user, $username, $password ) {
 
 
 
-// let's create a shortcode that displays a login form on the front-end.
-function login_form_shortcode( $atts, $content = null ) {
- 	
- 	$form = '';
-
- 	if ( !empty( get_query_var( 'login', '' ) ) ) {
- 		$form = '<div class="login-error">The credentials you entered do not match our records.</a>';
- 	}
-
-	if ( isset( $_REQUEST['redirect_to'] ) ) {
-		$redirect = $_REQUEST['redirect_to'];
-	} else {
-		$redirect = get_bloginfo( 'home' );
-	}
- 
-	if ( !is_user_logged_in() ) {
-		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
-	}
-
-	$form = str_replace( get_bloginfo('home') . '/log-in/?redirect_to=', '', $form );
-
-	return $form;
-
-}
-add_shortcode('lscu-login-form', 'login_form_shortcode');
-
-
-
 // when the user authenticates on LSCU, also authenticate them on InfoSight
 function infosight_authenticate() {
 
@@ -98,14 +77,145 @@ add_action('wp_login', 'infosight_authenticate');
 
 
 
-// when a user resets their password, redirect them to the login form.
-function lost_password_redirect( $user_info, $newpass ) {
+// let's create a shortcode that displays a login form on the front-end.
+function login_form_shortcode( $atts, $content = null ) {
+ 	
+ 	$form = '';
 
-    wp_redirect( home_url() . '/log-in' ); 
+ 	if ( isset( $_REQUEST['login-error'] ) ) {
+ 		$form = '<div class="login-error">The credentials you entered do not match our records.</div>';
+ 	}
+
+	if ( isset( $_REQUEST['redirect_to'] ) ) {
+		$redirect = $_REQUEST['redirect_to'];
+	} else {
+		$redirect = get_home_url();
+	}
+ 
+    $account_page = get_post( pure_get_option( 'account-page' ) );
+    $account_url = get_permalink( $account_page->ID );
+
+	if ( !is_user_logged_in() ) {
+		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
+	} else {
+		$form .= "You are currently logged in, please visit <a href='" . $account_url . "'>your account</a> for more options.";
+	}
+
+	return $form;
+
+}
+add_shortcode('pure-login-form', 'login_form_shortcode');
+
+
+
+// let's create a shortcode that displays a login form on the front-end.
+function reset_form_shortcode( $atts, $content = null ) {
+
+    $account_page = get_post( pure_get_option( 'account-page' ) );
+    $account_url = get_permalink( $account_page->ID );
+ 	
+ 	// they're logged in, what do they need a password reset for?!
+	if ( is_user_logged_in() ) return "You are currently logged in, please visit <a href='" . $account_url . "'>your account</a> for more options.";
+
+	// empty form variable.
+	$form = '';
+
+    $reset_page = get_post( pure_get_option( 'reset-page' ) );
+    $reset_url = get_permalink( $reset_page->ID );
+
+    $action = ( isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '' );
+
+    // handle requests
+ 	if ( isset( $_REQUEST['reset'] ) ) {
+
+	    // the reset request has been sent
+ 		$form .= 'A password reset email has been sent to the email address we have on record. Please click the link in it to continue the reset process.';
+
+ 	} else if ( $action == 'rp' && isset( $_REQUEST['key'] ) && isset( $_REQUEST['login'] ) ) {
+
+ 		// if the password doesn't match, display an error.
+ 		if ( isset( $_REQUEST['mismatch'] ) ) $form .= '<div class="error reset">The two passwords you entered do not match. Please try again.</div>'; 
+
+ 		// if they clicked the link to reset, show the password and confirmation password fields.
+ 		$form .= '<form name="resetpassform" id="resetpassform" action="' . $reset_url . '?action=resetpass" method="post" autocomplete="off">
+			<input type="hidden" name="user_login" value="' . $_REQUEST['login'] . '" />
+			<p>
+				<label for="pass1">New password<br />
+				<input type="password" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" /></label>
+			</p>
+			<p>
+				<label for="pass2">Confirm new password<br />
+				<input type="password" name="pass2" id="pass2" class="input" size="20" value="" autocomplete="off" /></label>
+			</p>
+			<input type="hidden" name="rp_key" value="' . $_REQUEST['key'] . '" />
+			<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" value="Reset Password" /></p>
+		</form>';
+
+ 	} else {
+
+ 		// if they're just arriving at this page, display a lost password form.
+	 	$form .= '<form name="lostpasswordform" id="lostpasswordform" action="' . get_home_url() . '/wp-login.php?action=lostpassword" method="post">
+			<p>
+				<label for="user_login">Username or E-mail:<br>
+				<input type="text" name="user_login" id="user_login" class="password-reset" value="" autocomplete="off"></label>
+			</p>
+			<input type="hidden" name="redirect_to" value="' . $reset_url . '?reset=1" />
+			<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Get New Password"></p>
+		</form>';
+
+	}
+ 
+	return $form;
+
+}
+add_shortcode('pure-reset-password', 'reset_form_shortcode');
+
+
+
+// function to reset the password to the new one.
+function pure_reset_password( $user, $new_pass ) {
+	/**
+	 * Fires before the user's password is reset.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param object $user     The user.
+	 * @param string $new_pass New user password.
+	 */
+	do_action( 'password_reset', $user, $new_pass );
+
+	wp_set_password( $new_pass, $user->ID );
+	update_user_option( $user->ID, 'default_password_nag', false, true );
+
+	wp_password_change_notification( $user );
+
+	$login_page = get_post( pure_get_option( 'login-page' ) );
+	$login_url = get_permalink( $login_page->ID );
+
+    wp_redirect( $login_url . '?reset=success' ); 
     exit;
 
 }
-add_action( 'password_reset', 'lost_password_redirect' );
+
+
+
+// set a handler for reset
+function reset_password_handler() {
+	$reset_page = get_post( pure_get_option( 'reset-page' ) );
+	$reset_url = get_permalink( $reset_page->ID );
+
+	$action = ( isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '' );
+	if ( $action == 'resetpass' ) {
+
+		if ( $_POST['pass1'] != $_POST['pass2'] ) {
+			wp_redirect( $reset_url . '?action=rp&key=' . $_POST['rp_key'] . '&login=' . $_POST['user_login'] . "&mismatch=1" );
+		}
+		$userdata = get_user_by( 'login', $_POST['user_login'] );
+		pure_reset_password( $userdata, $_POST['pass1'] );
+
+	}
+}
+add_action( 'init', 'reset_password_handler', 9995 );
 
 
 
@@ -113,10 +223,12 @@ add_action( 'password_reset', 'lost_password_redirect' );
 // to the login form with a parameter for the login error.
 function failed_login_redirect( $username ) {
 
-    $referrer = wp_get_referer();
+    $referrer = $_SERVER["HTTP_REFERER"];
+    $redirect_to = ( isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : get_home_url() );
 
     if ( $referrer && ! strstr($referrer, 'wp-login') && ! strstr($referrer,'wp-admin') ) {
-        wp_redirect( add_query_arg( 'login', 'failed', $referrer ) );
+    	$redirect_url = add_query_arg( 'redirect_to', $redirect_to, add_query_arg( 'login-error', 'true', $referrer ) );
+        wp_redirect( $redirect_url );
         exit;
     }
 
@@ -141,6 +253,54 @@ function empty_credential_error( $user, $username, $password ) {
 
 }
 add_filter( 'authenticate', 'empty_credential_error', 30, 3 );
+
+
+
+// adjust reset password email content
+function pure_retrieve_password_message( $message, $key ){
+    
+    // if we don't have username, cancel it
+    if ( !isset( $_POST['user_login'] )  ) return '';
+	
+
+    // get the user login from the request since it's set.
+	$user_login = trim($_POST['user_login']);
+
+
+    // get the user info (whether email address or username)
+    if ( strpos( $user_login, '@' ) ) $user_data = get_user_by( 'email', $user_login );
+    	else $user_data = get_user_by( 'login', $user_login );
+
+
+    // if we failed at that, cancel it.
+    if ( empty( $user_data ) ) return '';
+
+
+    // get the password reset page URL.
+    $reset_page = get_post( pure_get_option( 'reset-page' ) );
+    $reset_url = get_permalink( $reset_page->ID );
+
+
+    // get the message option from our metabox.
+ 	$message = pure_get_option( 'reset-email' );
+
+    // replace shortcodes in the email message body.
+    $message = str_replace( '[password-reset-url]' , $reset_url . "?action=rp&key=$key&login=" . rawurlencode( $user_data->user_login ), $message );
+    $message = str_replace( '[user-id]' , $user_data->ID );
+    $message = str_replace( '[first-name]' , $user_data->first_name );
+    $message = str_replace( '[last-name]' , $user_data->last_name );
+    $message = str_replace( '[user-login]' , $user_data->user_login );
+    $message = str_replace( '[email]' , $user_data->user_email );
+    $message = str_replace( '[homepage]' , get_home_url() );
+    $message = str_replace( '[admin-email]' , get_option( 'admin_email' ) );
+    $message = str_replace( '[date]' , date( 'n/j/Y' ) );
+    $message = str_replace( '[time]' , date( 'g:i a' ) );
+
+
+    // Return completed message for retrieve password
+    return $message;
+}
+add_filter( 'retrieve_password_message', 'pure_retrieve_password_message', 11, 2 );
 
 
 
