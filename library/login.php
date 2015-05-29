@@ -77,6 +77,43 @@ add_action('wp_login', 'infosight_authenticate');
 
 
 
+// if the login fails for any reason, redirect the user back
+// to the login form with a parameter for the login error.
+function failed_login_redirect( $username ) {
+
+    $referrer = $_SERVER["HTTP_REFERER"];
+    $redirect_to = ( isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : get_home_url() );
+
+    if ( $referrer && ! strstr($referrer, 'wp-login') && ! strstr($referrer,'wp-admin') ) {
+    	$redirect_url = add_query_arg( 'redirect_to', $redirect_to, add_query_arg( 'login-error', 'true', $referrer ) );
+        wp_redirect( $redirect_url );
+        exit;
+    }
+
+}
+add_action( 'wp_login_failed', 'failed_login_redirect' );
+
+
+
+// check for empty username and password when a user is authenticating
+// by default, WP doesn't even treat this as a login attempt, and redirects
+// the user back to the admin login, which we'd like to avoid.
+function empty_credential_error( $user, $username, $password ) {
+
+    if ( is_a( $user, 'WP_User' ) ) return $user;
+
+    if ( empty($username) || empty($password) ) {
+        $error = new WP_Error();
+        $user  = new WP_Error( 'authentication_failed', __('Neither the username nor password can be empty.' ));
+
+        return $error;
+    }
+
+}
+add_filter( 'authenticate', 'empty_credential_error', 30, 3 );
+
+
+
 // let's create a shortcode that displays a login form on the front-end.
 function login_form_shortcode( $atts, $content = null ) {
  	
@@ -216,43 +253,6 @@ function reset_password_handler() {
 	}
 }
 add_action( 'init', 'reset_password_handler', 9995 );
-
-
-
-// if the login fails for any reason, redirect the user back
-// to the login form with a parameter for the login error.
-function failed_login_redirect( $username ) {
-
-    $referrer = $_SERVER["HTTP_REFERER"];
-    $redirect_to = ( isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : get_home_url() );
-
-    if ( $referrer && ! strstr($referrer, 'wp-login') && ! strstr($referrer,'wp-admin') ) {
-    	$redirect_url = add_query_arg( 'redirect_to', $redirect_to, add_query_arg( 'login-error', 'true', $referrer ) );
-        wp_redirect( $redirect_url );
-        exit;
-    }
-
-}
-add_action( 'wp_login_failed', 'failed_login_redirect' );
-
-
-
-// check for empty username and password when a user is authenticating
-// by default, WP doesn't even treat this as a login attempt, and redirects
-// the user back to the admin login, which we'd like to avoid.
-function empty_credential_error( $user, $username, $password ) {
-
-    if ( is_a( $user, 'WP_User' ) ) return $user;
-
-    if ( empty($username) || empty($password) ) {
-        $error = new WP_Error();
-        $user  = new WP_Error( 'authentication_failed', __('Neither the username nor password can be empty.' ));
-
-        return $error;
-    }
-
-}
-add_filter( 'authenticate', 'empty_credential_error', 30, 3 );
 
 
 
