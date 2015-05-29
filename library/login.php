@@ -122,6 +122,61 @@ add_filter( 'authenticate', 'empty_credential_error', 30, 3 );
 
 
 
+// override new user notification
+function wp_new_user_notification ( $user_id, $pass = '' ) {
+	
+	// -> Get the new user's ID.
+	$user_data = new WP_User ( $user_id );
+	
+	// -> Build the admin payload.
+	$admin_message  = sprintf ( __( 'New user registration on %s:' ), get_option('blogname')) . "\r\n\r\n";
+	$admin_message .= sprintf ( __( 'Username: %s' ), $user_data->user_login ) . "\r\n\r\n";
+	$admin_message .= sprintf ( __( 'E-mail: %s' ), $user_data->user_email ) . "\r\n";
+	
+	// -> Send out an e-mail regardless of errors.
+	@wp_mail ( get_option ( 'admin_email' ) , sprintf ( __( '[%s] New User Registration' ), get_option ( 'blogname' ) ), $admin_message );
+	
+	// -> Return/do not continue if the password is null.
+	if ( empty ( $pass ) ) return;
+	
+
+	// get the password reset page URL.
+    $login_page = get_post( pure_get_option( 'login-page' ) );
+    $login_url = get_permalink( $login_page->ID );
+
+    // get the message option from our metabox.
+ 	$message = pure_get_option( 'reset-email' );
+
+    // replace shortcodes in the email message body.
+    $message = str_replace( '[login-url]', $login_url, $message );
+    $message = str_replace( '[user-id]', $user_data->ID, $message );
+    $message = str_replace( '[first-name]', $user_data->first_name, $message );
+    $message = str_replace( '[last-name]', $user_data->last_name, $message );
+    $message = str_replace( '[user-login]', $user_data->user_login, $message );
+    $message = str_replace( '[email]', $user_data->user_email, $message );
+    $message = str_replace( '[homepage]', get_home_url(), $message );
+    $message = str_replace( '[admin-email]', get_option( 'admin_email' ), $message );
+    $message = str_replace( '[date]', date( 'n/j/Y' ), $message );
+    $message = str_replace( '[time]', date( 'g:i a' ), $message );
+
+	
+	// -> Add line breaks to the body.
+	$message = nl2br ( $message );
+
+	// -> Strip out any slashes in the content.
+	$message = stripslashes ( $message );
+
+    // get the blog name for the reset email subject
+    $blogname = wp_specialchars_decode( get_option('blogname'), ENT_QUOTES );
+    $title = sprintf( __('[%s] Welcome!'), $blogname );
+	
+	// -> Send out the message.
+	wp_mail ( $user_data->user_email, $title, $message );
+		
+}
+
+
+
 // let's create a shortcode that displays a login form on the front-end.
 function login_form_shortcode( $atts, $content = null ) {
  	
@@ -285,95 +340,7 @@ add_action( 'init', 'reset_password_handler', 9995 );
 
 
 
-/**
- * Handles sending password retrieval email to user.
- *
- * @uses $wpdb WordPress Database object
- * @param string $user_login User Login or Email
- * @return bool true on success false on error
- */
-function pure_retrieve_password( $user_login ) {
-
-    global $wpdb, $wp_hasher;
-
-    $user_login = sanitize_text_field($user_login);
-
-    if ( empty( $user_login) ) {
-        return false;
-    } else if ( strpos( $user_login, '@' ) ) {
-        $user_data = get_user_by( 'email', trim( $user_login ) );
-        if ( empty( $user_data ) )
-           return false;
-    } else {
-        $login = trim($user_login);
-        $user_data = get_user_by('login', $login);
-    }
-
-    do_action('lostpassword_post');
-
-
-    if ( !$user_data ) return false;
-
-    // redefining user_login ensures we return the right case in the email
-    $user_login = $user_data->user_login;
-    $user_email = $user_data->user_email;
-
-    do_action('retreive_password', $user_login);  // Misspelled and deprecated
-    do_action('retrieve_password', $user_login);
-
-    $allow = apply_filters('allow_password_reset', true, $user_data->ID);
-
-    if ( ! $allow )
-        return false;
-    else if ( is_wp_error($allow) )
-        return false;
-
-    $key = wp_generate_password( 20, false );
-    do_action( 'retrieve_password_key', $user_login, $key );
-
-    if ( empty( $wp_hasher ) ) {
-        require_once ABSPATH . 'wp-includes/class-phpass.php';
-        $wp_hasher = new PasswordHash( 8, true );
-    }
-    $hashed = $wp_hasher->HashPassword( $key );
-    $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
-
-
-    // get the password reset page URL.
-    $reset_page = get_post( pure_get_option( 'reset-page' ) );
-    $reset_url = get_permalink( $reset_page->ID );
-
-    // get the message option from our metabox.
- 	$message = pure_get_option( 'reset-email' );
-
-    // replace shortcodes in the email message body.
-    $message = str_replace( '[password-reset-url]' , $reset_url . "?action=rp&key=$key&login=" . rawurlencode( $user_data->user_login ), $message );
-    $message = str_replace( '[user-id]' , $user_data->ID );
-    $message = str_replace( '[first-name]' , $user_data->first_name );
-    $message = str_replace( '[last-name]' , $user_data->last_name );
-    $message = str_replace( '[user-login]' , $user_data->user_login );
-    $message = str_replace( '[email]' , $user_data->user_email );
-    $message = str_replace( '[homepage]' , get_home_url() );
-    $message = str_replace( '[admin-email]' , get_option( 'admin_email' ) );
-    $message = str_replace( '[date]' , date( 'n/j/Y' ) );
-    $message = str_replace( '[time]' , date( 'g:i a' ) );
-
-    // get the blog name for the reset email subject
-    $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-    $title = sprintf( __('[%s] Password Reset'), $blogname );
-
-    // if we have a message and the email sends, return true.
-    if ( $message && !wp_mail( $user_email, $title, $message ) )
-        wp_die( __('The e-mail could not be sent.') . "<br />\n" . 
-        	__('Possible reason: your host may have disabled the mail() function...') );
-
-    return true;
-
-}
-
-
-
-add_filter( 'retrieve_password_message', 'pure_retrieve_password_message', 11, 2 );
+// update the password retrieval message
 function pure_retrieve_password_message( $message, $key ){
     
 	global $wpdb;
@@ -412,6 +379,7 @@ function pure_retrieve_password_message( $message, $key ){
 	return $message;
 
 }
+add_filter( 'retrieve_password_message', 'pure_retrieve_password_message', 11, 2 );
 
 
 ?>
