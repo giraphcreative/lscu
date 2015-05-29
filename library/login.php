@@ -18,6 +18,14 @@ function account_toolbox() {
 	// current user information
 	get_currentuserinfo();
 
+	// get the account page link.
+    $account_page = get_post( pure_get_option( 'account-page' ) );
+    $account_url = get_permalink( $account_page->ID );
+
+	// get the account page link.
+    $login_page = get_post( pure_get_option( 'login-page' ) );
+    $login_url = get_permalink( $login_page->ID );
+
 	// get the referer
 	$referer = ( isset( $_SERVER['HTTPS'] ) ? 'https://' : 'http://' ) . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 
@@ -28,12 +36,12 @@ function account_toolbox() {
 	// if the user is logged in.
 	if ( is_user_logged_in() ) { 
 		?>
-		<a href="/account" class='account-button'>My Account</a> <a href="<?php echo wp_logout_url( get_bloginfo( 'home' ) ) ?>" class="logout-button">Logout</a>
+		<a href="<?php print $account_url ?>" class='account-button'>My Account</a> <a href="<?php echo wp_logout_url( get_bloginfo( 'home' ) ) ?>" class="logout-button">Logout</a>
 		<span class='welcome'>Welcome, <?php print ( !empty( $current_user->user_firstname ) ? $current_user->user_firstname : $current_user->user_login ); ?></span>
 		<?php 
 	} else { 
 		?>
-		<a href="/log-in/?redirect_to=<?php print $referer ?>" class='account-button'>Log In</a>
+		<a href="<?php print $login_url ?>?redirect_to=<?php print $referer ?>" class='account-button'>Log In</a>
 		<?php 
 	}
 
@@ -131,9 +139,13 @@ function login_form_shortcode( $atts, $content = null ) {
  
     $account_page = get_post( pure_get_option( 'account-page' ) );
     $account_url = get_permalink( $account_page->ID );
+ 
+    $reset_page = get_post( pure_get_option( 'reset-page' ) );
+    $reset_url = get_permalink( $reset_page->ID );
 
 	if ( !is_user_logged_in() ) {
 		$form .= wp_login_form( array('echo' => false, 'redirect' => $redirect ) );
+		$form .= '<p><a href="' . $reset_url . '">Lost/forgotten Password</a></p>';
 	} else {
 		$form .= "You are currently logged in, please visit <a href='" . $account_url . "'>your account</a> for more options.";
 	}
