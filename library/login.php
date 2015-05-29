@@ -145,7 +145,7 @@ function wp_new_user_notification ( $user_id, $pass = '' ) {
     $login_url = get_permalink( $login_page->ID );
 
     // get the message option from our metabox.
- 	$message = pure_get_option( 'reset-email' );
+ 	$message = pure_get_option( 'welcome-email' );
 
     // replace shortcodes in the email message body.
     $message = str_replace( '[login-url]', $login_url, $message );
