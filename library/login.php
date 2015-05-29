@@ -208,7 +208,7 @@ function reset_form_shortcode( $atts, $content = null ) {
 				<label for="user_login">Username or E-mail:<br>
 				<input type="text" name="user_login" id="user_login" class="password-reset" value="" autocomplete="off"></label>
 			</p>
-			<input type="hidden" name="redirect_to" value="' . $reset_url . '?reset=1" />
+			<input type="hidden" name="redirect_to" value="' . $reset_url . '?action=reset" />
 			<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" value="Get New Password"></p>
 		</form>';
 
@@ -250,16 +250,33 @@ function pure_reset_password( $user, $new_pass ) {
 
 // set a handler for reset
 function reset_password_handler() {
+
+	// get the reset page from the db
 	$reset_page = get_post( pure_get_option( 'reset-page' ) );
 	$reset_url = get_permalink( $reset_page->ID );
 
-	$action = ( isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '' );
-	if ( $action == 'resetpass' ) {
+	// get the login parameter
+	$login = ( isset( $_POST['user_login'] ) ? $_POST['user_login'] : '' );
 
+	// grab the action parameter
+	$action = ( isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '' );
+
+	// handle based on the action
+	if ( $action == 'resetpass' && !empty( $login ) ) {
+
+		// check if the passwords match
 		if ( $_POST['pass1'] != $_POST['pass2'] ) {
+
+			// if the passwords don't match, redirect with an error parameter
 			wp_redirect( $reset_url . '?action=rp&key=' . $_POST['rp_key'] . '&login=' . $_POST['user_login'] . "&mismatch=1" );
+			exit;
+
 		}
-		$userdata = get_user_by( 'login', $_POST['user_login'] );
+
+		// retrieve user data
+		$userdata = get_user_by( 'login', $login );
+
+		// set the new password.
 		pure_reset_password( $userdata, $_POST['pass1'] );
 
 	}
@@ -268,30 +285,63 @@ add_action( 'init', 'reset_password_handler', 9995 );
 
 
 
-// adjust reset password email content
-function pure_retrieve_password_message( $message, $key ){
-    
-    // if we don't have username, cancel it
-    if ( !isset( $_POST['user_login'] )  ) return '';
-	
+/**
+ * Handles sending password retrieval email to user.
+ *
+ * @uses $wpdb WordPress Database object
+ * @param string $user_login User Login or Email
+ * @return bool true on success false on error
+ */
+function pure_retrieve_password( $user_login ) {
 
-    // get the user login from the request since it's set.
-	$user_login = trim($_POST['user_login']);
+    global $wpdb, $wp_hasher;
+
+    $user_login = sanitize_text_field($user_login);
+
+    if ( empty( $user_login) ) {
+        return false;
+    } else if ( strpos( $user_login, '@' ) ) {
+        $user_data = get_user_by( 'email', trim( $user_login ) );
+        if ( empty( $user_data ) )
+           return false;
+    } else {
+        $login = trim($user_login);
+        $user_data = get_user_by('login', $login);
+    }
+
+    do_action('lostpassword_post');
 
 
-    // get the user info (whether email address or username)
-    if ( strpos( $user_login, '@' ) ) $user_data = get_user_by( 'email', $user_login );
-    	else $user_data = get_user_by( 'login', $user_login );
+    if ( !$user_data ) return false;
 
+    // redefining user_login ensures we return the right case in the email
+    $user_login = $user_data->user_login;
+    $user_email = $user_data->user_email;
 
-    // if we failed at that, cancel it.
-    if ( empty( $user_data ) ) return '';
+    do_action('retreive_password', $user_login);  // Misspelled and deprecated
+    do_action('retrieve_password', $user_login);
+
+    $allow = apply_filters('allow_password_reset', true, $user_data->ID);
+
+    if ( ! $allow )
+        return false;
+    else if ( is_wp_error($allow) )
+        return false;
+
+    $key = wp_generate_password( 20, false );
+    do_action( 'retrieve_password_key', $user_login, $key );
+
+    if ( empty( $wp_hasher ) ) {
+        require_once ABSPATH . 'wp-includes/class-phpass.php';
+        $wp_hasher = new PasswordHash( 8, true );
+    }
+    $hashed = $wp_hasher->HashPassword( $key );
+    $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
 
 
     // get the password reset page URL.
     $reset_page = get_post( pure_get_option( 'reset-page' ) );
     $reset_url = get_permalink( $reset_page->ID );
-
 
     // get the message option from our metabox.
  	$message = pure_get_option( 'reset-email' );
@@ -308,12 +358,60 @@ function pure_retrieve_password_message( $message, $key ){
     $message = str_replace( '[date]' , date( 'n/j/Y' ) );
     $message = str_replace( '[time]' , date( 'g:i a' ) );
 
+    // get the blog name for the reset email subject
+    $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+    $title = sprintf( __('[%s] Password Reset'), $blogname );
 
-    // Return completed message for retrieve password
-    return $message;
+    // if we have a message and the email sends, return true.
+    if ( $message && !wp_mail( $user_email, $title, $message ) )
+        wp_die( __('The e-mail could not be sent.') . "<br />\n" . 
+        	__('Possible reason: your host may have disabled the mail() function...') );
+
+    return true;
+
 }
-add_filter( 'retrieve_password_message', 'pure_retrieve_password_message', 11, 2 );
 
+
+
+add_filter( 'retrieve_password_message', 'pure_retrieve_password_message', 11, 2 );
+function pure_retrieve_password_message( $message, $key ){
+    
+	global $wpdb;
+				
+	// -> Get the target username or e-mail from the post.
+	$Post_Login = htmlentities ( $_POST['user_login'] );
+	
+	// -> Get the required variables.	
+	$user_id = $wpdb -> get_results ( "SELECT ID FROM $wpdb->users WHERE (user_login='$Post_Login' OR user_email='$Post_Login') LIMIT 1" );
+		
+	// -> Get the new user's ID.			
+	$user_data = new WP_User ( $user_id->ID );
+			
+    // get the message option from our metabox.
+ 	$message = pure_get_option( 'reset-email' );
+
+    // replace shortcodes in the email message body.
+    $message = str_replace( '[password-reset-url]' , $reset_url . "?action=rp&key=$key&login=" . rawurlencode( $user_data->user_login ), $message );
+    $message = str_replace( '[user-id]', $user_data->ID, $message );
+    $message = str_replace( '[first-name]', $user_data->first_name, $message );
+    $message = str_replace( '[last-name]', $user_data->last_name, $message );
+    $message = str_replace( '[user-login]', $user_data->user_login, $message );
+    $message = str_replace( '[email]', $user_data->user_email, $message );
+    $message = str_replace( '[homepage]', get_home_url(), $message );
+    $message = str_replace( '[admin-email]', get_option( 'admin_email' ), $message );
+    $message = str_replace( '[date]', date( 'n/j/Y' ), $message );
+    $message = str_replace( '[time]', date( 'g:i a' ), $message );
+	
+	// -> Add line breaks to the body.
+	$message = nl2br ( $message );
+	
+	// -> Strip out any slashes in the content.
+	$message = stripslashes ( $message );
+	
+	// -> Return the result.
+	return $message;
+
+}
 
 
 ?>
