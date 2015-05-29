@@ -209,7 +209,7 @@ function reset_form_shortcode( $atts, $content = null ) {
 				<input type="text" name="user_login" id="user_login" class="password-reset" value="" autocomplete="off"></label>
 			</p>
 			<input type="hidden" name="redirect_to" value="' . $reset_url . '?reset=1" />
-			<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Get New Password"></p>
+			<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" value="Get New Password"></p>
 		</form>';
 
 	}
