@@ -20,6 +20,13 @@ if ( empty( $color ) ) $color = 'navy';
 			<a href="http://myleverage.com/"><div class="widget leverage"><div class="widget-title"><h4>Leverage</h4></div></div></a>
 		</div>
 		<div class="three-quarter">
+			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			    <?php 
+			    if ( function_exists( 'bcn_display' ) ) {
+			        bcn_display();
+			    }
+			    ?>
+			</div>
 			<?php 
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post(); 

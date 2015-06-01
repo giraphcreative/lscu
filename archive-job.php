@@ -31,6 +31,13 @@ $job_count = wp_count_posts( 'job' )->publish;
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-jobs') ) : ?><!-- no sidebar --><?php endif; ?>
 		</div>
 		<div class="three-quarter">
+			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			    <?php 
+			    if ( function_exists( 'bcn_display' ) ) {
+			        bcn_display();
+			    }
+			    ?>
+			</div>
 			<div class="entry-job"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count == 1 ? '' : 's' ) ?></strong></div>
 			<?php 
 			global $wp_query;

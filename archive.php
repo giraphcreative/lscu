@@ -21,6 +21,13 @@ get_header();
 
 	<section id="primary" class="content-area wrap group" role="main">
 
+		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+		    <?php 
+		    if ( function_exists( 'bcn_display' ) ) {
+		        bcn_display();
+		    }
+		    ?>
+		</div>
 		<?php if ( have_posts() ) : ?>
 		<?php
 		

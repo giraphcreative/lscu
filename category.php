@@ -30,6 +30,13 @@ $category_info = Taxonomy_MetaData::get( $taxonomy, $term_id );
 		</div>
 		<div class="three-quarter post-list">
 
+			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			    <?php 
+			    if ( function_exists( 'bcn_display' ) ) {
+			        bcn_display();
+			    }
+			    ?>
+			</div>
 			<?php if ( have_posts() ) : 
 			
 				// Start the Loop.
