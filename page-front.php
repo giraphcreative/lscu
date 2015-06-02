@@ -29,7 +29,10 @@ get_header();
 				<h2><span>News</span></h2>
 				<div class="third-content">
 					<?php
-					query_posts( 'posts_per_page=3' );
+					query_posts( array(
+						'cat' => '26',
+						'posts_per_page' => 5
+					) );
 					if ( have_posts() ) {
 						$num = 1;
 						while ( have_posts() ) {
