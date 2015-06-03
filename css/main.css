@@ -1851,3 +1851,14 @@ img.mfp-img {
   @media only screen and (min-width: 768px) {
     .entry-job .job-info {
       margin-bottom: 10px; } }
+
+.job-count {
+  border-bottom: 3px solid #d4d5d6;
+  padding: 20px 0; }
+
+.job-search {
+  float: right;
+  max-width: 40%;
+  padding-top: 10px; }
+  .job-search input[type=text] {
+    padding: 10px; }

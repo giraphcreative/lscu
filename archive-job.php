@@ -38,7 +38,8 @@ $job_count = wp_count_posts( 'job' )->publish;
 			    }
 			    ?>
 			</div>
-			<div class="entry-job"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count == 1 ? '' : 's' ) ?></strong></div>
+			<div class="job-search"><input type="text" id="job-search" value="" placeholder="Search Jobs"></div>
+			<div class="job-count"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count == 1 ? '' : 's' ) ?></strong></div>
 			<?php 
 			global $wp_query;
 			$args = array_merge( $wp_query->query_vars,  array(

@@ -35,3 +35,19 @@
 	}
 }
 
+
+.job-count {
+	border-bottom: 3px solid lighten( $grey, 25% );
+	padding: 20px 0;
+}
+
+
+.job-search {
+	float: right;
+	max-width: 40%;
+	padding-top: 10px;
+
+	input[type=text] {
+		padding: 10px;
+	}
+}
