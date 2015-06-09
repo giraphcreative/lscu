@@ -32,11 +32,7 @@ $job_count = wp_count_posts( 'job' )->publish;
 		</div>
 		<div class="three-quarter">
 			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-			    <?php 
-			    if ( function_exists( 'bcn_display' ) ) {
-			        bcn_display();
-			    }
-			    ?>
+			    <span><a href="<?php home_url() ?>" class="home">LSCU</a></span> &gt; <span><span>CU Job Center</span></span>
 			</div>
 			<div class="job-search"><input type="text" id="job-search" value="" placeholder="Search Jobs"></div>
 			<div class="job-count"><strong>Showing <?php print $job_count; ?> Job<?php print ( $job_count == 1 ? '' : 's' ) ?></strong></div>
