@@ -269,7 +269,7 @@ function reset_form_shortcode( $atts, $content = null ) {
  		// if they're just arriving at this page, display a lost password form.
 	 	$form .= '<form name="lostpasswordform" id="lostpasswordform" action="' . get_home_url() . '/wp-login.php?action=lostpassword" method="post">
 			<p>
-				<label for="user_login">Username or E-mail:<br>
+				<label for="user_login">Username or Email:<br>
 				<input type="text" name="user_login" id="user_login" class="password-reset" value="" autocomplete="off"></label>
 			</p>
 			<input type="hidden" name="redirect_to" value="' . $reset_url . '?action=reset" />
