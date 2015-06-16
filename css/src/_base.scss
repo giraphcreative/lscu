@@ -3,9 +3,9 @@
 body {
 	margin: 0;
 	@include font;
-	font-size: 16px;
+	font-size: 17px;
 	line-height: 25px;
-	color: $grey-dark;
+	color: darken( $grey-dark, 10% );
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,12 +55,7 @@ strong em, em strong {
 
 a {
 	color: $navy;
-	text-decoration: none;
 	transition: opacity 400ms ease-in-out;
-
-	&:hover {
-		text-decoration: underline;
-	}
 }
 
 input, textarea {
