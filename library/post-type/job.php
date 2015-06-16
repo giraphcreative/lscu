@@ -7,7 +7,7 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 
 // let's create the function for the custom type
-function strategic_post_types() { 
+function lscu_post_types() { 
 
 
 	// creating (registering) the custom type 
@@ -56,7 +56,7 @@ function strategic_post_types() {
 
 
 // adding the function to the Wordpress init
-add_action( 'init', 'strategic_post_types');
+add_action( 'init', 'lscu_post_types');
 
 
 
