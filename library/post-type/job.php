@@ -272,4 +272,27 @@ function the_job_list( $jobs = '', $random = false ) {
 
 
 
+add_action( 'gform_post_submission_17', 'job_expiry_timestamp', 10, 2 );
+/**
+ * Create a UNIX timestamp based on Gform date fields
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/gravity-forms-unix-timestamp
+ * @link http://www.gravityhelp.com/documentation/page/Gform_post_submission
+ *
+ * 'gform_post_submission' applies to all forms, append form ID to specify
+ *
+ * @param array $entry
+ * @param array $form
+ * @return array
+ */
+function job_expiry_timestamp( $entry, $form ) {
+	$start_date = get_post_meta( $entry['post_id'], '_p_job_expires_date', true );
+	if( $start_date ) {
+		$timestamp = strtotime( $start_date );
+		update_post_meta( $entry['post_id'], '_p_job_expires', $timestamp );		
+	}
+}
+
+
+
 ?>
