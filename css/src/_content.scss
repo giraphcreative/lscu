@@ -101,6 +101,14 @@ img {
 }
 
 
+
+.post-meta {
+	@include font-italic;
+	color: $grey;
+}
+
+
+
 .pagination {
 	padding: 15px 0;
 	text-align: center;

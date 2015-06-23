@@ -21,6 +21,7 @@ get_header();
 			while ( have_posts() ) : the_post(); 
 				?>
 				<h1><?php the_title(); ?></h1>
+				<p class="post-meta">Posted <?php the_date(); ?> in <?php the_category(', '); ?></p>
 				<?php
 				the_content();
 			endwhile;

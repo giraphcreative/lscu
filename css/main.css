@@ -1040,6 +1040,11 @@ img.alignleft {
   padding: 20px 0;
   border-bottom: 3px solid #d4d5d6; }
 
+.post-meta {
+  font-family: "Avenir Italic", sans-serif;
+  font-weight: normal;
+  color: #939598; }
+
 .pagination {
   padding: 15px 0;
   text-align: center;
@@ -1859,3 +1864,54 @@ img.mfp-img {
   padding-top: 10px; }
   .job-search input[type=text] {
     padding: 10px; }
+
+.calendar {
+  border-top: 1px solid #babbbd;
+  border-left: 1px solid #babbbd;
+  width: 100%; }
+  .calendar td {
+    width: 14.58%;
+    padding: 4px;
+    text-align: center;
+    border-right: 1px solid #babbbd;
+    border-bottom: 1px solid #babbbd; }
+    .calendar td.calendar-day-head {
+      background: #c7c8ca; }
+      .calendar td.calendar-day-head span {
+        display: none; }
+        @media only screen and (min-width: 768px) {
+          .calendar td.calendar-day-head span {
+            display: inline; } }
+    .calendar td.calendar-day:hover {
+      background: #e1e2e3; }
+    .calendar td .day-events {
+      display: none; }
+      @media only screen and (min-width: 768px) {
+        .calendar td .day-events {
+          display: block;
+          min-height: 100px; }
+          .calendar td .day-events .event-time, .calendar td .day-events .event-description {
+            display: none; } }
+      .calendar td .day-events a {
+        font-family: "Avenir Demi", sans-serif;
+        font-weight: normal;
+        font-size: .8em;
+        line-height: 1em; }
+      .calendar td .day-events .event-title {
+        margin-top: 4px; }
+
+.day-event-list {
+  display: block;
+  padding: 20px 0; }
+  @media only screen and (min-width: 768px) {
+    .day-event-list {
+      display: none; } }
+  .day-event-list .event-title {
+    font-family: "Avenir Demi", sans-serif;
+    font-weight: normal;
+    font-size: 1.2em; }
+  .day-event-list .event-time {
+    font-family: "Avenir Italic", sans-serif;
+    font-weight: normal; }
+  .day-event-list .event-description {
+    font-size: .8em; }
