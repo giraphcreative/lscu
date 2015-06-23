@@ -1,0 +1,81 @@
+
+
+.calendar {
+	border-top: 1px solid lighten( $grey, 15% );
+	border-left: 1px solid lighten( $grey, 15% );
+	width: 100%;
+
+	td {
+		width: 14.58%;
+		padding: 4px;
+		text-align: center;
+		border-right: 1px solid lighten( $grey, 15% );
+		border-bottom: 1px solid lighten( $grey, 15% );
+
+		&.calendar-day-head {
+			background: lighten( $grey, 20% );
+
+			span {
+				display: none;
+				
+				@include respond-to( 768px ) {
+					display: inline;
+				}
+			}
+		}
+
+		&.calendar-day:hover {
+			background: lighten( $grey, 30% );
+		}
+
+		.day-events {
+			display: none;
+
+			@include respond-to( 768px ) {
+				display: block;
+				min-height: 100px;
+
+				.event-time, .event-description {
+					display: none;
+				}
+			}
+
+			a {
+				@include font-bold;
+				font-size: .8em;
+				line-height: 1em;
+			}
+
+			.event-title {
+				margin-top: 4px;
+			}
+
+		}
+	}
+}
+
+
+.day-event-list {
+	display: block;
+	padding: 20px 0;
+
+	@include respond-to( 768px ) {
+		display: none;
+	}
+
+	.event-title {
+		@include font-bold;
+		font-size: 1.2em;
+	}
+
+	.event-time {
+		@include font-italic;
+		color: $grey;
+	}
+
+	.event-description {
+		font-size: .85em;
+		line-height: 1.4em;
+	}
+}
+

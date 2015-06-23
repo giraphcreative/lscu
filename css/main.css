@@ -1912,6 +1912,8 @@ img.mfp-img {
     font-size: 1.2em; }
   .day-event-list .event-time {
     font-family: "Avenir Italic", sans-serif;
-    font-weight: normal; }
+    font-weight: normal;
+    color: #939598; }
   .day-event-list .event-description {
-    font-size: .8em; }
+    font-size: .85em;
+    line-height: 1.4em; }

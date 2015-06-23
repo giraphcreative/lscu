@@ -48,6 +48,7 @@ include( "library/login.php" );
 
 // post types
 include( "library/post-type/job.php" );
+include( "library/post-type/event.php" );
 
 
 // [anchor] shortcode
