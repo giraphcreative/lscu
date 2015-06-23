@@ -1,5 +1,30 @@
 
 
+.month-nav {
+	padding: 7px 10px;
+	background: $grey;
+	color: white;
+	border-radius: 10px;
+	text-decoration: none;
+	margin-bottom: 10px;
+	float: left;
+
+	&.next {
+		float: right;
+	}
+
+	&:hover {
+		background: lighten( $grey, 5% );
+	}
+}
+
+
+
+.calendar-month-title {
+	text-align: center;
+}
+
+
 .calendar {
 	border-top: 1px solid lighten( $grey, 15% );
 	border-left: 1px solid lighten( $grey, 15% );

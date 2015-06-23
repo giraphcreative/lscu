@@ -211,15 +211,24 @@ function get_next_month( $month, $year ) {
 // show month events
 function show_month_events( $month, $year ) {
 
+	$event_list_url = "/events-new";
+
 	// let's make an empty calendar
 	$calendar = '';
-
 
 	// get the events for the month.
 	$events = get_month_events( $month, $year );
 
 	// show next and previous month links.
-	$calendar .= "";
+	$prev = get_previous_month( $month, $year );
+	$prev_ts = mktime( 0, 0, 0, $prev['month'], 1, $prev['year'] );
+	$next = get_next_month( $month, $year );
+	$next_ts = mktime( 0, 0, 0, $next['month'], 1, $next['year'] );
+	$calendar .= '<a href="' . $event_list_url . "?mo=" . $prev['month'] . '&yr=' . $prev['year'] . '" class="month-nav previous">&laquo; ' . date( "F", $prev_ts ) . '</a>';
+	$calendar .= '<a href="' . $event_list_url . "?mo=" . $next['month'] . '&yr=' . $next['year'] . '" class="month-nav next">' . date( "F", $next_ts ) . ' &raquo;</a>';
+
+	// add month title
+	$calendar .= '<h2 class="calendar-month-title">' . date( 'F Y', mktime( 0, 0, 0, $month, 1, $year ) ) . "</h2>";
 
 	// open the table tags
 	$calendar .= '<table cellpadding="0" cellspacing="0" class="calendar">';

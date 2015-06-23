@@ -1846,6 +1846,22 @@ img.mfp-img {
   .job-search input[type=text] {
     padding: 10px; }
 
+.month-nav {
+  padding: 7px 10px;
+  background: #939598;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  float: left; }
+  .month-nav.next {
+    float: right; }
+  .month-nav:hover {
+    background: #a0a2a4; }
+
+.calendar-month-title {
+  text-align: center; }
+
 .calendar {
   border-top: 1px solid #babbbd;
   border-left: 1px solid #babbbd;
