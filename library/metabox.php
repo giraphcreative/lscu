@@ -128,7 +128,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
-    // job metabox
+    // event metabox
     $event_metabox = new_cmb2_box( array(
         'id' => 'event_metabox',
         'title' => 'Event',
@@ -153,12 +153,6 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'City',
         'id'   => CMB_PREFIX . 'event_city',
         'type' => 'text_medium'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'State',
-        'id'   => CMB_PREFIX . 'event_state',
-        'type' => 'text_small'
     ) );
 
     $event_metabox->add_field( array(
@@ -214,6 +208,24 @@ function page_metaboxes( $meta_boxes ) {
         'name' => 'End Date/Time',
         'id'   => CMB_PREFIX . 'event_end',
         'type' => 'text_datetime_timestamp'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Early Bird Deadline',
+        'id'   => CMB_PREFIX . 'event_early_date',
+        'type' => 'text_datetime_timestamp'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Early Bird Price',
+        'id'   => CMB_PREFIX . 'event_price_early',
+        'type' => 'text_money'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Regular Price',
+        'id'   => CMB_PREFIX . 'event_price',
+        'type' => 'text_money'
     ) );
 
 
