@@ -6,14 +6,27 @@
 get_header();
 
 ?>
+	<div class="large-title bg-grey-light">
+		<div class="wrap">
+			<div class="large-title-icon bg-grey-light" style="background-image: url(<?php print p_image_resize( get_bloginfo('home') . '/wp-content/uploads/2015/03/h.jpg', 300, 300, true ) ?>);">
+				<div class="hex1"></div>
+				<div class="hex2"></div>
+			</div>
+			<div class="large-title-text">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</div>
+	</div>
+
+	<?php the_showcase(); ?>
+
 	<div id="primary" class="site-content">
 
-		<div id="content" class="site-content content-narrow group" role="main">
+		<div id="content" class="site-content content-wide wrap group" role="main">
 		<?php 
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post(); 
 				?>
-			<h1><?php the_title(); ?></h1>
 			<div class="two-fifth right event-info">
 				<?php 
 				// display credit union name
@@ -29,7 +42,6 @@ get_header();
 				if ( has_cmb_value( 'event_start' ) && has_cmb_value( 'event_end' ) ) {
 					print "<p><label>Duration:</label><br>" . duration( get_cmb_value( 'event_start' ), get_cmb_value( 'event_end' ) ) . "</p>";
 				}
-
 
 
 				// display event venue information
