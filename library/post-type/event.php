@@ -324,4 +324,23 @@ function show_month_events( $month, $year ) {
 
 
 
+function duration( $start, $end ) {
+	// get duration in seconds
+	$duration_seconds = $end - $start;
+
+	// calculate days, then hours, then minutes
+	$days = floor( $duration_seconds / 86400 );
+	$hours = floor( ( $duration_seconds - ( $days * 86400 ) ) / 3600 );
+	$minutes = floor( ( $duration_seconds - ( $days * 86400 ) - ( $hours * 3600 ) ) / 60 );
+
+	$time_string_parts = array();
+	if ( $days > 0 ) $time_string_parts[] = $days . ' day' . ( $days > 1 ? 's' : '' );
+	if ( $hours > 0 ) $time_string_parts[] = $hours . ' hour' . ( $hours > 1 ? 's' : '' );
+	if ( $minutes > 0 ) $time_string_parts[]= $minutes . ' minute' . ( $minutes > 1 ? 's' : '' );
+
+	return implode( ", ", $time_string_parts );
+}
+
+
+
 ?>

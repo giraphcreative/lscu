@@ -50,7 +50,7 @@ body {
 
 
 @include respond-to( 768px ) {
-	.quarter, .third, .half, .two-third, .three-quarter {
+	.quarter, .third, .half, .two-third, .three-quarter, .two-fifth {
 		float: left;
 
 		&.right {
@@ -65,6 +65,11 @@ body {
 
 	.third {
 		width: 32%;
+		margin: 0 .5%;
+	}
+
+	.two-fifth {
+		width: 39%;
 		margin: 0 .5%;
 	}
 

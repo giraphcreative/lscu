@@ -995,15 +995,18 @@ body {
   padding: 0 0 20px; }
 
 @media only screen and (min-width: 768px) {
-  .quarter, .third, .half, .two-third, .three-quarter {
+  .quarter, .third, .half, .two-third, .three-quarter, .two-fifth {
     float: left; }
-    .quarter.right, .third.right, .half.right, .two-third.right, .three-quarter.right {
+    .quarter.right, .third.right, .half.right, .two-third.right, .three-quarter.right, .two-fifth.right {
       float: right; }
   .quarter {
     width: 24%;
     margin: 0 .5%; }
   .third {
     width: 32%;
+    margin: 0 .5%; }
+  .two-fifth {
+    width: 39%;
     margin: 0 .5%; }
   .two-third {
     width: 66%;
@@ -1914,3 +1917,14 @@ img.mfp-img {
   .day-event-list .event-description {
     font-size: .85em;
     line-height: 1.4em; }
+
+.event-info {
+  padding: 0; }
+  @media only screen and (min-width: 768px) {
+    .event-info {
+      padding: 0 20px;
+      border-left: 4px solid #d4d5d6;
+      margin: 0 0 50px 30px; } }
+  .event-info label {
+    font-family: "Avenir Demi", sans-serif;
+    font-weight: normal; }
