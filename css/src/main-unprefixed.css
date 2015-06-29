@@ -521,10 +521,10 @@ header {
         border-radius: 10px;
         margin: 0 10px;
         display: inline-block;
-        width: 43%; }
+        width: 43%;
+        text-decoration: none; }
         header .aux p.account-links .account-button:hover {
-          background-color: #336683;
-          text-decoration: none; }
+          background-color: #336683; }
       header .aux p.account-links .logout-button {
         padding: 9px 45px 6px 12px;
         background: #47494b url(../img/icon-button-arrow-small.png) right center no-repeat;
@@ -536,10 +536,10 @@ header {
         border-radius: 10px;
         margin: 0 10px;
         display: inline-block;
-        width: 43%; }
+        width: 43%;
+        text-decoration: none; }
         header .aux p.account-links .logout-button:hover {
-          background-color: #545558;
-          text-decoration: none; }
+          background-color: #545558; }
 
 .large-title {
   padding: 30px 20px; }

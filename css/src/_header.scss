@@ -316,10 +316,10 @@ header {
 				margin: 0 10px;
 				display: inline-block;
 				width: 43%;
+				text-decoration: none;
 
 				&:hover {
 					background-color: lighten( $navy, 5% );
-					text-decoration: none;
 				}
 			}
 
@@ -334,10 +334,10 @@ header {
 				margin: 0 10px;
 				display: inline-block;
 				width: 43%;
+				text-decoration: none;
 
 				&:hover {
 					background-color: darken( $grey, 25% );
-					text-decoration: none;
 				}
 			}
 		}
