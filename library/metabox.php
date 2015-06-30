@@ -233,6 +233,54 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $event_metabox->add_field( array(
+        'name' => 'Hotel',
+        'id'   => CMB_PREFIX . 'event_hotel',
+        'type' => 'text',
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel Address',
+        'id'   => CMB_PREFIX . 'event_hotel_address',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel City',
+        'id'   => CMB_PREFIX . 'event_hotel_city',
+        'type' => 'text_medium'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel State',
+        'id'   => CMB_PREFIX . 'event_hotel_state',
+        'type' => 'text_small'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel Zipcode',
+        'id'   => CMB_PREFIX . 'event_hotel_zipcode',
+        'type' => 'text_small'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel Email',
+        'id'   => CMB_PREFIX . 'event_hotel_email',
+        'type' => 'text_email'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel Phone',
+        'id'   => CMB_PREFIX . 'event_hotel_phone',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Hotel Rate',
+        'id'   => CMB_PREFIX . 'event_hotel_price',
+        'type' => 'text_money'
+    ) );
+
+    $event_metabox->add_field( array(
         'name' => 'Event Website',
         'id'   => CMB_PREFIX . 'event_website',
         'desc' => 'If populated, links from the calendar/listings will go directly to this URL instead of the event page on this website.',
