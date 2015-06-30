@@ -6,7 +6,7 @@
 get_header(); 
 
 ?>
-	<div class="large-title bg-grey-light">
+	<div class="large-title bg-lime">
 		<div class="wrap">
 			<div class="large-title-icon bg-lime" style="background-image: url(<?php print get_bloginfo('template_url') . '/img/event-image.png' ?>);">
 				<div class="hex1"></div>
