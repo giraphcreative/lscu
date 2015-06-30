@@ -36,7 +36,12 @@ get_header();
 					if ( has_cmb_value( 'event_end' ) ) {
 						print " - " . date( "g:i a", get_cmb_value( 'event_end' ) );
 					}
-					print "</p>";
+					print " EST<br>";
+					print date( "g:i a", get_cmb_value( 'event_start' )-3600 );
+					if ( has_cmb_value( 'event_end' ) ) {
+						print " - " . date( "g:i a", get_cmb_value( 'event_end' )-3600 );
+					}
+					print " CST</p>";
 				}
 
 				if ( has_cmb_value( 'event_start' ) && has_cmb_value( 'event_end' ) ) {
