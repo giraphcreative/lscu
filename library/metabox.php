@@ -179,6 +179,36 @@ function page_metaboxes( $meta_boxes ) {
     ));
 
     $event_metabox->add_field( array(
+        'name' => 'Start Date/Time',
+        'id'   => CMB_PREFIX . 'event_start',
+        'type' => 'text_datetime_timestamp'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'End Date/Time',
+        'id'   => CMB_PREFIX . 'event_end',
+        'type' => 'text_datetime_timestamp'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Early Bird Deadline',
+        'id'   => CMB_PREFIX . 'event_early_date',
+        'type' => 'text_datetime_timestamp'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Early Bird Price',
+        'id'   => CMB_PREFIX . 'event_price_early',
+        'type' => 'text_money'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Regular Price',
+        'id'   => CMB_PREFIX . 'event_price',
+        'type' => 'text_money'
+    ) );
+
+    $event_metabox->add_field( array(
         'name' => 'Venue',
         'id'   => CMB_PREFIX . 'event_venue',
         'type' => 'text',
@@ -285,36 +315,6 @@ function page_metaboxes( $meta_boxes ) {
         'id'   => CMB_PREFIX . 'event_website',
         'desc' => 'If populated, links from the calendar/listings will go directly to this URL instead of the event page on this website.',
         'type' => 'text'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'Start Date/Time',
-        'id'   => CMB_PREFIX . 'event_start',
-        'type' => 'text_datetime_timestamp'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'End Date/Time',
-        'id'   => CMB_PREFIX . 'event_end',
-        'type' => 'text_datetime_timestamp'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'Early Bird Deadline',
-        'id'   => CMB_PREFIX . 'event_early_date',
-        'type' => 'text_datetime_timestamp'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'Early Bird Price',
-        'id'   => CMB_PREFIX . 'event_price_early',
-        'type' => 'text_money'
-    ) );
-
-    $event_metabox->add_field( array(
-        'name' => 'Regular Price',
-        'id'   => CMB_PREFIX . 'event_price',
-        'type' => 'text_money'
     ) );
 
 
