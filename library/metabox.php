@@ -179,6 +179,19 @@ function page_metaboxes( $meta_boxes ) {
     ));
 
     $event_metabox->add_field( array(
+        'name' => 'Type',
+        'id'   => CMB_PREFIX . 'event_type',
+        'type' => 'select',
+        'default' => 'standard',
+        'options' => array(
+            'chapter' => 'Chapter Event',
+            'standard' => 'Standard Event'
+            'webinar' => 'Webinar',
+            'workshop' => 'Workshop'
+        )
+    ) );
+
+    $event_metabox->add_field( array(
         'name' => 'Start Date/Time',
         'id'   => CMB_PREFIX . 'event_start',
         'type' => 'text_datetime_timestamp'
