@@ -1966,3 +1966,5 @@ img.mfp-img {
   .event-info label {
     font-family: "Avenir Demi", sans-serif;
     font-weight: normal; }
+  .event-info hr {
+    margin: 10px 0; }
