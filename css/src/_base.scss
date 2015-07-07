@@ -104,7 +104,7 @@ input, textarea {
 		margin: 25px 0;
 	}
 
-	button, input[type=submit], input[type=reset] {
+	button, input[type=submit], input[type=reset], .button {
 		padding: 9px 45px 6px 12px;
 		background: $navy url(../img/icon-button-arrow.png) right center no-repeat;
 		color: white;
@@ -112,6 +112,7 @@ input, textarea {
 		border: 3px solid white;
 		box-shadow: 4px 4px 10px lighten( $grey, 15% );
 		border-radius: 10px;
+		text-decoration: none;
 	}
 }
 
