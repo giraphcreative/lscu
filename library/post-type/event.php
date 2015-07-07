@@ -177,6 +177,11 @@ function get_month_events( $m, $y ) {
 		'posts_per_page' => 100
 	);
 
+	if ( isset( $_GET['event_category'] ) ) {
+		$event_cat = get_term( $_GET['event_category'], 'event_cat' );
+		$args[ 'event_cat' ] = $event_cat->slug;
+	}
+
 	$event_query = new WP_Query( $args );
 	$events = $event_query->get_posts();
 
@@ -336,15 +341,13 @@ function show_month_events( $month, $year ) {
 
 function filter_by_event_type() {
 
-	global $event_types;
-
-	// display a select box for event type filtering on the calendar.
-	print '<select class="event-type">';
-	print '<option value="all">All Events</option>';
-	foreach ( $event_types as $event_type_key => $event_type_label ) {
-		print '<option value="' . $event_type_key . '">' . $event_type_label . '</option>';
-	}
-	print '</select>';
+	wp_dropdown_categories( array(
+		'show_option_all' => 'All Event Categories',
+		'orderby' => 'NAME', 
+		'taxonomy' => 'event_cat',
+		'class' => 'event-category',
+		'selected' => ( isset( $_GET['event_category'] ) ? $_GET['event_category'] : 0 )
+	) );
 
 }
 
