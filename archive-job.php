@@ -6,12 +6,13 @@
 get_header(); 
 
 global $wp_query;
-$args = array_merge( $wp_query->query_vars,  array(
+
+$args = array_merge( $wp_query->query_vars, array(
 	'meta_query' => array(
 		array(
-				'key' => '_p_job_expires',
-				'value' => $today,
-				'compare' => '>='
+			'key' => '_p_job_expires',
+			'value' => $today,
+			'compare' => '>='
 		)
 	),
 	'post_type' => 'job',
@@ -20,7 +21,18 @@ $args = array_merge( $wp_query->query_vars,  array(
 	'meta_key' => '_p_job_expires',
 	'posts_per_page' => 100
 ) );
+
+if ( isset( $_GET['job_type'] ) ) {
+	$args['meta_query']['relation'] = 'AND';
+	$args['meta_query'][] = array(
+		'key' => '_p_job_type',
+		'value' => $_GET['job_type'],
+		'compare' => '='
+	);
+}
+
 query_posts( $args );
+
 $job_count = $wp_query->found_posts;
 
 ?>
