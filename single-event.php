@@ -60,16 +60,15 @@ get_header();
 					print '<p class="text-center"><a href="/event-registration/?event_price=' . $current_price . '&event_name=' . get_the_title() . '&event_qty=1" class="button">Register Now</a></p>';
 				}
 
-				// display event venue information
-				print ( has_cmb_value( 'event_venue' ) ? '<p><label>Venue:</label><br>' . get_cmb_value( 'event_venue' ) . '</p>' : '' );
-
 				// get address values and display them.
+				$venue = get_cmb_value( 'event_venue' );
 				$address = get_cmb_value( 'event_address' );
 				$city = get_cmb_value( 'event_city' );
 				$state = get_cmb_value( 'event_state' );
 				$zipcode = get_cmb_value( 'event_zipcode' );
-				if ( !empty( $address ) && !empty( $city ) && !empty( $state ) && !empty( $zipcode ) ) {
-					print "<p>" . $address . "<br>" . $city . ", " . $state . " " . $zipcode . "</p>";
+				if ( !empty( $venue ) && !empty( $address ) && !empty( $city ) && !empty( $state ) && !empty( $zipcode ) ) {
+					print "<hr><h5>Venue Info:</h5>";
+					print "<p>" . $venue . "<br>" . $address . "<br>" . $city . ", " . $state . " " . $zipcode . "</p>";
 
 					// gmap embed api key: AIzaSyB0FlglKxf0TJtQZJlbrCa5q836iyMRcYE
 					?>
@@ -77,6 +76,32 @@ get_header();
 				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0FlglKxf0TJtQZJlbrCa5q836iyMRcYE
 				&q=<?php print urlencode( $address . ", " . $city . ", "  . $state . ", " . $zipcode ) ?>" allowfullscreen></iframe></p>
 					<?php
+				}
+
+				// get hotel address values and display them.
+				$hotel_name = get_cmb_value( 'event_hotel' );
+				$hotel_address = get_cmb_value( 'event_hotel_address' );
+				$hotel_city = get_cmb_value( 'event_hotel_city' );
+				$hotel_state = get_cmb_value( 'event_hotel_state' );
+				$hotel_zipcode = get_cmb_value( 'event_hotel_zipcode' );
+				$hotel_email = get_cmb_value( 'event_hotel_email' );
+				$hotel_phone = get_cmb_value( 'event_hotel_phone' );
+				$hotel_rate = get_cmb_value( 'event_hotel_price' );
+				if ( !empty( $hotel_name ) && !empty( $hotel_address ) && !empty( $hotel_city ) && !empty( $hotel_state ) && !empty( $hotel_zipcode ) ) {
+					print "<hr><h5>Hotel Info:</h5>";
+					print "<p>" . $hotel_name . "<br>" . $hotel_address . "<br>" . $hotel_city . ", " . $hotel_state . " " . $hotel_zipcode . "</p>";
+
+					if ( !empty( $hotel_phone ) ) {
+						print "<p><label>Phone:</label> <a href=\"tel:" . $hotel_phone . "\">" . $hotel_phone . "</a></p>";
+					}
+
+					if ( !empty( $hotel_email ) ) {
+						print "<p><label>Email:</label> <a href=\"mailto:" . $hotel_email . "\">" . $hotel_email . "</a></p>";
+					}
+
+					if ( !empty( $hotel_rate ) ) {
+						print "<p><label>Rate:</label> $" . $hotel_rate . "/night</p>";
+					}
 				}
 				?>
 			</div>
