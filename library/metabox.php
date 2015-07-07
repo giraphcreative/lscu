@@ -9,7 +9,7 @@ require_once( 'cmb2/init.php' );
 // set up some event types
 $event_types = array(
     'chapter' => 'Chapter Event',
-    'standard' => 'Standard Event'
+    'standard' => 'Standard Event',
     'webinar' => 'Webinar',
     'workshop' => 'Workshop'
 );

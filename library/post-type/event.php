@@ -5,6 +5,15 @@
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 
+//add_filter('query_vars', 'parameter_queryvars' );
+function parameter_queryvars( $qvars ) {
+	$qvars[] = ' price';
+	$qvars[] = ' name';
+	$qvars[] = ' qty';
+	return $qvars;
+}
+
+
 
 // let's create the function for the custom type
 function lscu_events() { 
@@ -319,6 +328,23 @@ function show_month_events( $month, $year ) {
 	
 	/* all done, return result */
 	print $calendar;
+
+}
+
+
+
+
+function filter_by_event_type() {
+
+	global $event_types;
+
+	// display a select box for event type filtering on the calendar.
+	print '<select class="event-type">';
+	print '<option value="all">All Events</option>';
+	foreach ( $event_types as $event_type_key => $event_type_label ) {
+		print '<option value="' . $event_type_key . '">' . $event_type_label . '</option>';
+	}
+	print '</select>';
 
 }
 

@@ -44,14 +44,24 @@ get_header();
 					print " CST</p>";
 				}
 
+				// display the event duration.
 				if ( has_cmb_value( 'event_start' ) && has_cmb_value( 'event_end' ) ) {
 					print "<p><label>Duration:</label><br>" . duration( get_cmb_value( 'event_start' ), get_cmb_value( 'event_end' ) ) . "</p>";
 				}
 
+				// display price
+				$early_date = get_cmb_value( 'event_early_date' );
+				$early_price = get_cmb_value( 'event_price_early' );
+				$regular_price = get_cmb_value( 'event_price' );
+				$current_price = ( $early_date < time() ? $early_price : $regular_price );
+				$is_early = ( $early_date < time() ? true : false );
+				print "<p><label>Price:</label><br>$" . $current_price . ( $is_early ? ' (early registration price)' : '' ) . "</p>";
+				print '<p class="text-center"><a href="/event-registration/?event_price=' . $current_price . '&event_name=' . get_the_title() . '&event_qty=1" class="button">Register Now</a></p>';
 
 				// display event venue information
 				print ( has_cmb_value( 'event_venue' ) ? '<p><label>Venue:</label><br>' . get_cmb_value( 'event_venue' ) . '</p>' : '' );
 
+				// get address values and display them.
 				$address = get_cmb_value( 'event_address' );
 				$city = get_cmb_value( 'event_city' );
 				$state = get_cmb_value( 'event_state' );

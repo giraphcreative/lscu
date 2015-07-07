@@ -22,6 +22,8 @@ get_header();
 		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
 		    <span><a href="<?php home_url() ?>" class="home">LSCU</a></span> &gt; <span><span>Education Calendar</span></span>
 		</div>
+		<p><strong>Filter by Event Type:</strong> <?php filter_by_event_type(); ?></p>
+		<br>
 		<?php 
 
 		// get URL parameters and default to current month.
