@@ -6,10 +6,20 @@ require_once( 'cmb2/init.php' );
 
 
 
+// set up some event types
+$event_types = array(
+    'chapter' => 'Chapter Event',
+    'standard' => 'Standard Event'
+    'webinar' => 'Webinar',
+    'workshop' => 'Workshop'
+);
+
+
+
 // add metabox(es)
 function page_metaboxes( $meta_boxes ) {
 
-    global $colors;
+    global $colors, $event_types;
 
     // showcase metabox
     $title_metabox = new_cmb2_box( array(
@@ -176,19 +186,14 @@ function page_metaboxes( $meta_boxes ) {
         'object_types' => array( 'event' ), // post type
         'context' => 'normal',
         'priority' => 'high',
-    ));
+    ) );
 
     $event_metabox->add_field( array(
         'name' => 'Type',
         'id'   => CMB_PREFIX . 'event_type',
         'type' => 'select',
         'default' => 'standard',
-        'options' => array(
-            'chapter' => 'Chapter Event',
-            'standard' => 'Standard Event'
-            'webinar' => 'Webinar',
-            'workshop' => 'Workshop'
-        )
+        'options' => $event_types
     ) );
 
     $event_metabox->add_field( array(
