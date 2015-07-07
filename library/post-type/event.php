@@ -178,8 +178,10 @@ function get_month_events( $m, $y ) {
 	);
 
 	if ( isset( $_GET['event_category'] ) ) {
-		$event_cat = get_term( $_GET['event_category'], 'event_cat' );
-		$args[ 'event_cat' ] = $event_cat->slug;
+		if ( $_GET['event_category'] != 0 ) {
+			$event_cat = get_term( $_GET['event_category'], 'event_cat' );
+			$args[ 'event_cat' ] = $event_cat->slug;
+		}
 	}
 
 	$event_query = new WP_Query( $args );
