@@ -311,6 +311,12 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $event_metabox->add_field( array(
+        'name' => 'Hotel Website',
+        'id'   => CMB_PREFIX . 'event_hotel_website',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
         'name' => 'Event Website',
         'id'   => CMB_PREFIX . 'event_website',
         'desc' => 'If populated, links from the calendar/listings will go directly to this URL instead of the event page on this website.',
@@ -437,6 +443,41 @@ function page_metaboxes( $meta_boxes ) {
         'id'   => 'content',
         'type' => 'wysiwyg',
         'options' => array( 'textarea_rows' => 7 )
+    ) );
+
+
+
+    // showcase metabox
+    $gallery_metabox = new_cmb2_box( array(
+        'id' => 'gallery_metabox',
+        'title' => 'Photo Gallery',
+        'object_types' => array( 'page', 'event' ), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $gallery_metabox_group = $gallery_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'gallery',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Photo', 'cmb2'),
+            'remove_button' => __('Remove Photo', 'cmb2'),
+            'group_title'   => __( 'Photo {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $gallery_metabox->add_group_field( $gallery_metabox_group, array(
+        'name' => 'Image/Video',
+        'id'   => 'image',
+        'type' => 'file',
+        'preview_size' => array( 100, 100 )
+    ) );
+
+    $gallery_metabox->add_group_field( $gallery_metabox_group, array(
+        'name' => 'Alt Text',
+        'id'   => 'alt',
+        'type' => 'text',
     ) );
 
 

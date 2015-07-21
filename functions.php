@@ -40,6 +40,7 @@ include( "library/metabox-theme.php" );
 include( "library/title.php" );
 include( "library/showcase.php" );
 include( "library/accordion.php" );
+include( "library/photos.php" );
 
 
 // include custom login stylesheet
