@@ -1171,6 +1171,39 @@ img.alignleft {
     .accordion .accordion-box.bg-grey-light .accordion-box-content, .accordion .accordion-box.bg-grey-dark .accordion-box-content, .accordion .accordion-box.bg-grey-light-light .accordion-box-content, .accordion .accordion-box.bg-grey-dark-light .accordion-box-content {
       background-color: #e1e2e3; }
 
+.photo-gallery {
+  padding: 5px;
+  zoom: 1; }
+  .photo-gallery:before, .photo-gallery:after {
+    content: "";
+    display: table; }
+  .photo-gallery, .photo-gallery:before, .photo-gallery:after {
+    clear: both; }
+  .photo-gallery .photo {
+    padding: 5px; }
+    .photo-gallery .photo img {
+      display: block;
+      width: 100%; }
+    @media only screen and (min-width: 480px) {
+      .photo-gallery .photo {
+        float: left;
+        width: 50%; } }
+    @media only screen and (min-width: 900px) {
+      .photo-gallery .photo {
+        width: 33.3333%; } }
+    @media only screen and (min-width: 1220px) {
+      .photo-gallery .photo {
+        width: 25%; } }
+    @media only screen and (min-width: 1440px) {
+      .photo-gallery .photo {
+        width: 20%; } }
+    @media only screen and (min-width: 1680px) {
+      .photo-gallery .photo {
+        width: 16.6666%; } }
+    @media only screen and (min-width: 1800px) {
+      .photo-gallery .photo {
+        width: 14.2856%; } }
+
 .gform_confirmation_message {
   background: #c5ffe4;
   border: 3px solid #007940;
