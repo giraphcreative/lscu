@@ -1,11 +1,9 @@
 
 
 .photo-gallery {
-	padding: 5px;
 	@include clearfix;
 	
 	.photo {
-		padding: 5px;
 	
 		img {
 			display: block;
