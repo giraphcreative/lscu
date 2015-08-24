@@ -40,8 +40,6 @@ if ( empty( $color ) ) $color = 'navy';
 
 	</div><!-- #content -->
 
-	<?php the_photo_gallery(); ?>
-
 <?php
 
 get_footer();
