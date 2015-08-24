@@ -15,7 +15,7 @@ get_header();
 				?>
 			<h1><?php the_title(); ?></h1>
 			<div class="third right job-info">
-				<?php 
+				<?php
 				// display credit union name
 				print ( has_cmb_value( 'job_company' ) ? "<p><label>Credit Union:</label><br> " . get_cmb_value( 'job_company' ) . "</p>" : '' );
 
@@ -36,7 +36,7 @@ get_header();
 
 				<?php
 				// display job type
-				print ( has_cmb_value( 'job_expires' ) ? "<p><label>Closing:</label> " . get_cmb_value( 'job_expires' ) . "</p>" : '' );
+				print ( has_cmb_value( 'job_expires' ) ? "<p><label>Closing:</label> " . date( "n/j/Y", get_cmb_value( 'job_expires' ) ) . "</p>" : '' );
 				?>
 			</div>
 			<p><strong>Job Description:</strong></p>
