@@ -66,9 +66,14 @@ get_header();
 				$city = get_cmb_value( 'event_city' );
 				$state = get_cmb_value( 'event_state' );
 				$zipcode = get_cmb_value( 'event_zipcode' );
+				$venue_email = get_cmb_value( 'event_email' );
 				if ( !empty( $venue ) && !empty( $address ) && !empty( $city ) && !empty( $state ) && !empty( $zipcode ) ) {
 					print "<hr><h5>Venue Info:</h5>";
 					print "<p>" . $venue . "<br>" . $address . "<br>" . $city . ", " . $state . " " . $zipcode . "</p>";
+
+					if ( !empty( $venue_email ) ) {
+						print "<p><label>Email:</label> <a href=\"mailto:" . $venue_email . "\">" . $venue_email . "</a></p>";
+					}
 
 					// gmap embed api key: AIzaSyB0FlglKxf0TJtQZJlbrCa5q836iyMRcYE
 					?>
