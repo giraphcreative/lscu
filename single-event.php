@@ -87,6 +87,7 @@ get_header();
 				$hotel_email = get_cmb_value( 'event_hotel_email' );
 				$hotel_phone = get_cmb_value( 'event_hotel_phone' );
 				$hotel_rate = get_cmb_value( 'event_hotel_price' );
+				$hotel_website = get_cmb_value( 'event_hotel_website' );
 				if ( !empty( $hotel_name ) && !empty( $hotel_address ) && !empty( $hotel_city ) && !empty( $hotel_state ) && !empty( $hotel_zipcode ) ) {
 					print "<hr><h5>Hotel Info:</h5>";
 					print "<p>" . $hotel_name . "<br>" . $hotel_address . "<br>" . $hotel_city . ", " . $hotel_state . " " . $hotel_zipcode . "</p>";
@@ -97,6 +98,11 @@ get_header();
 
 					if ( !empty( $hotel_email ) ) {
 						print "<p><label>Email:</label> <a href=\"mailto:" . $hotel_email . "\">" . $hotel_email . "</a></p>";
+					}
+
+					if ( !empty( $hotel_website ) ) {
+						$parse = parse_url( $hotel_website );
+						print "<p><label>Website:</label> <a href=\"" . $hotel_website . "\">" . $parse['host'] . "</a></p>";
 					}
 
 					if ( !empty( $hotel_rate ) ) {

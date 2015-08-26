@@ -14,6 +14,10 @@ jQuery(document).ready(function($){
 			location.href = $.query.set( "event_category", $(this).val() );
 		});
 
+		$( 'a.month-nav' ).click(function(){
+			location.href = $.query.set( "event_category", $(this).val() );
+		});
+
 	}
 
 });
