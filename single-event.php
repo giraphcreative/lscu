@@ -57,7 +57,7 @@ get_header();
 				$is_early = ( $early_date < time() ? true : false );
 				if ( $current_price != '0' ) {
 					print "<p><label>Price:</label><br>$" . $current_price . ( $is_early ? ' (early registration price)' : '' ) . "</p>";
-					print '<p class="text-center"><a href="/event-registration/?event_price=' . $current_price . '&event_name=' . get_the_title() . '&event_qty=1" class="button">Register Now</a></p>';
+					//print '<p class="text-center"><a href="/event-registration/?event_price=' . $current_price . '&event_name=' . get_the_title() . '&event_qty=1" class="button">Register Now</a></p>';
 				}
 
 				// get address values and display them.
