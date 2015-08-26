@@ -7,16 +7,9 @@ get_header();
 
 global $wp_query;
 
-$today = mktime( 0, 0, 0 );
 
+// start building args for query_posts
 $args = array_merge( $wp_query->query_vars, array(
-	'meta_query' => array(
-		array(
-			'key' => '_p_job_expires',
-			'value' => $today,
-			'compare' => '>='
-		)
-	),
 	'post_type' => 'job',
 	'orderby' => 'meta_value',
 	'order' => 'ASC',
@@ -24,14 +17,47 @@ $args = array_merge( $wp_query->query_vars, array(
 	'posts_per_page' => 100
 ) );
 
+
+// start building meta query for job expiration
+$today = mktime( 0, 0, 0 );
+$expires_query = array(
+	'relation' => 'OR',
+	array(
+		'key' => '_p_job_expires',
+		'value' => 0,
+		'compare' => '='
+	),
+	array(
+		'key' => '_p_job_expires',
+		'value' => $today,
+		'compare' => '>='
+	)
+);
+
+
+// add meta_query for job type if set
 if ( isset( $_GET['job_type'] ) ) {
-	$args['meta_query']['relation'] = 'AND';
-	$args['meta_query'][] = array(
+	$type_query = array(
 		'key' => '_p_job_type',
 		'value' => $_GET['job_type'],
 		'compare' => '='
 	);
 }
+
+
+// if we have a type query
+if ( !empty( $type_query ) ) {
+	// add it in addition to the expiration query
+	$args['meta_query'] = array(
+		'relation' => 'AND',
+		$expires_query,
+		$type_query
+	);
+} else {
+	// othewise just use the expiration query.
+	$args['meta_query'] = $expires_query;
+}
+
 
 query_posts( $args );
 
