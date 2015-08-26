@@ -14,10 +14,8 @@ if ( empty( $color ) ) $color = 'navy';
 	<?php the_thumb_showcase(); ?>
 
 	<div id="content" class="wrap group content-two-column <?php print $color; ?>" role="main">
-
 		<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?><!-- no sidebar --><?php endif; ?>
-			<a href="http://myleverage.com/"><div class="widget leverage"><div class="widget-title"><h4>Leverage</h4></div></div></a>
 		</div>
 		<div class="three-quarter">
 			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
@@ -37,7 +35,6 @@ if ( empty( $color ) ) $color = 'navy';
 			the_accordion();
 			?>
 		</div>
-
 	</div><!-- #content -->
 
 <?php
