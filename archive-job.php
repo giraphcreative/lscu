@@ -7,6 +7,8 @@ get_header();
 
 global $wp_query;
 
+$today = mktime( 0, 0, 0 );
+
 $args = array_merge( $wp_query->query_vars, array(
 	'meta_query' => array(
 		array(
