@@ -1236,16 +1236,16 @@ img.alignleft {
     margin-top: -24px; }
   .sidebar .widget.widget_text .textwidget {
     padding: 15px; }
-  .sidebar .widget.tribe-events-list-widget .widget-title:before {
+  .sidebar .widget.tribe-events-list-widget .widget-title:before, .sidebar .widget.widget_events_widget .widget-title:before {
     background-image: url(../img/icon-events-small.png); }
-  .sidebar .widget.tribe-events-list-widget ol {
+  .sidebar .widget.tribe-events-list-widget ol, .sidebar .widget.widget_events_widget ol {
     padding: 10px; }
-    .sidebar .widget.tribe-events-list-widget ol li {
+    .sidebar .widget.tribe-events-list-widget ol li, .sidebar .widget.widget_events_widget ol li {
       padding: 10px 0;
       margin-bottom: 0; }
-      .sidebar .widget.tribe-events-list-widget ol li h4 {
+      .sidebar .widget.tribe-events-list-widget ol li h4, .sidebar .widget.widget_events_widget ol li h4 {
         font-size: 1.2em; }
-  .sidebar .widget.tribe-events-list-widget p.tribe-events-widget-link {
+  .sidebar .widget.tribe-events-list-widget p.tribe-events-widget-link, .sidebar .widget.widget_events_widget p.tribe-events-widget-link {
     text-align: center;
     padding: 10px; }
   .sidebar .widget.leverage .widget-title {
@@ -1968,3 +1968,11 @@ img.mfp-img {
     font-weight: normal; }
   .event-info hr {
     margin: 10px 0; }
+
+.widget_events_widget p {
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 22px; }
+  .widget_events_widget p a {
+    font-family: "Avenir Demi", sans-serif;
+    font-weight: normal; }

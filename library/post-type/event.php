@@ -153,7 +153,7 @@ function get_day_events( $m, $d, $y ) {
 
 
 
-function get_month_events( $m, $y ) {
+function get_month_events( $m, $y, $category='' ) {
 
 	$timestamp_start = mktime( 0, 0, 0, $m, 1, $y );
 	$timestamp_end = mktime( 23, 59, 59, $m, date( 't', $timestamp_start ), $y );
@@ -195,6 +195,58 @@ function get_month_events( $m, $y ) {
 			$events[$key]->$info_key = $info_item[0];
 		}
 	}
+
+	wp_reset_query();
+	
+	return $events;
+
+}
+
+
+
+function get_upcoming_events( $limit, $category=0 ) {
+
+	$timestamp_start = mktime( 0, 0, 0 );
+
+	$args = array(
+		'meta_query' => array(
+			'relation' => 'AND',
+			array(
+				'key' => '_p_event_start',
+				'value' => $timestamp_start,
+				'compare' => '>='
+			)
+		),
+		'post_type' => 'event',
+		'orderby' => 'meta_value_num',
+		'meta_key' => '_p_event_start',
+		'order' => 'ASC',
+		'posts_per_page' => $limit
+	);
+
+	if ( $category > 0 ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'event_cat',
+				'field' => 'id',
+				'terms' => $category
+			)
+		);
+	}
+
+	$event_query = new WP_Query( $args );
+	$events = $event_query->get_posts();
+
+	foreach ( $events as $key => $event ) {
+		$event_info = array();
+		$event_info = get_post_custom( $event->ID );
+
+		foreach ( $event_info as $info_key => $info_item ) {		
+			$events[$key]->$info_key = $info_item[0];
+		}
+	}
+
+
 
 	wp_reset_query();
 	
@@ -340,16 +392,30 @@ function show_month_events( $month, $year ) {
 
 
 
+function get_event_categories() {
+    $args = array(
+		'orderby'            => 'name',
+		'order'              => 'ASC',
+		'number'             => null,
+		'echo'               => 0,
+		'taxonomy'           => 'event_cat',
+    );
+    return get_categories( $args ); 
+}
+
+
 
 function filter_by_event_type() {
 
-	wp_dropdown_categories( array(
-		'show_option_all' => 'All Event Categories',
-		'orderby' => 'NAME', 
-		'taxonomy' => 'event_cat',
-		'class' => 'event-category',
-		'selected' => ( isset( $_GET['event_category'] ) ? $_GET['event_category'] : 0 )
-	) );
+	wp_dropdown_categories( 
+		array(
+			'show_option_all' => 'All Event Categories',
+			'orderby' => 'NAME', 
+			'taxonomy' => 'event_cat',
+			'class' => 'event-category',
+			'selected' => ( isset( $_GET['event_category'] ) ? $_GET['event_category'] : 0 )
+		) 
+	);
 
 }
 
@@ -468,6 +534,101 @@ function manage_event_columns( $column, $post_id ) {
 
 
 
+// Creating the widget 
+class event_widget extends WP_Widget {
+
+	public $number_contacts = 6;
+
+
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'events_widget', 
+
+			// Widget name will appear in UI
+			__('Upcoming Events', 'events_domain'), 
+
+			// Widget description
+			array( 'description' => __( 'Display a list of calendar events in the sidebar.', 'events_domain'), ) 
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget( $args, $instance ) {
+
+		// if admin selected a number of posts, use that. default to 5.
+		$limit = ( !empty( $instance['limit'] ) ? $instance['limit'] : 5 );
+		
+		// use any supplied category, or empty for all.
+		$category = ( !empty( $instance['category'] ) ? $instance['category'] : 0 );
+
+		// get the events
+		$events = get_upcoming_events( $limit, $category );
+
+		// open the ripon widget
+		echo $args['before_widget'];
+
+		// before and after widget arguments are defined by themes
+		echo $args['before_title'] . ( !empty( $instance['title'] ) ? $instance['title'] : "Upcoming Events" ) . $args['after_title'];
+
+		// list the events
+		if ( !empty( $events ) ) {
+			foreach ( $events as $event ) {
+				print '<p><a href="' . get_permalink( $event->ID ) . '">' . $event->post_title . '</a><br>' . date( 'n/j/Y g:ia', $event->_p_event_start ) . '</p>';
+			}
+		}
+
+		// close the widget tag
+		echo $args['after_widget'];
+	}
+			
+
+	// Widget Backend 
+	public function form( $instance ) {
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'title' ] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'limit' ); ?>"><?php _e( 'Limit:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'limit' ] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Category:' ); ?></label> 
+			<?php 	
+			wp_dropdown_categories( array(
+				'show_option_all' => 'All Event Categories',
+				'orderby' => 'NAME', 
+				'taxonomy' => 'event_cat',
+				'class' => 'event-category',
+				'id' => $this->get_field_id( 'category' ),
+				'name' => $this->get_field_name( 'category' ),
+				'selected' => $instance['category'],
+			) );
+			?>
+		</p>
+		<hr>
+		<?php
+	}
+	
+
+	// Updating widget replacing old instances with new
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+
+		$instance[ 'title' ] = $new_instance[ 'title' ];
+		$instance[ 'limit' ] = $new_instance[ 'limit' ];
+		$instance[ 'category' ] = $new_instance[ 'category' ];
+
+		return $instance;
+	}
+
+}
+
+
+
 // enable sortable columns for event post type
 add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
 function edit_event_sort($columns) {
@@ -479,6 +640,11 @@ function edit_event_sort($columns) {
 	return wp_parse_args($custom, $columns);
 }
 
+// Register and load the widget
+function register_events_widget() {
+	register_widget( 'event_widget' );
+}
+add_action( 'widgets_init', 'register_events_widget' );
 
 
 

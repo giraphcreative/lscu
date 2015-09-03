@@ -136,3 +136,15 @@
 
 
 
+.widget_events_widget {
+	p {
+		padding: 5px 10px;
+		font-size: 14px;
+		line-height: 22px;
+
+		a {
+			@include font-bold;
+		}
+	}
+}
+

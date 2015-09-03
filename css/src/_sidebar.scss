@@ -133,7 +133,7 @@
 			}
 		}
 
-		&.tribe-events-list-widget {
+		&.tribe-events-list-widget, &.widget_events_widget {
 			.widget-title:before {
 				background-image: url(../img/icon-events-small.png);
 			}
