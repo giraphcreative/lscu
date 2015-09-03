@@ -374,4 +374,112 @@ function duration( $start, $end ) {
 
 
 
+// set the event columns for the event custom post type
+add_filter( 'manage_edit-event_columns', 'edit_event_columns' ) ;
+function edit_event_columns( $columns ) {
+
+	$columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __( 'Movie' ),
+		'start' => __( 'Starts' ),
+		'end' => __( 'Ends' ),
+		'category' => __( 'Category' ),
+	);
+
+	return $columns;
+}
+
+
+
+// add content to custom event admin listing columns
+add_action( 'manage_event_posts_custom_column', 'manage_event_columns', 10, 2 );
+function manage_event_columns( $column, $post_id ) {
+	global $post;
+
+	switch( $column ) {
+
+		/* If displaying the 'duration' column. */
+		case 'start' :
+
+			/* Get the post meta. */
+			$start = get_post_meta( $post_id, '_p_event_start', true );
+
+			/* If no duration is found, output a default message. */
+			if ( empty( $start ) )
+				echo __( '-' );
+
+			/* If there is a duration, append 'minutes' to the text string. */
+			else
+				printf( date( 'n/j/Y @ g:ia', $start ) );
+
+			break;
+
+		/* If displaying the 'duration' column. */
+		case 'end' :
+
+			/* Get the post meta. */
+			$end = get_post_meta( $post_id, '_p_event_end', true );
+
+			/* If no duration is found, output a default message. */
+			if ( empty( $end ) )
+				echo __( '-' );
+
+			/* If there is a duration, append 'minutes' to the text string. */
+			else
+				printf( date( 'n/j/Y @ g:ia', $end) );
+
+			break;
+
+		/* If displaying the 'genre' column. */
+		case 'category' :
+
+			/* Get the genres for the post. */
+			$terms = get_the_terms( $post_id, 'event_cat' );
+
+			/* If terms were found. */
+			if ( !empty( $terms ) ) {
+
+				$out = array();
+
+				/* Loop through each term, linking to the 'edit posts' page for the specific term. */
+				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'genre' => $term->slug ), 'edit.php' ) ),
+						esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'genre', 'display' ) )
+					);
+				}
+
+				/* Join the terms, separating them with a comma. */
+				echo join( ', ', $out );
+			}
+
+			/* If no terms were found, output a default message. */
+			else {
+				_e( 'No Category' );
+			}
+
+			break;
+
+		/* Just break out of the switch statement for everything else. */
+		default :
+			break;
+	}
+}
+
+
+
+// enable sortable columns for event post type
+add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
+function edit_event_sort($columns) {
+	$custom = array(
+		'start' 	=> '_p_event_start',
+		'end' 		=> '_p_event_end',
+		'category'  => 'event_cat'
+	);
+	return wp_parse_args($custom, $columns);
+}
+
+
+
+
 ?>
