@@ -1,6 +1,7 @@
 <?php
 
 
+// adjust post thumbnail sizes to generate
 if ( function_exists( 'add_theme_support' ) ) {
 
 	// enable featured image
@@ -11,6 +12,9 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 }
 
+
+
+// add more image sizes.
 if ( function_exists( 'add_image_size' ) ) {
 
 	// set the default story thumbnail size
@@ -21,8 +25,6 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'story-image-large', 1000, 500, true );
 
 }
-
-
 
 
 
@@ -109,6 +111,7 @@ function p_image_resize( $url, $width, $height = null, $crop = null, $single = t
 }
 
 
+
 // returns a boolean indicating if the path provided leads to an image.
 function p_is_image( $img_path ) {
 
@@ -124,6 +127,8 @@ function p_is_image( $img_path ) {
 }
 
 
+
+// images added to posts shouldn't link to the image by default.
 function wpb_imagelink_setup() {
     $image_set = get_option( 'image_default_link_type' );
     
@@ -132,6 +137,20 @@ function wpb_imagelink_setup() {
     }
 }
 add_action('admin_init', 'wpb_imagelink_setup', 10);
+
+
+
+// adjust formats allowed in media library
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) { 
+    // Add *.EPS files to Media upload 
+    $existing_mimes['eps'] = 'application/postscript'; 
+
+    // Add *.AI files to Media upload 
+    $existing_mimes['ai'] = 'application/postscript'; 
+    return $existing_mimes; 
+}
+
 
 
 ?>
