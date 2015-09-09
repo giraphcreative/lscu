@@ -204,7 +204,7 @@ em {
   font-family: "Avenir Italic", sans-serif;
   font-weight: normal; }
 
-strong em, em strong {
+strong em, em strong, h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
   font-family: "Avenir Demi Italic", sans-serif;
   font-weight: normal; }
 
