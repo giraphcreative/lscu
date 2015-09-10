@@ -1954,7 +1954,7 @@ img.mfp-img {
         font-weight: normal;
         font-size: 13px; }
       .calendar td .day-events .event-title {
-        margin-top: 6px;
+        margin-bottom: 8px;
         line-height: 20px; }
 
 .day-event-list {
@@ -1966,7 +1966,8 @@ img.mfp-img {
   .day-event-list .event-title {
     font-family: "Avenir Demi", sans-serif;
     font-weight: normal;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    margin-top: 5px; }
   .day-event-list .event-time {
     font-family: "Avenir Italic", sans-serif;
     font-weight: normal;
