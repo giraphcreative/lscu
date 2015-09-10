@@ -77,11 +77,11 @@
 			a {
 				@include font-bold;
 				font-size: .8em;
-				line-height: 1em;
+				line-height: .9em;
 			}
 
 			.event-title {
-				margin-top: 4px;
+				margin-bottom: 8px;
 			}
 
 		}
