@@ -1056,7 +1056,7 @@ body {
     width: 39%;
     margin: 0 .5%; }
   .three-fifth {
-    width: 59%;
+    width: 58%;
     margin: 0 1% 0 0; }
   .two-third {
     width: 66%;
@@ -1984,8 +1984,7 @@ img.mfp-img {
   @media only screen and (min-width: 768px) {
     .event-info {
       padding: 0 20px;
-      border-left: 4px solid #d4d5d6;
-      margin: 0 0 50px 30px; } }
+      border-left: 4px solid #d4d5d6; } }
   .event-info label {
     font-family: "Avenir Demi", sans-serif;
     font-weight: normal; }
