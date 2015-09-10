@@ -330,6 +330,10 @@ function show_month_events( $month, $year ) {
 	// keep going with days....
 	for ( $list_day = 1; $list_day <= $days_in_month; $list_day++ ) :
 
+		// let's check the start and end of the day
+		$day_start = mktime( 0, 0, 0, $month, $list_day, $year );
+		$day_end = mktime( 23, 59, 59, $month, $list_day, $year );
+
 		// loop through all the events and list them for this day.
 		$day_events = '';
 		foreach ( $events as $event ) {
@@ -339,10 +343,6 @@ function show_month_events( $month, $year ) {
 				$day_events .= "<div class='event-title'><a href=\"" . ( !empty( $event->_p_event_website ) ? $event->_p_event_website : get_permalink( $event->ID ) ) . "\">" . $event->post_title . "</a></div><div class='event-time'>" . date( "n/j g:i a", $event->_p_event_start ) . " - " . date( "g:i a", $event->_p_event_end ) . "</div><div class='event-description'>" . $event->post_excerpt . "</div>";
 			}
 		}
-
-		// let's check the start and end of the day
-		$day_start = mktime( 0, 0, 0, $month, $list_day, $year );
-		$day_end = mktime( 23, 59, 59, $month, $list_day, $year );
 
 		// start building out the day.
 		$calendar .= '<td class="calendar-day">';
