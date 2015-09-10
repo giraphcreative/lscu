@@ -31,7 +31,7 @@ get_header();
 				<?php 
 				// display credit union name
 				if ( has_cmb_value( 'event_start' ) ) {
-					print "<h3>" . date( "F nS", get_cmb_value( 'event_start' ) ) . "</h3>";
+					print "<h3>" . date( "F jS", get_cmb_value( 'event_start' ) ) . "</h3>";
 					print "<p>" . date( "g:i a", get_cmb_value( 'event_start' ) );
 					if ( has_cmb_value( 'event_end' ) ) {
 						print " - " . date( "g:i a", get_cmb_value( 'event_end' ) );
