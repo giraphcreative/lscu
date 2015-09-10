@@ -279,7 +279,7 @@ function get_next_month( $month, $year ) {
 // show month events
 function show_month_events( $month, $year ) {
 
-	$event_list_url = "/events-new";
+	$event_list_url = "/events";
 
 	// let's make an empty calendar
 	$calendar = '';
