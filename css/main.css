@@ -1952,10 +1952,10 @@ img.mfp-img {
       .calendar td .day-events a {
         font-family: "Avenir Demi", sans-serif;
         font-weight: normal;
-        font-size: .8em;
-        line-height: .8em; }
+        font-size: 13px; }
       .calendar td .day-events .event-title {
-        margin-bottom: 8px; }
+        margin-top: 6px;
+        line-height: 20px; }
 
 .day-event-list {
   display: block;

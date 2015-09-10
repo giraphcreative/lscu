@@ -76,12 +76,12 @@
 
 			a {
 				@include font-bold;
-				font-size: .8em;
-				line-height: .8em;
+				font-size: 13px;
 			}
 
 			.event-title {
-				margin-bottom: 8px;
+				margin-top: 6px;
+				line-height: 20px;
 			}
 
 		}
