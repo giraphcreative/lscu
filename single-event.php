@@ -116,9 +116,8 @@ get_header();
 				}
 				?>
 			</div>
-				<?php 
-				the_content();
-			
+			<div class="three-fifth"><?php the_content(); ?></div>
+				<?php
 			endwhile;
 		endif;
 		 ?>

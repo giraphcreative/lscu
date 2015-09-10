@@ -1042,9 +1042,9 @@ body {
   padding: 0 0 20px; }
 
 @media only screen and (min-width: 768px) {
-  .quarter, .third, .half, .two-third, .three-quarter, .two-fifth {
+  .quarter, .third, .half, .two-third, .three-quarter, .two-fifth, .three-fifth {
     float: left; }
-    .quarter.right, .third.right, .half.right, .two-third.right, .three-quarter.right, .two-fifth.right {
+    .quarter.right, .third.right, .half.right, .two-third.right, .three-quarter.right, .two-fifth.right, .three-fifth.right {
       float: right; }
   .quarter {
     width: 24%;
@@ -1055,6 +1055,9 @@ body {
   .two-fifth {
     width: 39%;
     margin: 0 .5%; }
+  .three-fifth {
+    width: 59%;
+    margin: 0 1% 0 0; }
   .two-third {
     width: 66%;
     margin: 0 .5%; }
