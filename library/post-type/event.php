@@ -109,7 +109,6 @@ function add_event_caps() {
     $role->add_cap( 'read_private_events' );
     $role->add_cap( 'edit_private_events' );
     $role->add_cap( 'edit_published_events' );
-    $role->add_cap( 'edit_events' );
 
 }
 add_action( 'admin_init', 'add_event_caps');

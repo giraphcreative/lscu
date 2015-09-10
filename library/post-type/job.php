@@ -104,7 +104,6 @@ function add_job_caps() {
     $role->add_cap( 'read_private_jobs' );
     $role->add_cap( 'edit_private_jobs' );
     $role->add_cap( 'edit_published_jobs' );
-    $role->add_cap( 'edit_jobs' );
 
 }
 add_action( 'admin_init', 'add_job_caps');
