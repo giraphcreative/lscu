@@ -24,7 +24,7 @@ $icon-width: 70px;
 		
 		&.events {
 			background-color: lighten( $navy, 50% );
-			.tribe-events-widget-link { display: none; }
+			.widget-title { display: none; }
 			h2, button { background-color: $navy; }
 			h2:before { background-image: url(../img/icon-events.png); }
 		}
