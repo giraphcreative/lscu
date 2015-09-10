@@ -50,7 +50,7 @@ function lscu_events() {
 				'with_front' => false 
 			), /* you can specify its url slug */
 			'has_archive' => 'events', /* you can rename the slug here */
-			'capability_type' => 'post',
+			'capability_type' => 'event',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
 			'supports' => array( 'title', 'editor', 'excerpt' )
@@ -89,6 +89,30 @@ register_taxonomy( 'event_cat',
 		)
 	)
 );
+
+
+
+// add capabilities
+function add_event_caps() {
+
+    // gets the author role
+    $role = get_role( 'administrator' );
+
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'read_event' );
+    $role->add_cap( 'edit_event' );
+    $role->add_cap( 'delete_event' );
+    $role->add_cap( 'edit_events' );
+    $role->add_cap( 'edit_others_events' );
+    $role->add_cap( 'publish_events' );
+    $role->add_cap( 'read_private_events' );
+    $role->add_cap( 'edit_private_events' );
+    $role->add_cap( 'edit_published_events' );
+    $role->add_cap( 'edit_events' );
+
+}
+add_action( 'admin_init', 'add_event_caps');
 
 
 
