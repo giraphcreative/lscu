@@ -36,12 +36,12 @@ get_header();
 					if ( has_cmb_value( 'event_end' ) ) {
 						print " - " . date( "g:i a", get_cmb_value( 'event_end' ) );
 					}
-					print " EST<br>";
+					print " E" . ( date('I') == 1 ? "S" : "D" ) . "T<br>";
 					print date( "g:i a", get_cmb_value( 'event_start' )-3600 );
 					if ( has_cmb_value( 'event_end' ) ) {
 						print " - " . date( "g:i a", get_cmb_value( 'event_end' )-3600 );
 					}
-					print " CST</p>";
+					print " C" . ( date('I') == 1 ? "S" : "D" ) . "T</p>";
 				}
 
 				// display the event duration.
