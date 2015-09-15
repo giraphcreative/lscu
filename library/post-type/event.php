@@ -475,7 +475,7 @@ function edit_event_columns( $columns ) {
 
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
-		'title' => __( 'Movie' ),
+		'title' => __( 'Event' ),
 		'start' => __( 'Starts' ),
 		'end' => __( 'Ends' ),
 		'category' => __( 'Category' ),
