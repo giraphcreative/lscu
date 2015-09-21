@@ -21,7 +21,7 @@ get_header();
 				<div class="third-content">
 				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-events')) : ?>[events widget]<?php endif; ?>
 				</div>
-				<button class="home-third-button link-events" data-url="/events/month"><span>All Events</span></button>
+				<button class="home-third-button link-events" data-url="/events"><span>All Events</span></button>
 				<div class="clearfix"></div>
 			</div>
 
