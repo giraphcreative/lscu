@@ -494,23 +494,25 @@ function manage_event_clauses( $pieces, $query ) {
 	* We only want our code to run in the main WP query
 	* AND if an orderby query variable is designated.
 	*/
-	if ( $query->get( 'post_type' ) == 'event' && $query->get( 'event_cat' ) ) {
+	if ( $query->get( 'post_type' ) == 'event' && $query->get( 'orderby' ) == 'event_cat' ) {
 
 		// Get the order query variable - ASC or DESC
 		$order = strtoupper( $query->get( 'order' ) );
 
 		// Make sure the order setting qualifies. If not, set default as ASC
-		if ( $order == 'asc' ) $order = 'ASC';
-			else $order = 'DESC';
+		if ( $order != 'ASC' ) $order = 'DESC';
 
 		// join category name
 		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->term_relationships wp_termrel ON wp_termrel.object_id = {$wpdb->posts}.ID ";
 		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->term_taxonomy wp_termtax ON wp_termrel.term_taxonomy_id = wp_termtax.term_id ";
 		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->terms wp_terms ON wp_terms.term_id = wp_termtax.term_id ";
-			
+		
+		//
 		$pieces[ 'orderby' ] = "wp_terms.name $order";
 
 	}
+
+	print_r( $pieces );
 		
 	return $pieces;
 
