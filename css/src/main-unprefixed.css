@@ -1263,24 +1263,25 @@ img.alignleft {
   .sidebar .widget.cat-post-widget ul {
     padding: 10px; }
 
-.widget_multi_twitter .tweet {
-  padding: 10px; }
-  .widget_multi_twitter .tweet .twitter-avatar {
+.twitter-aggregator-tweet {
+  padding: 5px 5px 15px; }
+  .twitter-aggregator-tweet .twitter-aggregator-tweet-profile-pic {
     display: none; }
-  .widget_multi_twitter .tweet .tweet-userName {
+  .twitter-aggregator-tweet .twitter-aggregator-tweet-profile-name {
     font-family: "Avenir Demi", sans-serif;
     font-weight: normal;
     float: left;
     color: #797b7f;
     padding: 4px 0;
     line-height: 25px; }
-  .widget_multi_twitter .tweet .tweet-time {
+  .twitter-aggregator-tweet .twitter-aggregator-tweet-time {
     float: right;
     font-size: .8em;
     line-height: 25px;
     color: #adafb1;
     padding: 4px 0; }
-  .widget_multi_twitter .tweet .tweet-message {
+  .twitter-aggregator-tweet .twitter-aggregator-tweet-text {
+    clear: both;
     font-size: .9em; }
 
 footer {

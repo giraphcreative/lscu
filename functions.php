@@ -51,6 +51,10 @@ include( "library/post-type/job.php" );
 include( "library/post-type/event.php" );
 
 
+// widgets
+include( "library/twitter-aggregator/widget.php" );
+
+
 // [anchor] shortcode
 function p_anchor( $atts, $content = null, $code = "" ) {
     return '<a name="'.$content.'"></a>';
