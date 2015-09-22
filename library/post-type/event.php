@@ -486,6 +486,37 @@ function edit_event_columns( $columns ) {
 
 
 
+add_filter( 'posts_clauses', 'manage_event_clauses', 1, 2 );
+function manage_event_clauses( $pieces, $query ) {
+	global $wpdb;
+
+	/**
+	* We only want our code to run in the main WP query
+	* AND if an orderby query variable is designated.
+	*/
+	if ( $query->get( 'post_type' ) == 'event' && $query->get( 'event_cat' ) ) {
+
+		// Get the order query variable - ASC or DESC
+		$order = strtoupper( $query->get( 'order' ) );
+
+		// Make sure the order setting qualifies. If not, set default as ASC
+		if ( $order == 'asc' ) $order = 'ASC';
+			else $order = 'DESC';
+
+		// join category name
+		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->term_relationships wp_termrel ON wp_termrel.object_id = {$wpdb->posts}.ID ";
+		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->term_taxonomy wp_termtax ON wp_termrel.term_taxonomy_id = wp_termtax.term_id ";
+		$pieces[ 'join' ] .= " LEFT JOIN $wpdb->terms wp_terms ON wp_terms.term_id = wp_termtax.term_id ";
+			
+		$pieces[ 'orderby' ] = "wp_terms.name $order";
+
+	}
+		
+	return $pieces;
+
+}
+
+
 // add content to custom event admin listing columns
 add_action( 'manage_event_posts_custom_column', 'manage_event_columns', 10, 2 );
 function manage_event_columns( $column, $post_id ) {
@@ -664,7 +695,7 @@ function edit_event_sort($columns) {
 	$custom = array(
 		'start' 	=> '_p_event_start',
 		'end' 		=> '_p_event_end',
-		'category'  => 'event_cat'
+		'category'	=> 'event_cat'
 	);
 	return wp_parse_args($custom, $columns);
 }
