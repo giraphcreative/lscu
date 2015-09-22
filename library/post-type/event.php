@@ -512,8 +512,6 @@ function manage_event_clauses( $pieces, $query ) {
 
 	}
 
-	print_r( $pieces );
-		
 	return $pieces;
 
 }
