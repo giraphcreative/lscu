@@ -10,15 +10,15 @@ jQuery(document).ready(function($){
 			$( '.day-event-list' ).html( $(this).find( '.day-events' ).html() );
 		});
 
-		$( 'select.event-category' ).change(function(){
-			location.href = $.query.set( "event_category", $(this).val() );
-		});
-
-		$( 'a.month-nav' ).click(function(){
-			location.href = $.query.set( "event_category", $(this).val() );
-		});
-
 	}
+
+	$( 'select.event-category' ).change(function(){
+		location.href = $.query.set( "event_category", $(this).val() );
+	});
+
+	$( 'a.month-nav' ).click(function(){
+		location.href = $.query.set( "mo", $(this).data('month') ).set( "yr", $(this).data('year') );
+	});
 
 });
 

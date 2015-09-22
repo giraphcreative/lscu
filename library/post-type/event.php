@@ -321,8 +321,8 @@ function show_month_events( $month, $year ) {
 	$prev_ts = mktime( 0, 0, 0, $prev['month'], 1, $prev['year'] );
 	$next = get_next_month( $month, $year );
 	$next_ts = mktime( 0, 0, 0, $next['month'], 1, $next['year'] );
-	$calendar .= '<a href="' . $event_list_url . "?mo=" . $prev['month'] . '&yr=' . $prev['year'] . '" class="month-nav previous">&laquo; ' . date( "F", $prev_ts ) . '</a>';
-	$calendar .= '<a href="' . $event_list_url . "?mo=" . $next['month'] . '&yr=' . $next['year'] . '" class="month-nav next">' . date( "F", $next_ts ) . ' &raquo;</a>';
+	$calendar .= '<a data-month="' . $prev['month'] . '" data-year="' . $prev['year'] . '" class="month-nav previous">&laquo; ' . date( "F", $prev_ts ) . '</a>';
+	$calendar .= '<a data-month="' . $next['month'] . '" data-year="' . $next['year'] . '" class="month-nav next">' . date( "F", $next_ts ) . ' &raquo;</a>';
 
 	// add month title
 	$calendar .= '<h2 class="calendar-month-title">' . date( 'F Y', mktime( 0, 0, 0, $month, 1, $year ) ) . "</h2>";

@@ -1934,7 +1934,8 @@ img.mfp-img {
   border-radius: 10px;
   text-decoration: none;
   margin-bottom: 10px;
-  float: left; }
+  float: left;
+  cursor: pointer; }
   .month-nav.next {
     float: right; }
   .month-nav:hover {
