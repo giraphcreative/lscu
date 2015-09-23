@@ -5,6 +5,13 @@
 
 get_header(); 
 
+if ( isset( $_REQUEST['event_category'] ) ) {
+	$category_info = get_term_by( 'id', $_REQUEST['event_category'], 'event_cat' );
+	$page_title = $category_info->name;
+} else {
+	$page_title = "Education Calendar";
+}
+
 ?>
 	<div class="large-title bg-lime">
 		<div class="wrap">
@@ -13,14 +20,14 @@ get_header();
 				<div class="hex2"></div>
 			</div>
 			<div class="large-title-text">
-				<h1>Education Calendar</h1>
+				<h1><?php print $page_title; ?></h1>
 			</div>
 		</div>
 	</div>
 	
 	<div id="content" class="wrap content-wide" role="main">
 		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-		    <span><a href="<?php home_url() ?>" class="home">LSCU</a></span> &gt; <span><span>Education Calendar</span></span>
+		    <span><a href="<?php home_url() ?>" class="home">LSCU</a></span> &gt; <span><span><?php print $page_title; ?></span></span>
 		</div>
 		<p><strong>Filter by Event Type:</strong> <?php filter_by_event_type(); ?></p>
 		<br>
