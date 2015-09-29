@@ -666,6 +666,7 @@ class event_widget extends WP_Widget {
 				'id' => $this->get_field_id( 'category' ),
 				'name' => $this->get_field_name( 'category' ),
 				'selected' => $instance['category'],
+				'hierarchical' => true
 			) );
 			?>
 		</p>
