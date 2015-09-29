@@ -1964,10 +1964,8 @@ img.mfp-img {
         font-weight: normal;
         font-size: 13px; }
       .calendar td .day-events .event {
-        padding: 5px 0;
+        padding: 7px 0;
         border-top: 1px solid #c7c8ca; }
-        .calendar td .day-events .event:first-child {
-          border-top: 0; }
       .calendar td .day-events .event-title {
         line-height: 20px; }
 
