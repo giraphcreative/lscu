@@ -5,11 +5,11 @@
 
 get_header(); 
 
-if ( isset( $_REQUEST['event_category'] ) ) {
+if ( isset( $_REQUEST['event_category'] ) && $_REQUEST['event_category']!=0 ) {
 	$category_info = get_term_by( 'id', $_REQUEST['event_category'], 'event_cat' );
 	$page_title = $category_info->name;
 } else {
-	$page_title = "Education Calendar";
+	$page_title = "Events Calendar";
 }
 
 ?>
