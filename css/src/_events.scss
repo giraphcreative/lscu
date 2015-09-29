@@ -79,9 +79,17 @@
 				@include font-bold;
 				font-size: 13px;
 			}
+			
+			.event {
+				padding: 5px 0;
+				border-top: 1px solid lighten( $grey, 20% );
+
+				&:first-child {
+					border-top: 0;
+				}
+			}
 
 			.event-title {
-				margin-bottom: 8px;
 				line-height: 20px;
 			}
 
