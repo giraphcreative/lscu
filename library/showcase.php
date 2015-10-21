@@ -25,7 +25,7 @@ function the_showcase() {
 					$image = '<img src="' . $slide["image"] . '" alt="' . ( !empty( $slide['title'] ) ? $slide['title'] : '' ) . '">';
 				} else {
 					// it's a video, so oEmbed that stuffs, yo
-					$image = apply_filter( 'the_content', $slide["image"] );
+					$image = apply_filters( 'the_content', $slide["image"] );
 				}
 
 				?>
@@ -113,7 +113,7 @@ function the_footer_showcase() {
 					$image = '<img src="' . $slide["image"] . '">';
 				} else {
 					// it's a video, so oEmbed that stuffs, yo
-					$image = apply_filter( 'the_content', $slide["image"] );
+					$image = apply_filters( 'the_content', $slide["image"] );
 				}
 
 				?>
