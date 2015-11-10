@@ -421,6 +421,7 @@ function show_month_events( $month, $year ) {
 
 
 
+// get a list of event categories in an array
 function get_event_categories() {
     $args = array(
 		'orderby'            => 'name',
@@ -434,6 +435,7 @@ function get_event_categories() {
 
 
 
+// filter events by category using a dropdown menu
 function filter_by_event_type() {
 
 	wp_dropdown_categories( 
@@ -450,6 +452,7 @@ function filter_by_event_type() {
 
 
 
+// returns a duration from start and end timestamps
 function duration( $start, $end ) {
 	// get duration in seconds
 	$duration_seconds = $end - $start;
@@ -459,11 +462,13 @@ function duration( $start, $end ) {
 	$hours = floor( ( $duration_seconds - ( $days * 86400 ) ) / 3600 );
 	$minutes = floor( ( $duration_seconds - ( $days * 86400 ) - ( $hours * 3600 ) ) / 60 );
 
+	// build a time string
 	$time_string_parts = array();
 	if ( $days > 0 ) $time_string_parts[] = $days . ' day' . ( $days > 1 ? 's' : '' );
 	if ( $hours > 0 ) $time_string_parts[] = $hours . ' hour' . ( $hours > 1 ? 's' : '' );
 	if ( $minutes > 0 ) $time_string_parts[]= $minutes . ' minute' . ( $minutes > 1 ? 's' : '' );
 
+	// return it.
 	return implode( ", ", $time_string_parts );
 }
 
@@ -486,6 +491,7 @@ function edit_event_columns( $columns ) {
 
 
 
+// add some post clauses to select more fields when we get events.
 add_filter( 'posts_clauses', 'manage_event_clauses', 1, 2 );
 function manage_event_clauses( $pieces, $query ) {
 	global $wpdb;
@@ -515,6 +521,7 @@ function manage_event_clauses( $pieces, $query ) {
 	return $pieces;
 
 }
+
 
 
 // add content to custom event admin listing columns
