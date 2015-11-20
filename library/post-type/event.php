@@ -717,4 +717,15 @@ add_action( 'widgets_init', 'register_events_widget' );
 
 
 
+add_action( 'rss2_item', 'rss_event_date' );
+
+function rss_event_date() {
+	global $post;
+	if ( $post->post_type == 'event' ) {
+		print "<eventDate>" . get_post_meta( $post->ID, CMB_PREFIX . 'event_start', 1 ) . "</eventDate>";
+	}
+}
+
+
+
 ?>
