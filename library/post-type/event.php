@@ -737,6 +737,8 @@ function rss_event_sort( $query ) {
 		$query->set('meta_key', CMB_PREFIX . 'event_start');
 		$query->set('order','ASC');
 		$query->set('posts_per_page','30');
+		$query->set('meta_value',mktime());
+		$query->set('meta_compare','>=');
 	}
 	return $query;
 }
