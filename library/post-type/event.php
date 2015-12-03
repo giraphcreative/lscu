@@ -730,4 +730,18 @@ add_action( 'rss2_item', 'rss_event_date' );
 
 
 
+// hook into feed and sort/limit event post type by event date.
+function rss_event_sort( $query ) {
+	if ( $query->is_feed && isset( $query->query['event_cat'] ) ) {
+		$query->set('orderby','meta_value');
+		$query->set('meta_key', CMB_PREFIX . 'event_start');
+		$query->set('order','ASC');
+		$query->set('posts_per_page','30');
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts', 'rss_event_sort' );
+
+
+
 ?>
