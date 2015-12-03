@@ -698,6 +698,14 @@ class event_widget extends WP_Widget {
 
 
 
+// Register and load the widget
+function register_events_widget() {
+	register_widget( 'event_widget' );
+}
+add_action( 'widgets_init', 'register_events_widget' );
+
+
+
 // enable sortable columns for event post type
 add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
 function edit_event_sort($columns) {
@@ -709,22 +717,16 @@ function edit_event_sort($columns) {
 	return wp_parse_args($custom, $columns);
 }
 
-// Register and load the widget
-function register_events_widget() {
-	register_widget( 'event_widget' );
-}
-add_action( 'widgets_init', 'register_events_widget' );
 
 
-
-add_action( 'rss2_item', 'rss_event_date' );
-
+// add the event data to the RSS feed for event post types.
 function rss_event_date() {
 	global $post;
 	if ( $post->post_type == 'event' ) {
 		print "<eventDate>" . get_post_meta( $post->ID, CMB_PREFIX . 'event_start', 1 ) . "</eventDate>";
 	}
 }
+add_action( 'rss2_item', 'rss_event_date' );
 
 
 
