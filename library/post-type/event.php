@@ -723,7 +723,7 @@ function edit_event_sort($columns) {
 function rss_event_date() {
 	global $post;
 	if ( $post->post_type == 'event' ) {
-		print "<eventDate>" . get_post_meta( $post->ID, CMB_PREFIX . 'event_start', 1 ) . "</eventDate>";
+		print "<eventDate>" . date( 'r', get_post_meta( $post->ID, CMB_PREFIX . 'event_start', 1 ) ) . "</eventDate>";
 	}
 }
 add_action( 'rss2_item', 'rss_event_date' );
