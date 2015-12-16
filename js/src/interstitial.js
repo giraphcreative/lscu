@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
 			}, 0 );
 
 			$.cookie(interstitial_cookie_key, 1, {
-				expires : 10           //expires in 10 days
+				expires : 1           //expires in 10 days
 			});
 
 		}
