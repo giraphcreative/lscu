@@ -55,6 +55,10 @@ include( "library/post-type/event.php" );
 include( "library/twitter-aggregator/widget.php" );
 
 
+// interstitial
+include( "library/interstitial.php" );
+
+
 // [anchor] shortcode
 function p_anchor( $atts, $content = null, $code = "" ) {
     return '<a name="'.$content.'"></a>';

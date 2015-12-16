@@ -11,7 +11,7 @@ function page_metaboxes( $meta_boxes ) {
 
     global $colors, $event_types;
 
-    // showcase metabox
+    // title metabox
     $title_metabox = new_cmb2_box( array(
         'id' => 'title_metabox',
         'title' => 'Large Title',
@@ -501,6 +501,38 @@ function page_metaboxes( $meta_boxes ) {
         'options' => $colors
     ) );
 
+
+
+    // interstitial metabox
+    $interstitial_metabox = new_cmb2_box( array(
+        'id' => 'interstitial_metabox',
+        'title' => 'Interstitial',
+        'desc' => "A lightweight floating advertisement/video that shows up over the top of the page for a set amount of seconds.",
+        'object_types' => array( 'page' ), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+    ));
+
+    $interstitial_metabox->add_field( array(
+        'name' => 'Image/Video',
+        'id'   => CMB_PREFIX . 'interstitial',
+        'type' => 'file',
+        'preview_size' => array( 200, 100 )
+    ) );
+
+    $interstitial_metabox->add_field( array(
+        'name' => 'Link',
+        'id'   => CMB_PREFIX . 'interstitial-link',
+        'type' => 'text_url',
+    ) );
+
+    $interstitial_metabox->add_field( array(
+        'name' => 'Delay',
+        'desc' => 'Set a timeout for how long the ad/video should display. Set to "0" for no timeout.',
+        'id'   => CMB_PREFIX . 'interstitial-delay',
+        'type' => 'text',
+        'default' => '30'
+    ) );
 
 }
 add_filter( 'cmb2_init', 'page_metaboxes' );
