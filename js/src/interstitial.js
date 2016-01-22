@@ -89,7 +89,7 @@ jQuery(document).ready(function($){
 						}
 
 						// navigate when they click the content of the magnific popup.
-						mfp_interstitial.content.click(function(){
+						mfp_interstitial.content.find("figure").click(function(){
 							if ( interstitial_href.length != 0 ) {
 								location.href = interstitial_href;
 							}
@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
 			}, 0 );
 
 			$.cookie(interstitial_cookie_key, 1, {
-				expires : 1           //expires in 10 days
+				expires : 1           //expires in 1 day
 			});
 
 		}
