@@ -155,6 +155,11 @@ img, .wp-caption {
 .wp-caption {
 	width: 300px !important;
 
+	img {
+		margin: 0 !important;
+		float: none !important;
+	}
+
 	.wp-caption-text {
 		clear: both;
 		padding: 8px 10px;
