@@ -156,6 +156,7 @@ img, .wp-caption {
 	width: 300px !important;
 
 	.wp-caption-text {
+		clear: both;
 		padding: 8px 10px;
 		font-size: .85em;
 		color: $grey-dark;
