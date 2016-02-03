@@ -1131,7 +1131,7 @@ img.aligncenter, .wp-caption.aligncenter {
     background: #a0a2a4; }
 
 .wp-caption {
-  width: auto !important; }
+  width: 300px !important; }
   .wp-caption .wp-caption-text {
     font-size: .85em;
     color: #47494b;
