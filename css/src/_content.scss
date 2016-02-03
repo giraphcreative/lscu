@@ -146,6 +146,21 @@ img {
 }
 
 
+.wp-caption {
+	@include respond-to( 500px ){
+		&.alignright {
+			float: right;
+			margin: 0 0 15px 15px;
+		}
+
+		&.alignleft {
+			float: left;
+			margin: 0 15px 15px 0;
+		}
+	}
+}
+
+
 .tablepress-id-38 {
 	td {
 		width: 33.33%;
