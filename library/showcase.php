@@ -30,7 +30,7 @@ function the_showcase() {
 
 				?>
 			<div class="slide<?php print ( $key == 0 ? ' visible' : '' ); ?>">
-				<?php if ( !empty( $link ) ) { ?><a href="<?php print $link ?>" class="<?php print ( stristr( $link, 'vimeo' ) || stristr( $link, 'youtube' ) || stristr( $link, 'google.com/maps' ) && !stristr( $link, '/channel' ) ? 'lightbox-iframe' : '' ) ?>"><?php } ?>
+				<?php if ( !empty( $link ) ) { ?><a href="<?php print $link ?>" class="<?php print ( ( stristr( $link, 'vimeo' ) || stristr( $link, 'youtube' ) || stristr( $link, 'google.com/maps' ) ) && !stristr( $link, 'channel' ) ? 'lightbox-iframe' : '' ) ?>"><?php } ?>
 				<?php print $image; ?>
 				<?php if ( !empty( $link ) ) { ?></a><?php } ?>
 			</div>
