@@ -14,7 +14,7 @@ function the_accordion() {
 		<?php
 		$count = 0;
 		foreach ( $boxes as $key => $box ) {
-			if ( !empty( $box["title"] ) && !empty( $box["content"] ) ) {
+			if ( !empty( $box["title"] ) && !empty( $box["content"] ) && empty( $box["hide"] ) ) {
 
 				// store the title and subtitle
 				$title = ( isset( $box["title"] ) ? $box["title"] : '' );
