@@ -143,7 +143,7 @@ function get_day_events( $m, $d, $y ) {
 				array(
 					'key' => '_p_event_end',
 					'value' => mktime( 23, 59, 59, $m, $d, $y ),
-					'compare' => '>='
+					'compare' => '<='
 				)
 			),
 			array(
