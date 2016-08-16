@@ -1416,7 +1416,8 @@ footer {
     margin-top: 10px; }
     @media only screen and (min-width: 768px) {
       footer .cuna {
-        float: right; }
+        float: right;
+        clear: both; }
         footer .cuna:after {
           clear: right; } }
 

@@ -120,6 +120,7 @@ footer {
 
 		@include respond-to( 768px ) {
 			float: right;
+			clear: both;
 
 			&:after {
 				clear: right;
