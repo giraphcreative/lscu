@@ -8,9 +8,7 @@ footer {
 	@include clearfix;
 
 	.column {
-		&.first {
-			text-align: center;
-		}
+		text-align: center;
 
 		@include respond-to( 768px ) {
 			float: left;
@@ -26,6 +24,7 @@ footer {
 			
 			&.last {
 				width: 27%;
+				text-align: left;
 			}
 		}
 
@@ -61,6 +60,7 @@ footer {
 		ul {
 			list-style-type: disc;
 			padding: 10px 20px;
+			text-align: left;
 	
 			@include respond-to( 1220px ) {
 				padding: 10px;
@@ -114,5 +114,17 @@ footer {
 		}
 	}
 
+	.cuna {
+		max-width: 50%;
+		margin-top: 10px;
+
+		@include respond-to( 768px ) {
+			float: right;
+
+			&:after {
+				clear: right;
+			}
+		}
+	}
 }
 

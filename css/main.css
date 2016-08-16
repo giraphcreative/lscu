@@ -621,7 +621,6 @@ header {
       left: 5.6602540378px;
       background: inherit;
       -webkit-transform: scaleY(0.5773502692) rotate(-45deg);
-          -ms-transform: scaleY(0.5773502692) rotate(-45deg);
               transform: scaleY(0.5773502692) rotate(-45deg); }
       .large-title .large-title-icon .hex1:after,
       .large-title .large-title-icon .hex2:after {
@@ -634,7 +633,6 @@ header {
         top: 0;
         background: inherit;
         -webkit-transform: rotate(45deg) scaleY(1.7320508076);
-            -ms-transform: rotate(45deg) scaleY(1.7320508076);
                 transform: rotate(45deg) scaleY(1.7320508076); }
     .large-title .large-title-icon .hex1 {
       top: -21.2132034356px;
@@ -684,7 +682,6 @@ header {
           left: 9.9903810568px;
           background: inherit;
           -webkit-transform: scaleY(0.5773502692) rotate(-45deg);
-              -ms-transform: scaleY(0.5773502692) rotate(-45deg);
                   transform: scaleY(0.5773502692) rotate(-45deg); }
           .large-title .large-title-icon .hex1:after,
           .large-title .large-title-icon .hex2:after {
@@ -697,7 +694,6 @@ header {
             top: 0;
             background: inherit;
             -webkit-transform: rotate(45deg) scaleY(1.7320508076);
-                -ms-transform: rotate(45deg) scaleY(1.7320508076);
                     transform: rotate(45deg) scaleY(1.7320508076); }
         .large-title .large-title-icon .hex1 {
           top: -31.8198051534px;
@@ -747,7 +743,6 @@ header {
           left: 14.3205080757px;
           background: inherit;
           -webkit-transform: scaleY(0.5773502692) rotate(-45deg);
-              -ms-transform: scaleY(0.5773502692) rotate(-45deg);
                   transform: scaleY(0.5773502692) rotate(-45deg); }
           .large-title .large-title-icon .hex1:after,
           .large-title .large-title-icon .hex2:after {
@@ -760,7 +755,6 @@ header {
             top: 0;
             background: inherit;
             -webkit-transform: rotate(45deg) scaleY(1.7320508076);
-                -ms-transform: rotate(45deg) scaleY(1.7320508076);
                     transform: rotate(45deg) scaleY(1.7320508076); }
         .large-title .large-title-icon .hex1 {
           top: -42.4264068712px;
@@ -1187,7 +1181,6 @@ img.aligncenter, .wp-caption.aligncenter {
             bottom: 10px; } }
     .accordion .accordion-box .accordion-box-title.open h4:before {
       -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
               transform: rotate(180deg); }
   .accordion .accordion-box .accordion-box-content {
     display: none;
@@ -1216,7 +1209,7 @@ img.aligncenter, .wp-caption.aligncenter {
       background-color: #e1e2e3; }
 
 .gform_confirmation_message {
-  background: #c5ffe4;
+  background: #c6ffe4;
   border: 3px solid #007940;
   color: #007940;
   font-family: "Avenir Demi", sans-serif;
@@ -1283,7 +1276,6 @@ img.aligncenter, .wp-caption.aligncenter {
     display: block; }
   .sidebar .widget.widget_nav_menu ul li.menu-item-has-children.open > a:before, .sidebar .widget.widget_categories ul li.menu-item-has-children.open > a:before {
     -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
             transform: rotate(180deg); }
   .sidebar .widget.widget_nav_menu ul li ul li a, .sidebar .widget.widget_categories ul li ul li a {
     padding: 5px 10px 3px 25px; }
@@ -1359,25 +1351,26 @@ footer {
     display: table; }
   footer, footer:before, footer:after {
     clear: both; }
-  footer .column.first {
+  footer .column {
     text-align: center; }
-  @media only screen and (min-width: 768px) {
-    footer .column {
-      float: left;
-      border-left: 6px solid white;
-      min-height: 300px;
-      padding: 15px 25px;
-      width: 28%; }
-      footer .column.first {
-        border-left: 0;
-        width: 45%; }
-      footer .column.last {
-        width: 27%; } }
-  @media only screen and (min-width: 1220px) {
-    footer .column .address {
-      float: left;
-      width: 50%;
-      padding: 20px 0; } }
+    @media only screen and (min-width: 768px) {
+      footer .column {
+        float: left;
+        border-left: 6px solid white;
+        min-height: 300px;
+        padding: 15px 25px;
+        width: 28%; }
+        footer .column.first {
+          border-left: 0;
+          width: 45%; }
+        footer .column.last {
+          width: 27%;
+          text-align: left; } }
+    @media only screen and (min-width: 1220px) {
+      footer .column .address {
+        float: left;
+        width: 50%;
+        padding: 20px 0; } }
   footer h3 {
     font-family: "Avenir", sans-serif;
     font-weight: normal;
@@ -1395,7 +1388,8 @@ footer {
     text-decoration: none; }
   footer nav ul {
     list-style-type: disc;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    text-align: left; }
     @media only screen and (min-width: 1220px) {
       footer nav ul {
         padding: 10px; }
@@ -1433,6 +1427,14 @@ footer {
       text-indent: -400px;
       cursor: pointer;
       margin-top: -25px; }
+  footer .cuna {
+    max-width: 50%;
+    margin-top: 10px; }
+    @media only screen and (min-width: 768px) {
+      footer .cuna {
+        float: right; }
+        footer .cuna:after {
+          clear: right; } }
 
 .home-thirds {
   padding: 10px 20px;
@@ -1578,12 +1580,10 @@ footer {
   cursor: progress; }
 
 .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out; }
 
 .mfp-zoom {
   cursor: pointer;
-  cursor: -webkit-zoom-in;
   cursor: zoom-in; }
 
 .mfp-auto-cursor .mfp-content {
@@ -1874,16 +1874,13 @@ img.mfp-img {
 @media all and (max-width: 900px) {
   .mfp-arrow {
     -webkit-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-        transform: scale(0.75); }
+    transform: scale(0.75); }
   .mfp-arrow-left {
     -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
-        transform-origin: 0; }
+    transform-origin: 0; }
   .mfp-arrow-right {
     -webkit-transform-origin: 100%;
-    -ms-transform-origin: 100%;
-        transform-origin: 100%; }
+    transform-origin: 100%; }
   .mfp-container {
     padding-left: 6px;
     padding-right: 6px; } }

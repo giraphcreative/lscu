@@ -1196,7 +1196,7 @@ img.aligncenter, .wp-caption.aligncenter {
       background-color: #e1e2e3; }
 
 .gform_confirmation_message {
-  background: #c5ffe4;
+  background: #c6ffe4;
   border: 3px solid #007940;
   color: #007940;
   font-family: "Avenir Demi", sans-serif;
@@ -1335,25 +1335,26 @@ footer {
     display: table; }
   footer, footer:before, footer:after {
     clear: both; }
-  footer .column.first {
+  footer .column {
     text-align: center; }
-  @media only screen and (min-width: 768px) {
-    footer .column {
-      float: left;
-      border-left: 6px solid white;
-      min-height: 300px;
-      padding: 15px 25px;
-      width: 28%; }
-      footer .column.first {
-        border-left: 0;
-        width: 45%; }
-      footer .column.last {
-        width: 27%; } }
-  @media only screen and (min-width: 1220px) {
-    footer .column .address {
-      float: left;
-      width: 50%;
-      padding: 20px 0; } }
+    @media only screen and (min-width: 768px) {
+      footer .column {
+        float: left;
+        border-left: 6px solid white;
+        min-height: 300px;
+        padding: 15px 25px;
+        width: 28%; }
+        footer .column.first {
+          border-left: 0;
+          width: 45%; }
+        footer .column.last {
+          width: 27%;
+          text-align: left; } }
+    @media only screen and (min-width: 1220px) {
+      footer .column .address {
+        float: left;
+        width: 50%;
+        padding: 20px 0; } }
   footer h3 {
     font-family: "Avenir", sans-serif;
     font-weight: normal;
@@ -1371,7 +1372,8 @@ footer {
     text-decoration: none; }
   footer nav ul {
     list-style-type: disc;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    text-align: left; }
     @media only screen and (min-width: 1220px) {
       footer nav ul {
         padding: 10px; }
@@ -1409,6 +1411,14 @@ footer {
       text-indent: -400px;
       cursor: pointer;
       margin-top: -25px; }
+  footer .cuna {
+    max-width: 50%;
+    margin-top: 10px; }
+    @media only screen and (min-width: 768px) {
+      footer .cuna {
+        float: right; }
+        footer .cuna:after {
+          clear: right; } }
 
 .home-thirds {
   padding: 10px 20px;

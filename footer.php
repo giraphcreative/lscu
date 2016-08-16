@@ -34,6 +34,7 @@
 				'menu_class' => 'nav-menu' ) 
 			); ?>
 		</nav>
+		<a href="http://www.cuna.org/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/logo-cuna.png" class="cuna"></a>
 	</div>
 	<div class="column last">
 		<h3>Sign Up For News</h3>
