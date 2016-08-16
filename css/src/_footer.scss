@@ -115,12 +115,15 @@ footer {
 	}
 
 	.cuna {
-		max-width: 40%;
-		margin-top: 10px;
+		max-width: 50%;
+		margin: 10px auto;
+		text-align: left;
 
 		@include respond-to( 768px ) {
 			float: right;
 			clear: both;
+			margin: 10px 0 0 0;
+			padding-right: 10%;
 
 			&:after {
 				clear: right;
