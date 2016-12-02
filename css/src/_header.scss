@@ -51,8 +51,8 @@ header {
 				display: block;
 			}
 
-			& > li:nth-child( 9 ) { background: $green; & > a { font-style: italic; } }
-			& > li:nth-child( 10 ) { background: $teal; }
+			& > li:nth-child( 9 ) { background: $teal; }
+			& > li:nth-child( 10 ) { background: $green; & > a { font-style: italic; } }
 
 			& > li {
 				box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3);
@@ -230,8 +230,8 @@ header {
 			& > li:nth-child( 6 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $orange; &:hover { background: lighten( $orange, 5% ); } } }
 			& > li:nth-child( 8 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $grey; &:hover { background: lighten( $grey, 5% ); } } }
 			& > li:nth-child( 5 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
-			& > li:nth-child( 9 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $forest; &:hover { background: lighten( $forest, 5% ); } } }
-			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
+			& > li:nth-child( 9 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
+			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $forest; &:hover { background: lighten( $forest, 5% ); } } }
 		}
 	}
 	
