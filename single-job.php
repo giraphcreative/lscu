@@ -28,7 +28,7 @@ get_header();
 				<?php if ( has_cmb_value( 'job_contact_name' ) ) { ?>
 				<p>
 				<?php print ( has_cmb_value( 'job_contact_name' ) ? "<label>Contact:</label> " . get_cmb_value( 'job_contact_name' ) . '<br>' : '' ); ?>
-				<?php print ( has_cmb_value( 'job_contact_email' ) ? '<label>Email:</label> <a href="' . get_cmb_value( 'job_contact_email' ) . '">' . get_cmb_value( 'job_contact_email' ) . '</a><br>' : '' ); ?>
+				<?php print ( has_cmb_value( 'job_contact_email' ) ? '<label>Email:</label> <a href="mailto:' . get_cmb_value( 'job_contact_email' ) . '">' . get_cmb_value( 'job_contact_email' ) . '</a><br>' : '' ); ?>
 				<?php print ( has_cmb_value( 'job_contact_phone' ) ? '<label>Phone:</label> ' . get_cmb_value( 'job_contact_phone' ) . '<br>' : '' ); ?>
 				<?php print ( has_cmb_value( 'job_contact_fax' ) ? "<label>Fax:</label> " . get_cmb_value( 'job_contact_fax' ) . "<br>" : '' ); ?>
 				</p>
