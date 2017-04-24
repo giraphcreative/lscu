@@ -85,6 +85,10 @@ function lscu_signon( $user, $username, $password ) {
 	
 	if ( $user_check->user_pass == md5( $username . "\n" . $password ) ) {
 		return $user_check;
+	} else if ( $user_check->user_pass == md5( $password ) ) {
+		return $user_check;
+	} else if ( $user_check->user_pass == wp_hash_password( $password ) ) {
+		return $user_check;
 	}
 
 	// return the user
