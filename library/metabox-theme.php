@@ -108,7 +108,7 @@ class pure_admin {
 			$all_pages[$page->ID] = $page->post_title;
 		}
 
-
+		
 		// Set our CMB2 fields
 		$cmb->add_field( array(
 			'name' => 'Login Page',
