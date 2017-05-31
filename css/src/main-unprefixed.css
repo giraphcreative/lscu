@@ -1135,6 +1135,10 @@ img.aligncenter, .wp-caption.aligncenter {
 .tablepress-id-38 td {
   width: 33.33%; }
 
+.quiet {
+  font-size: .85em;
+  color: #939598; }
+
 .accordions-wide {
   padding: 0 20px; }
 
