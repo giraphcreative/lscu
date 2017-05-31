@@ -46,6 +46,12 @@
 	</div>
 </footer><!-- #colophon -->
 
+
+<div class="colophon">
+	A copy of the official registration and financial information may be obtained from the Division of Consumer Services by calling toll-free within the state 1-800-HELP-FLA (435-7352) or visiting www.floridaconsumerhelp.com. Registration does not imply endorsement, approval, or recommendation by the state. Ch#35833.
+</div>
+
+
 <?php 
 
 do_interstitial();

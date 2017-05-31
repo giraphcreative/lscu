@@ -1434,6 +1434,11 @@ footer {
         footer .cuna:after {
           clear: right; } }
 
+.colophon {
+  padding: 20px;
+  font-size: .8em;
+  color: #939598; }
+
 .home-thirds {
   padding: 10px 20px;
   zoom: 1; }
