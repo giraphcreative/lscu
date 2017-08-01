@@ -50,7 +50,11 @@ get_header();
 			    }
 			    ?>
 			</div>
-			<?php if ( have_posts() ) : 
+			<?php 
+ 
+			query_posts( 'posts_per_page=6' );
+
+			if ( have_posts() ) : 
 
 				// Start the Loop.
 				while ( have_posts() ) : the_post(); 
