@@ -1351,7 +1351,7 @@ footer {
       footer .column {
         float: left;
         border-left: 6px solid white;
-        min-height: 300px;
+        min-height: 500px;
         padding: 15px 25px;
         width: 28%; }
         footer .column.first {
@@ -1360,11 +1360,19 @@ footer {
         footer .column.last {
           width: 27%;
           text-align: left; } }
+    @media only screen and (min-width: 1024px) {
+      footer .column {
+        min-height: 450px; } }
     @media only screen and (min-width: 1220px) {
-      footer .column .address {
-        float: left;
-        width: 50%;
-        padding: 20px 0; } }
+      footer .column {
+        min-height: 400px; }
+        footer .column .address {
+          float: left;
+          width: 50%;
+          padding: 20px 0; } }
+    footer .column .disclaimer {
+      color: white;
+      font-size: .8em; }
   footer h3 {
     font-family: "Avenir", sans-serif;
     font-weight: normal;

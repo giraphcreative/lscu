@@ -6,6 +6,15 @@ define( "CMB_PREFIX", "_p_" );
 
 
 
+// redirect incorrect URLs to the correct ones.
+$server = $_SERVER['HTTP_HOST'];
+if ( $server == 'lscu.giraphprojects.com' ) {
+    wp_redirect( 'http://www.lscu.coop' . $_SERVER['REQUEST_URI'] );
+    exit;
+}
+
+
+
 // define our color choices for all metaboxes.
 $colors = array(
     'sky' => 'Sky',

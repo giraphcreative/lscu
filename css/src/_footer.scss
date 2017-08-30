@@ -13,7 +13,7 @@ footer {
 		@include respond-to( 768px ) {
 			float: left;
 			border-left: 6px solid white;
-			min-height: 300px;
+			min-height: 500px;
 			padding: 15px 25px;
 			width: 28%;
 
@@ -28,12 +28,23 @@ footer {
 			}
 		}
 
+		@include respond-to( 1024px ) {
+			min-height: 450px;
+		}
+
 		@include respond-to( 1220px ) {
+			min-height: 400px;
+
 			.address {
 				float: left;
 				width: 50%;
 				padding: 20px 0;
 			}
+		}
+
+		.disclaimer {
+			color: white;
+			font-size: .8em;
 		}
 	}
 	
