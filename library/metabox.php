@@ -43,7 +43,6 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
 
-
     // showcase metabox
     $showcase_metabox = new_cmb2_box( array(
         'id' => 'showcase_metabox',

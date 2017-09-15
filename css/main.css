@@ -1367,7 +1367,7 @@ footer {
       footer .column {
         float: left;
         border-left: 6px solid white;
-        min-height: 500px;
+        min-height: 400px;
         padding: 15px 25px;
         width: 28%; }
         footer .column.first {
@@ -1378,7 +1378,7 @@ footer {
           text-align: left; } }
     @media only screen and (min-width: 1024px) {
       footer .column {
-        min-height: 450px; } }
+        min-height: 400px; } }
     @media only screen and (min-width: 1220px) {
       footer .column {
         min-height: 400px; }
@@ -1386,9 +1386,6 @@ footer {
           float: left;
           width: 50%;
           padding: 20px 0; } }
-    footer .column .disclaimer {
-      color: white;
-      font-size: .8em; }
   footer h3 {
     font-family: "Avenir", sans-serif;
     font-weight: normal;
@@ -1457,11 +1454,14 @@ footer {
         padding-right: 10%; }
         footer .cuna:after {
           clear: right; } }
-
-.colophon {
-  padding: 20px;
-  font-size: .8em;
-  color: #939598; }
+  footer .disclaimer {
+    clear: both;
+    color: white;
+    opacity: .5;
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 20px;
+    text-align: center; }
 
 .home-thirds {
   padding: 10px 20px;

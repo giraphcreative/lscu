@@ -13,7 +13,7 @@ footer {
 		@include respond-to( 768px ) {
 			float: left;
 			border-left: 6px solid white;
-			min-height: 500px;
+			min-height: 400px;
 			padding: 15px 25px;
 			width: 28%;
 
@@ -29,7 +29,7 @@ footer {
 		}
 
 		@include respond-to( 1024px ) {
-			min-height: 450px;
+			min-height: 400px;
 		}
 
 		@include respond-to( 1220px ) {
@@ -40,11 +40,6 @@ footer {
 				width: 50%;
 				padding: 20px 0;
 			}
-		}
-
-		.disclaimer {
-			color: white;
-			font-size: .8em;
 		}
 	}
 	
@@ -85,6 +80,7 @@ footer {
 		}
 	}
 
+
 	.social {
 		padding: 10px 0;
 		text-align: center;
@@ -93,6 +89,7 @@ footer {
 			max-width: 16.66%;
 		}
 	}
+
 
 	.subscribe {
 		position: relative;
@@ -125,6 +122,7 @@ footer {
 		}
 	}
 
+
 	.cuna {
 		max-width: 50%;
 		margin: 10px auto;
@@ -141,11 +139,16 @@ footer {
 			}
 		}
 	}
-}
 
-.colophon {
-	padding: 20px;
-	font-size: .8em;
-	color: $grey;
+
+	.disclaimer {
+		clear: both;
+		color: white;
+		opacity: .5;
+		font-size: 12px;
+		line-height: 16px;
+		padding-top: 20px;
+		text-align: center;
+	}
 }
 
