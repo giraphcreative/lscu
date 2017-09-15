@@ -13,7 +13,7 @@ footer {
 		@include respond-to( 768px ) {
 			float: left;
 			border-left: 6px solid white;
-			min-height: 400px;
+			min-height: 450px;
 			padding: 15px 25px;
 			width: 28%;
 
@@ -29,11 +29,11 @@ footer {
 		}
 
 		@include respond-to( 1024px ) {
-			min-height: 400px;
+			min-height: 440px;
 		}
 
 		@include respond-to( 1220px ) {
-			min-height: 400px;
+			min-height: 380px;
 
 			.address {
 				float: left;
@@ -125,19 +125,9 @@ footer {
 
 	.cuna {
 		max-width: 50%;
-		margin: 10px auto;
 		text-align: left;
-
-		@include respond-to( 768px ) {
-			float: right;
-			clear: both;
-			margin: 10px 0 0 0;
-			padding-right: 10%;
-
-			&:after {
-				clear: right;
-			}
-		}
+		clear: left;
+		padding: 20px 0;
 	}
 
 

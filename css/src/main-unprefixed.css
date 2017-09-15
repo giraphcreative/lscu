@@ -1351,7 +1351,7 @@ footer {
       footer .column {
         float: left;
         border-left: 6px solid white;
-        min-height: 400px;
+        min-height: 450px;
         padding: 15px 25px;
         width: 28%; }
         footer .column.first {
@@ -1362,10 +1362,10 @@ footer {
           text-align: left; } }
     @media only screen and (min-width: 1024px) {
       footer .column {
-        min-height: 400px; } }
+        min-height: 440px; } }
     @media only screen and (min-width: 1220px) {
       footer .column {
-        min-height: 400px; }
+        min-height: 380px; }
         footer .column .address {
           float: left;
           width: 50%;
@@ -1428,16 +1428,9 @@ footer {
       margin-top: -25px; }
   footer .cuna {
     max-width: 50%;
-    margin: 10px auto;
-    text-align: left; }
-    @media only screen and (min-width: 768px) {
-      footer .cuna {
-        float: right;
-        clear: both;
-        margin: 10px 0 0 0;
-        padding-right: 10%; }
-        footer .cuna:after {
-          clear: right; } }
+    text-align: left;
+    clear: left;
+    padding: 20px 0; }
   footer .disclaimer {
     clear: both;
     color: white;
