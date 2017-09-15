@@ -52,7 +52,8 @@ get_header();
 			</div>
 			<?php 
  
-			query_posts( 'posts_per_page=6' );
+			global $wp_query;
+			$wp_query->set( 'posts_per_page', 6 );
 
 			if ( have_posts() ) : 
 
