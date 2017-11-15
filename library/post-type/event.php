@@ -187,11 +187,6 @@ function get_month_events( $m, $y, $category='' ) {
 			'relation' => 'AND',
 			array(
 				'key' => '_p_event_start',
-				'value' => $timestamp_today,
-				'compare' => '>='
-			),
-			array(
-				'key' => '_p_event_start',
 				'value' => $timestamp_start,
 				'compare' => '>='
 			),
