@@ -116,7 +116,10 @@ get_header();
 				}
 				?>
 			</div>
-			<div class="three-fifth"><?php the_content(); ?></div>
+			<div class="three-fifth">
+				<?php the_content(); ?>
+				<?php the_accordion(); ?>
+			</div>
 				<?php
 			endwhile;
 		endif;

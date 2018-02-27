@@ -396,7 +396,7 @@ function page_metaboxes( $meta_boxes ) {
     $accordion_metabox = new_cmb2_box( array(
         'id' => 'accordion_metabox',
         'title' => 'Accordions',
-        'object_types' => array( 'page' ), // post type
+        'object_types' => array( 'page', 'event' ), // post type
         'context' => 'normal',
         'priority' => 'high',
     ) );
