@@ -102,6 +102,7 @@ input, textarea {
 		border-bottom: 1px solid lighten( $grey, 25% );
 		padding: 0;
 		margin: 25px 0;
+		clear: both;
 	}
 
 	button, input[type=submit], input[type=reset], .button {
