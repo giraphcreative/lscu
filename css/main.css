@@ -2320,6 +2320,9 @@ body.my-account #bbpress-forums {
   .sidebar #bbp-search-form label {
     text-transform: uppercase; }
 
+.widget_display_stats dl {
+  padding: 10px; }
+
 .sidebar .widget {
   padding: 10px 0;
   margin-bottom: 20px;
@@ -2346,9 +2349,9 @@ body.my-account #bbpress-forums {
       top: 50%;
       background: center center no-repeat;
       background-size: contain; }
-  .sidebar .widget.widget_nav_menu .widget-title:before, .sidebar .widget.widget_categories .widget-title:before {
+  .sidebar .widget.widget_nav_menu .widget-title:before, .sidebar .widget.widget_categories .widget-title:before, .sidebar .widget.widget_display_forums .widget-title:before {
     background-image: url(../img/icon-pointer.png); }
-  .sidebar .widget.widget_nav_menu ul li a, .sidebar .widget.widget_categories ul li a {
+  .sidebar .widget.widget_nav_menu ul li a, .sidebar .widget.widget_categories ul li a, .sidebar .widget.widget_display_forums ul li a {
     display: block;
     padding: 5px 10px 3px;
     border-bottom: 1px solid #c7c8ca;
@@ -2359,12 +2362,12 @@ body.my-account #bbpress-forums {
     font-size: .9em;
     text-decoration: none;
     position: relative; }
-    .sidebar .widget.widget_nav_menu ul li a:hover, .sidebar .widget.widget_categories ul li a:hover {
+    .sidebar .widget.widget_nav_menu ul li a:hover, .sidebar .widget.widget_categories ul li a:hover, .sidebar .widget.widget_display_forums ul li a:hover {
       background-color: #939598;
       color: white; }
-  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children > ul, .sidebar .widget.widget_categories ul li.menu-item-has-children > ul {
+  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children > ul, .sidebar .widget.widget_categories ul li.menu-item-has-children > ul, .sidebar .widget.widget_display_forums ul li.menu-item-has-children > ul {
     display: none; }
-  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children > a:before, .sidebar .widget.widget_categories ul li.menu-item-has-children > a:before {
+  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children > a:before, .sidebar .widget.widget_categories ul li.menu-item-has-children > a:before, .sidebar .widget.widget_display_forums ul li.menu-item-has-children > a:before {
     content: "";
     position: absolute;
     right: 0;
@@ -2376,14 +2379,14 @@ body.my-account #bbpress-forums {
     background-size: contain;
     -webkit-transition: -webkit-transform 500ms ease-in-out;
             transition: transform 500ms ease-in-out; }
-  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children.open > ul, .sidebar .widget.widget_categories ul li.menu-item-has-children.open > ul {
+  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children.open > ul, .sidebar .widget.widget_categories ul li.menu-item-has-children.open > ul, .sidebar .widget.widget_display_forums ul li.menu-item-has-children.open > ul {
     display: block; }
-  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children.open > a:before, .sidebar .widget.widget_categories ul li.menu-item-has-children.open > a:before {
+  .sidebar .widget.widget_nav_menu ul li.menu-item-has-children.open > a:before, .sidebar .widget.widget_categories ul li.menu-item-has-children.open > a:before, .sidebar .widget.widget_display_forums ul li.menu-item-has-children.open > a:before {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
-  .sidebar .widget.widget_nav_menu ul li ul li a, .sidebar .widget.widget_categories ul li ul li a {
+  .sidebar .widget.widget_nav_menu ul li ul li a, .sidebar .widget.widget_categories ul li ul li a, .sidebar .widget.widget_display_forums ul li ul li a {
     padding: 5px 10px 3px 25px; }
-  .sidebar .widget.widget_nav_menu ul li ul li ul li a, .sidebar .widget.widget_categories ul li ul li ul li a {
+  .sidebar .widget.widget_nav_menu ul li ul li ul li a, .sidebar .widget.widget_categories ul li ul li ul li a, .sidebar .widget.widget_display_forums ul li ul li ul li a {
     padding: 5px 10px 3px 40px; }
   .sidebar .widget.widget_lscu_connect_widget .widget-title:before {
     background-image: url(../img/icon-connect.png); }
