@@ -1533,7 +1533,8 @@ span.bbp-author-ip {
 /* =Breadcrumb and Tags
 -------------------------------------------------------------- */
 div.bbp-breadcrumb {
-  float: left; }
+  float: left;
+  display: none; }
 
 #bbpress-forums div.bbp-breadcrumb p,
 #bbpress-forums div.bbp-topic-tags p {
@@ -1548,7 +1549,8 @@ div.bbp-breadcrumb {
 /* =Search
 -------------------------------------------------------------- */
 #bbpress-forums #bbp-search-form {
-  clear: left; }
+  clear: left;
+  display: none; }
 
 #bbpress-forums #bbp-search-form .hidden {
   height: 0;

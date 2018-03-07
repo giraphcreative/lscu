@@ -409,6 +409,7 @@ span.bbp-author-ip {
 
 div.bbp-breadcrumb {
 	float: left;
+	display: none;
 }
 
 #bbpress-forums div.bbp-breadcrumb p,
@@ -429,6 +430,7 @@ div.bbp-breadcrumb {
 
 #bbpress-forums #bbp-search-form {
 	clear: left;
+	display: none;
 }
 
 #bbpress-forums #bbp-search-form .hidden {
