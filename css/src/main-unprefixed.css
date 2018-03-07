@@ -246,7 +246,8 @@ input, textarea {
   border: 0;
   border-bottom: 1px solid #d4d5d6;
   padding: 0;
-  margin: 25px 0; }
+  margin: 25px 0;
+  clear: both; }
 
 .content-style button, .content-narrow button, .content-wide button, #tribe-events-content button, .half button, .two-third button, .three-quarter button, .accordion .accordion-box .accordion-box-content button, .event-info button, .content-style input[type=submit], .content-narrow input[type=submit], .content-wide input[type=submit], #tribe-events-content input[type=submit], .half input[type=submit], .two-third input[type=submit], .three-quarter input[type=submit], .accordion .accordion-box .accordion-box-content input[type=submit], .event-info input[type=submit], .content-style input[type=reset], .content-narrow input[type=reset], .content-wide input[type=reset], #tribe-events-content input[type=reset], .half input[type=reset], .two-third input[type=reset], .three-quarter input[type=reset], .accordion .accordion-box .accordion-box-content input[type=reset], .event-info input[type=reset], .content-style .button, .content-narrow .button, .content-wide .button, #tribe-events-content .button, .half .button, .two-third .button, .three-quarter .button, .accordion .accordion-box .accordion-box-content .button, .event-info .button {
   padding: 9px 45px 6px 12px;
@@ -1225,7 +1226,9 @@ img.aligncenter, .wp-caption.aligncenter {
   background: transparent;
   clear: both;
   margin-bottom: 20px;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 22px; }
   #bbpress-forums hr {
     margin: 0 0 24px 0; }
   #bbpress-forums .even {
@@ -1258,8 +1261,6 @@ img.aligncenter, .wp-caption.aligncenter {
     background-color: #f4f4f4; }
   #bbpress-forums .status-closed, #bbpress-forums .status-closed a {
     color: #ccc; }
-  #bbpress-forums .bbp-topic-meta {
-    font-size: .8em; }
   #bbpress-forums li {
     background: none;
     margin: 0;
@@ -1322,7 +1323,7 @@ li.bbp-topic-freshness {
 #bbpress-forums li.bbp-body ul.forum,
 #bbpress-forums li.bbp-body ul.topic {
   overflow: hidden;
-  padding: 8px 8px 8px 15px; }
+  padding: 12px 12px 12px 18px; }
 
 li.bbp-header div.bbp-topic-content span#subscription-toggle,
 li.bbp-header div.bbp-topic-content span#favorite-toggle,
@@ -1816,7 +1817,6 @@ p.form-allowed-tags {
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1); }
   #bbpress-forums div.wp-editor-container .button-small {
-    font-size: .8em;
     line-height: 1em; }
 
 /* =Edit User
@@ -2035,6 +2035,7 @@ fieldset div.avatar {
 #bbpress-forums #bbp-user-wrapper ul.bbp-forums,
 #bbpress-forums #bbp-user-wrapper ul.bbp-replies,
 #bbpress-forums #bbp-user-wrapper fieldset.bbp-form {
+  font-size: 1em !important;
   clear: none; }
 
 #bbpress-forums #bbp-single-user-details {
@@ -2278,11 +2279,9 @@ body.my-account #bbpress-forums {
     border-radius: 0;
     margin: 20px 0; }
     #bbpress-forums div.bbp-template-notice p {
-      font-size: 1em;
       opacity: .8; }
   #bbpress-forums .bbp-pagination {
     zoom: 1;
-    font-size: .9em;
     color: #939598; }
     #bbpress-forums .bbp-pagination:before, #bbpress-forums .bbp-pagination:after {
       content: "";
@@ -2303,8 +2302,7 @@ body.my-account #bbpress-forums {
 .sidebar #bbp-search-form {
   padding: 0 10px; }
   .sidebar #bbp-search-form label {
-    text-transform: uppercase;
-    font-size: .8em; }
+    text-transform: uppercase; }
 
 .sidebar .widget {
   padding: 10px 0;

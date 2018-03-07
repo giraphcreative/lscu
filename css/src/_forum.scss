@@ -17,6 +17,8 @@
 	clear: both;
 	margin-bottom: 20px;
 	overflow: hidden;
+	font-size: 16px;
+	line-height: 22px;
 
 	hr {
 		margin: 0 0 24px 0;
@@ -77,7 +79,7 @@
 	}
 
 	.bbp-topic-meta {
-		font-size: .8em;
+		// font-size: .8em;
 	}
 
 	li {
@@ -161,7 +163,7 @@ li.bbp-topic-freshness {
 #bbpress-forums li.bbp-body ul.forum,
 #bbpress-forums li.bbp-body ul.topic {
 	overflow: hidden;
-	padding: 8px 8px 8px 15px;
+	padding: 12px 12px 12px 18px;
 }
 
 li.bbp-header div.bbp-topic-content span#subscription-toggle,
@@ -191,7 +193,7 @@ li.bbp-header div.bbp-reply-content span#favorite-toggle {
 }
 
 .bbp-body .bbp-reply-author {
-	font-size: .8em;
+	// font-size: .8em;
 }
 
 #bbpress-forums div.bbp-forum-author img.avatar,
@@ -720,7 +722,7 @@ p.form-allowed-tags {
 	border: 1px solid rgba( black, .1 );
 
 	.button-small {
-		font-size: .8em;
+		// font-size: .8em;
 		line-height: 1em;
 	}
 }
@@ -979,6 +981,7 @@ fieldset div.avatar {
 #bbpress-forums #bbp-user-wrapper ul.bbp-forums,
 #bbpress-forums #bbp-user-wrapper ul.bbp-replies,
 #bbpress-forums #bbp-user-wrapper fieldset.bbp-form {
+	font-size: 1em !important;
 	clear: none;
 }
 
@@ -1191,10 +1194,6 @@ body.my-account #bbpress-forums {
 	#bbpress-forums li.bbp-body li.bbp-topic-freshness {
 		margin-top: 7px;
 	}
-	#bbpress-forums li.bbp-header,
-	#bbpress-forums li.bbp-footer {
-		font-size: 10px;
-	}
 	#bbpress-forums li.bbp-header div.bbp-reply-author {
 		text-align: left;
 		width: 25%;
@@ -1284,7 +1283,7 @@ body.my-account #bbpress-forums {
 
 	& > #subscription-toggle a {
 		float: right;
-		@extend .btn-arrow;
+		// @extend .btn-arrow;
 	}
 
 	div.bbp-template-notice {
@@ -1293,19 +1292,17 @@ body.my-account #bbpress-forums {
 		margin: 20px 0;
 
 		p {
-			font-size: 1em;
 			opacity: .8;
 		}
 	}
 
 	.bbp-pagination {
 		@include clearfix;
-		font-size: .9em;
+		// font-size: .9em;
 		color: $grey;
 	}
 	
 	.bbp-header {
-		font-size: .7em;
 		text-transform: uppercase;
 
 		.bbp-reply-author {
@@ -1314,7 +1311,7 @@ body.my-account #bbpress-forums {
 	}
 
 	.bbp-meta {
-		font-size: .8em;
+		// font-size: .9em;
 	}
 	
 	.bbp-breadcrumb-home {
@@ -1334,7 +1331,6 @@ body.my-account #bbpress-forums {
 
 	label {
 		text-transform: uppercase;
-		font-size: .8em;
 	}
 }
 

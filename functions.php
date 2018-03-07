@@ -75,6 +75,13 @@ function p_anchor( $atts, $content = null, $code = "" ) {
 add_shortcode('anchor' , 'p_anchor' );
 
 
+// dequeue bbpress styles
+add_action( 'wp_print_styles', 'deregister_bbpress_styles', 15 );
+function deregister_bbpress_styles() {
+    wp_deregister_style( 'bbp-default' );
+}
+
+
 // enable oembed and shortcodes in text widgets
 add_filter( 'widget_text', array( $wp_embed, 'run_shortcode' ), 8 );
 add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
