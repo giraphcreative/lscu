@@ -332,7 +332,7 @@ header {
         background: #002d18; }
         header nav ul.nav-menu > li:nth-child(10) > a {
           font-style: italic;
-          background: #00130a; }
+          background: #002d18; }
       header nav ul.nav-menu > li {
         box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3); }
         @media only screen and (min-width: 600px) {
