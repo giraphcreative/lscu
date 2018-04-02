@@ -87,6 +87,11 @@ $icon-width: 70px;
 			overflow: auto;
 		}
 
+		.twitter-aggregator-tweet-time {
+			margin-top: 5px;
+			color: darken( $grey, 25% );
+		}
+
 		button {
 			display: block;
 			width: 100%;
