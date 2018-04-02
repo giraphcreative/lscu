@@ -9,11 +9,9 @@
 		.widget-title {
 			position: relative;
 			padding: 10px 30px 10px 10px;
-			background-color: $navy;
 
 			h4 {
 				@include font;
-				color: white;
 				border-bottom: 4px solid white;
 				text-transform: uppercase;
 				font-size: 1.1em;

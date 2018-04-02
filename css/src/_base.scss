@@ -87,6 +87,19 @@ input, textarea {
 		padding: 10px 0 5px;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		color: $navy;
+		.teal & { color: $teal; }
+		.forest & { color: $forest; }
+		.green & { color: $green; }
+		.grey &, .grey-light & { color: $grey; }
+		.lime & { color: $lime; }
+		.navy & { color: $navy; }
+		.orange & { color: $orange; }
+		.red & { color: $red; }
+		.yellow & { color: $yellow; }
+	}
+
 	blockquote {
 		padding: 10px 25px;
 		@include font-italic;
@@ -115,20 +128,6 @@ input, textarea {
 		border-radius: 10px;
 		text-decoration: none;
 	}
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-	color: $navy;
-	.teal & { color: $teal; }
-	.forest & { color: $forest; }
-	.green & { color: $green; }
-	.grey &, .grey-light & { color: $grey; }
-	.lime & { color: $lime; }
-	.navy & { color: $navy; }
-	.orange & { color: $orange; }
-	.red & { color: $red; }
-	.yellow & { color: $yellow; }
 }
 
 
