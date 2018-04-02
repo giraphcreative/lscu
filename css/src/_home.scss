@@ -27,6 +27,13 @@ $icon-width: 70px;
 			.widget-title { display: none; }
 			h2, button { background-color: $navy; }
 			h2:before { background-image: url(../img/icon-events.png); }
+			h3 {
+				padding-top: 20px;
+
+				&:first-child {
+					padding-top: 15px;
+				}
+			}
 		}
 		
 		&.news {
@@ -39,7 +46,6 @@ $icon-width: 70px;
 			background-color: lighten( $lime, 40% );
 			h2, button { background: $lime; }
 			h2:before { background-image: url(../img/icon-tweets.png); }
-			.widget-title { display: none; }
 		}
 
 		h2 {
