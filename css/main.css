@@ -912,6 +912,9 @@ header {
   text-decoration: none;
   opacity: 0.8; }
 
+.thumb-showcase h2 {
+  display: none; }
+
 .thumb-showcase .thumb-list {
   padding: 6px 0 0; }
   @media only screen and (min-width: 500px) {

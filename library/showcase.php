@@ -62,6 +62,7 @@ function the_thumb_showcase() {
 	if ( !empty( $thumbs[0]['title'] ) ) {
 		?>
 	<div class="thumb-showcase">
+		<h2>Thumbnail Showcase</h2>
 		<div class="thumbs">
 			<div class="thumb-list">
 		<?php
