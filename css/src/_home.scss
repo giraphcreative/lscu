@@ -38,13 +38,13 @@ $icon-width: 70px;
 		
 		&.news {
 			background-color: lighten( $orange, 35% );
-			h2, button { background-color: darken( $orange, 10% ); }
+			h2, button { background-color: darken( $orange, 20% ); }
 			h2:before { background-image: url(../img/icon-news.png); }
 		}
 		
 		&.tweets {
 			background-color: lighten( $lime, 40% );
-			h2, button { background: $lime; }
+			h2, button { background: darken( $lime, 20% ); }
 			h2:before { background-image: url(../img/icon-tweets.png); }
 		}
 
