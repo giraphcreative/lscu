@@ -181,7 +181,7 @@ function the_job_category_list() {
 		?>
 		<a href="<?php print esc_attr( get_term_link( $tax_term, $taxonomy ) ); ?>"><div class="solution bg-<?php print $category_info['color'] ?>">
 			<div class="solution-icon">
-				<img src="<?php print $category_info['icon'] ?>">
+				<img src="<?php print $category_info['icon']; ?>" alt="<?php print $tax_term->name; ?>">
 			</div>
 			<h3><?php print $tax_term->name ?></h3>
 		</div></a>
@@ -215,11 +215,11 @@ function the_job_list( $jobs = '', $random = false ) {
     	global $post;
         $jobs[get_the_ID()] = $post;
         $jobs[get_the_ID()]->icon = get_cmb_value( 'job_icon' );
-        ?><a href="/job/<?php print $post->post_name ?>"><div class="job bg-<?php print get_cmb_value( 'large-title-color' ) ?>">
+        ?><a href="/job/<?php print $post->post_name; ?>"><div class="job bg-<?php print get_cmb_value( 'large-title-color' ); ?>">
 				<div class="job-icon">
-					<img src="<?php print get_cmb_value( 'large-title-icon' ) ?>">
+					<img src="<?php print get_cmb_value( 'large-title-icon' ); ?>" alt="<?php print get_the_title(); ?>">
 				</div>
-				<h3><?php print get_the_title() ?></h3>
+				<h3><?php print get_the_title(); ?></h3>
 			</div></a><?php
     endwhile;
     wp_reset_query();

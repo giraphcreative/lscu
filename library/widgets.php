@@ -99,7 +99,7 @@ class lscu_connect_widget extends WP_Widget {
 				|| !empty( $instance[ 'phone' . $counter ] ) ) {
 			?>
 			<div class="contact">
-				<?php if ( !empty( $instance[ 'image' . $counter ] ) ) { ?><img src="<?php print $instance[ 'image' . $counter ] ?>"><?php } ?>
+				<?php if ( !empty( $instance[ 'image' . $counter ] ) ) { ?><img src="<?php print $instance[ 'image' . $counter ] ?>" alt="<?php print $instance['name'] ?>"><?php } ?>
 				<p><?php 
 				print ( !empty( $instance[ 'email' . $counter ] ) ? '<a href="mailto:' . $instance[ 'email' . $counter ] . '">' : '' );
 				print ( !empty( $instance[ 'name' . $counter ] ) ? '<strong>' . $instance[ 'name' . $counter ] . '</strong><br>' : '' ); 

@@ -82,6 +82,12 @@ function page_metaboxes( $meta_boxes ) {
         'preview_size' => array( 200, 80 )
     ) );
 
+    $showcase_metabox->add_group_field( $showcase_metabox_group, array(
+        'name' => 'Alt Text',
+        'id'   => 'alt',
+        'type' => 'text',
+    ) );
+
 
 
     // job metabox
@@ -496,6 +502,12 @@ function page_metaboxes( $meta_boxes ) {
         'id'   => 'image',
         'type' => 'file',
         'preview_size' => array( 200, 80 )
+    ) );
+
+    $showcase_footer_metabox->add_group_field( $showcase_footer_metabox_group, array(
+        'name' => 'Alt Text',
+        'id'   => 'alt',
+        'type' => 'text',
     ) );
 
     $showcase_footer_metabox->add_group_field( $showcase_footer_metabox_group, array(
