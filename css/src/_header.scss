@@ -53,7 +53,7 @@ header {
 			}
 
 			& > li:nth-child( 9 ) { background: $teal; }
-			& > li:nth-child( 10 ) { background: darken( $forest, 10% ); & > a { font-style: italic; } }
+			& > li:nth-child( 10 ) { background: darken( $forest, 10% ); & > a { font-style: italic; background: darken( $forest, 10% ); } }
 
 			& > li {
 				box-shadow: inset 0px 15px 22px -10px rgba(100, 100, 100, 0.3);
@@ -232,7 +232,7 @@ header {
 			& > li:nth-child( 8 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: darken( $grey, 5% ); &:hover { background: darken( $grey, 5% ); } } }
 			& > li:nth-child( 5 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
 			& > li:nth-child( 9 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
-			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: darken( $forest, 10% ); &:hover { background: darken( $forest, 10% ); } } }
+			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: darken( $forest, 15% ); &:hover { background: darken( $forest, 15% ); } } }
 		}
 	}
 	
