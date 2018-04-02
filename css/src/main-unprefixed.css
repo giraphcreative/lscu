@@ -23,11 +23,12 @@
   background-color: #376d8d; }
 
 .bg-yellow {
-  background-color: #93951b;
-  color: white; }
+  background-color: #D3D627;
+  color: black; }
 
 .bg-yellow-light {
-  background-color: #d9db3b; }
+  background-color: #d9db3b;
+  color: black; }
 
 .bg-orange {
   background-color: #df8106;
@@ -814,6 +815,8 @@ header {
           font-size: 45px;
           padding-right: 120px;
           margin-bottom: -20px; } }
+  .large-title.bg-yellow .large-title-text h1 {
+    color: black; }
 
 .showcase {
   position: relative;

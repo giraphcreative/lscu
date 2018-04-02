@@ -7,8 +7,8 @@
 .bg-teal-lightest { background-color: lighten( $teal, 22.5% ); }
 .bg-navy { background-color: $navy; color: white; }
 .bg-navy-light { background-color: lighten( $navy, 7.5% ); }
-.bg-yellow { background-color: darken( $yellow, 15% ); color: white; }
-.bg-yellow-light { background-color: lighten( $yellow, 5% ); }
+.bg-yellow { background-color: $yellow; color: black; }
+.bg-yellow-light { background-color: lighten( $yellow, 5% ); color: black; }
 .bg-orange { background-color: darken( $orange, 10% ); color: white; }
 .bg-orange-light { background-color: lighten( $orange, 7.5% ); }
 .bg-lime { background-color: darken( $lime, 10% ); color: white; }
