@@ -259,6 +259,10 @@ header {
 				margin: 0;
 			}
 
+			label {
+				display: none;
+			}
+
 			input[type=text] {
 				display: block;
 				right: 0;

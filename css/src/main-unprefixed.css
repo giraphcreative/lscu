@@ -500,6 +500,8 @@ header {
           padding: 0; } }
       header .aux .search form {
         margin: 0; }
+      header .aux .search label {
+        display: none; }
       header .aux .search input[type=text] {
         display: block;
         right: 0;
