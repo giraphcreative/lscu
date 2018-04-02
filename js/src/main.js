@@ -74,7 +74,7 @@ jQuery(document).ready(function($){
 	// sidebar title background colors.
 	if ( sidebar && large_title ) {
 		sidebar.find( '.widget:not(.leverage) .widget-title' ).css( 'background-color', large_title.css( 'background-color' ) );
-		sidebar.find( '.widget:not(.leverage) .widget-title h4' ).css( 'color', large_title.find( 'h1').css( 'color' ) );
+		sidebar.find( '.widget:not(.leverage) .widget-title h4' ).css( 'color', large_title.find( 'h1' ).css( 'color' ) );
 	}
 
 
