@@ -7,13 +7,13 @@
 .bg-teal-lightest { background-color: lighten( $teal, 22.5% ); }
 .bg-navy { background-color: $navy; }
 .bg-navy-light { background-color: lighten( $navy, 7.5% ); }
-.bg-yellow { background-color: $yellow; }
+.bg-yellow { background-color: darken( $yellow, 10% ); }
 .bg-yellow-light { background-color: lighten( $yellow, 5% ); }
-.bg-orange { background-color: $orange; }
+.bg-orange { background-color: darken( $orange, 10% ); }
 .bg-orange-light { background-color: lighten( $orange, 7.5% ); }
-.bg-lime { background-color: $lime; }
+.bg-lime { background-color: darken( $lime, 10% ); }
 .bg-lime-light { background-color: lighten( $lime, 7.5% ); }
-.bg-forest { background-color: $forest; }
+.bg-forest { background-color: darken( $forest, 10% ); }
 .bg-forest-light { background-color: lighten( $forest, 7.5% ); }
 .bg-grey-light { background-color: $grey; }
 .bg-grey-light-light { background-color: lighten( $grey, 7.5% ); }
