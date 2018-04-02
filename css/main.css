@@ -312,7 +312,7 @@ header {
           display: none; } }
     header nav ul.nav-menu {
       display: none;
-      background: #939598;
+      background: #6d6f72;
       position: relative;
       z-index: 1000;
       text-align: center;
@@ -454,9 +454,11 @@ header {
             header nav ul.nav-menu > li:nth-child(10) > ul.sub-menu > li > ul.sub-menu {
               left: -100%; } }
       header nav ul.nav-menu > li:nth-child(2) > ul.sub-menu, header nav ul.nav-menu > li:nth-child(2) > ul.sub-menu a, header nav ul.nav-menu > li:nth-child(2):hover a, header nav ul.nav-menu > li:nth-child(2).open a, header nav ul.nav-menu > li:nth-child(2).current-menu-item > a, header nav ul.nav-menu > li:nth-child(2).current-menu-ancestor > a {
-        background: #D3D627; }
+        background: #D3D627;
+        color: black; }
         header nav ul.nav-menu > li:nth-child(2) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(2) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(2):hover a:hover, header nav ul.nav-menu > li:nth-child(2).open a:hover, header nav ul.nav-menu > li:nth-child(2).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(2).current-menu-ancestor > a:hover {
-          background: #d9db3b; }
+          background: #d9db3b;
+          color: black; }
       header nav ul.nav-menu > li:nth-child(4) > ul.sub-menu, header nav ul.nav-menu > li:nth-child(4) > ul.sub-menu a, header nav ul.nav-menu > li:nth-child(4):hover a, header nav ul.nav-menu > li:nth-child(4).open a, header nav ul.nav-menu > li:nth-child(4).current-menu-item > a, header nav ul.nav-menu > li:nth-child(4).current-menu-ancestor > a, header nav ul.nav-menu > li:nth-child(7) > ul.sub-menu, header nav ul.nav-menu > li:nth-child(7) > ul.sub-menu a, header nav ul.nav-menu > li:nth-child(7):hover a, header nav ul.nav-menu > li:nth-child(7).open a, header nav ul.nav-menu > li:nth-child(7).current-menu-item > a, header nav ul.nav-menu > li:nth-child(7).current-menu-ancestor > a {
         background: #47494b; }
         header nav ul.nav-menu > li:nth-child(4) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(4) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(4):hover a:hover, header nav ul.nav-menu > li:nth-child(4).open a:hover, header nav ul.nav-menu > li:nth-child(4).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(4).current-menu-ancestor > a:hover, header nav ul.nav-menu > li:nth-child(7) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(7) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(7):hover a:hover, header nav ul.nav-menu > li:nth-child(7).open a:hover, header nav ul.nav-menu > li:nth-child(7).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(7).current-menu-ancestor > a:hover {
@@ -470,9 +472,9 @@ header {
         header nav ul.nav-menu > li:nth-child(6) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(6) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(6):hover a:hover, header nav ul.nav-menu > li:nth-child(6).open a:hover, header nav ul.nav-menu > li:nth-child(6).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(6).current-menu-ancestor > a:hover {
           background: #faa638; }
       header nav ul.nav-menu > li:nth-child(8) > ul.sub-menu, header nav ul.nav-menu > li:nth-child(8) > ul.sub-menu a, header nav ul.nav-menu > li:nth-child(8):hover a, header nav ul.nav-menu > li:nth-child(8).open a, header nav ul.nav-menu > li:nth-child(8).current-menu-item > a, header nav ul.nav-menu > li:nth-child(8).current-menu-ancestor > a {
-        background: #939598; }
+        background: #86888c; }
         header nav ul.nav-menu > li:nth-child(8) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(8) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(8):hover a:hover, header nav ul.nav-menu > li:nth-child(8).open a:hover, header nav ul.nav-menu > li:nth-child(8).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(8).current-menu-ancestor > a:hover {
-          background: #a0a2a4; }
+          background: #86888c; }
       header nav ul.nav-menu > li:nth-child(5) > ul.sub-menu, header nav ul.nav-menu > li:nth-child(5) > ul.sub-menu a, header nav ul.nav-menu > li:nth-child(5):hover a, header nav ul.nav-menu > li:nth-child(5).open a, header nav ul.nav-menu > li:nth-child(5).current-menu-item > a, header nav ul.nav-menu > li:nth-child(5).current-menu-ancestor > a {
         background: #15B0BF; }
         header nav ul.nav-menu > li:nth-child(5) > ul.sub-menu:hover, header nav ul.nav-menu > li:nth-child(5) > ul.sub-menu a:hover, header nav ul.nav-menu > li:nth-child(5):hover a:hover, header nav ul.nav-menu > li:nth-child(5).open a:hover, header nav ul.nav-menu > li:nth-child(5).current-menu-item > a:hover, header nav ul.nav-menu > li:nth-child(5).current-menu-ancestor > a:hover {

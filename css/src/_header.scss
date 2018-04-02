@@ -40,7 +40,7 @@ header {
 
 		ul.nav-menu {
 			display: none;
-			background: $grey;
+			background: darken( $grey, 15% );
 			position: relative;
 			z-index: 1000;
 			text-align: center;
@@ -225,11 +225,11 @@ header {
 
 			}
 
-			& > li:nth-child( 2 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $yellow; &:hover { background: lighten( $yellow, 5% ); } } }
+			& > li:nth-child( 2 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $yellow; color: black; &:hover { background: lighten( $yellow, 5% ); color: black; } } }
 			& > li:nth-child( 4 ), & > li:nth-child( 7 ) { & > ul.sub-menu, & > ul.sub-menu a,&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $grey-dark; &:hover { background: lighten( $grey-dark, 5% ); } } }
 			& > li:nth-child( 3 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $lime; &:hover { background: lighten( $lime, 5% ); } } }
 			& > li:nth-child( 6 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $orange; &:hover { background: lighten( $orange, 5% ); } } }
-			& > li:nth-child( 8 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $grey; &:hover { background: lighten( $grey, 5% ); } } }
+			& > li:nth-child( 8 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: darken( $grey, 5% ); &:hover { background: darken( $grey, 5% ); } } }
 			& > li:nth-child( 5 ) { & > ul.sub-menu, & > ul.sub-menu a,	&:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
 			& > li:nth-child( 9 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $teal; &:hover { background: lighten( $teal, 5% ); } } }
 			& > li:nth-child( 10 ) { & > ul.sub-menu, & > ul.sub-menu a, &:hover a, &.open a, &.current-menu-item > a, &.current-menu-ancestor > a { background: $forest; &:hover { background: lighten( $forest, 5% ); } } }
