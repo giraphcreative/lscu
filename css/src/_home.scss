@@ -38,7 +38,7 @@ $icon-width: 70px;
 		
 		&.news {
 			background-color: lighten( $orange, 35% );
-			h2, button { background-color: $orange; }
+			h2, button { background-color: darken( $orange, 5% ); }
 			h2:before { background-image: url(../img/icon-news.png); }
 		}
 		
