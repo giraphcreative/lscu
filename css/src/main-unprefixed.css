@@ -2581,8 +2581,6 @@ footer {
         background: #7DB241; }
       .home-thirds .third.tweets h2:before {
         background-image: url(../img/icon-tweets.png); }
-      .home-thirds .third.tweets .third-content {
-        padding-top: 15px; }
       .home-thirds .third.tweets .widget-title {
         display: none; }
     .home-thirds .third h2 {
@@ -2607,7 +2605,7 @@ footer {
         display: block;
         margin-right: 30px;
         border-bottom: 1px solid white; }
-    .home-thirds .third h4 {
+    .home-thirds .third h3 {
       font-size: 1.2em;
       line-height: 1.3em;
       padding-top: 15px; }

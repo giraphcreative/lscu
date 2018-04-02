@@ -39,7 +39,6 @@ $icon-width: 70px;
 			background-color: lighten( $lime, 40% );
 			h2, button { background: $lime; }
 			h2:before { background-image: url(../img/icon-tweets.png); }
-			.third-content { padding-top: 15px; }
 			.widget-title { display: none; }
 		}
 
@@ -70,7 +69,7 @@ $icon-width: 70px;
 			}
 		}
 
-		h4 {
+		h3 {
 			font-size: 1.2em;
 			line-height: 1.3em;
 			padding-top: 15px;
