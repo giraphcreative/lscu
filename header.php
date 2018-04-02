@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 	<nav role="navigation">
 		<!--<div class="wrap">-->
-			<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+			<button class="menu-toggle"><i class="fa fa-bars">Toggle Navigation</i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 		<!--</div>-->
 	</nav>

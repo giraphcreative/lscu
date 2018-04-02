@@ -68,7 +68,7 @@ function the_thumb_showcase() {
 	   	foreach ( $thumbs as $thumb ) {
 	        ?><a href="<?php print $thumb['link'] ?>"<?php print ( $thumb['type'] == 'iframe' ? ' class="lightbox-iframe"' : '' ); ?>><div class="thumb">
 				<div class="thumb-icon">
-					<img src="<?php print $thumb['image']; ?>">
+					<img src="<?php print $thumb['image']; ?>" alt="<?php print $thumb['title'] ?>">
 				</div>
 				<div class="thumb-text <?php print $thumb['color'] ?>">
 					<h3><?php print $thumb['title'] ?></h3>
@@ -110,7 +110,7 @@ function the_footer_showcase() {
 				// check if it's an image or video
 				if ( p_is_image( $slide["image"] ) ) {
 					// it's an image, so resize it and generate an img tag.
-					$image = '<img src="' . $slide["image"] . '">';
+					$image = '<img src="' . $slide["image"] . '" alt="' . $slide["title"] . '">';
 				} else {
 					// it's a video, so oEmbed that stuffs, yo
 					$image = apply_filters( 'the_content', $slide["image"] );
