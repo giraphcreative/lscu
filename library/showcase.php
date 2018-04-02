@@ -105,12 +105,13 @@ function the_footer_showcase() {
 				$title = ( isset( $slide["title"] ) ? $slide["title"] : '' );
 				$link = ( isset( $slide["link"] ) ? $slide["link"] : '' );
 				$icon = ( isset( $slide["icon"] ) ? $slide["icon"] : '' );
+				$alt = ( isset( $slide["alt"] ) ? $slide["alt"] : '' );
 
 				print $icon;
 				// check if it's an image or video
 				if ( p_is_image( $slide["image"] ) ) {
 					// it's an image, so resize it and generate an img tag.
-					$image = '<img src="' . $slide["image"] . '" alt="' . $slide["title"] . '">';
+					$image = '<img src="' . $slide["image"] . '" alt="' . ( !empty( $alt ) ? $alt : ( !empty( $title ) ? $title : $slide['image'] ) ) . '">';
 				} else {
 					// it's a video, so oEmbed that stuffs, yo
 					$image = apply_filters( 'the_content', $slide["image"] );
@@ -124,7 +125,7 @@ function the_footer_showcase() {
 				
 				<?php if ( !empty( $title ) ) { ?>
 				<div class="slide-hexagon">
-					<?php if ( !empty( $icon ) ) { ?><img src="<?php print $icon; ?>"><?php } ?>					
+					<?php if ( !empty( $icon ) ) { ?><img src="<?php print $icon; ?>" alt="<?php print ( !empty( $alt ) ? $alt : ( !empty( $title ) ? $title : $slide['image'] ) ); ?>"><?php } ?>					
 					<?php if ( !empty( $title ) ) { ?><h1><?php print $title; ?></h1><?php } ?>
 				</div>
 				<?php } ?>
