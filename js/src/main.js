@@ -72,8 +72,8 @@ jQuery(document).ready(function($){
 	
 
 	// sidebar title background colors.
-	if ( sidebar && large_title ) {
-		console.log( large_title.attr( 'class' ).replace( 'large-title ', '' ) );
+	if ( sidebar && large_title.length ) {
+		// console.log( large_title.attr( 'class' ).replace( 'large-title ', '' ) );
 		sidebar.find( '.widget:not(.leverage) .widget-title' ).addClass( large_title.attr( 'class' ).replace( 'large-title ', '' ) );
 	}
 
