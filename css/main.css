@@ -929,9 +929,6 @@ header {
   text-decoration: none;
   opacity: 0.8; }
 
-.thumb-showcase h2 {
-  display: none; }
-
 .thumb-showcase .thumb-list {
   padding: 6px 0 0; }
   @media only screen and (min-width: 500px) {
@@ -1218,7 +1215,8 @@ img.aligncenter, .wp-caption.aligncenter {
               transform: rotate(180deg); }
   .accordion .accordion-box .accordion-box-content {
     display: none;
-    padding: 20px; }
+    padding: 20px;
+    color: #47494b; }
     .accordion .accordion-box .accordion-box-content .wrap {
       max-width: 1180px; }
   .accordion .accordion-box.open .accordion-box-content {
