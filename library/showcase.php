@@ -71,7 +71,7 @@ function the_thumb_showcase() {
 					<img src="<?php print $thumb['image']; ?>" alt="<?php print strip_tags( $thumb['title'] ); ?>">
 				</div>
 				<div class="thumb-text <?php print $thumb['color'] ?>">
-					<h3><?php print $thumb['title'] ?></h3>
+					<h2><?php print $thumb['title'] ?></h2>
 					<p><?php print $thumb['subtitle'] ?></p>
 				</div>
 			</div></a><?php
