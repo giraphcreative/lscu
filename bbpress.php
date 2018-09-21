@@ -7,11 +7,16 @@ if ( empty( $color ) ) $color = 'navy';
 
 ?>
 
-	<?php the_large_title(); ?>
-
-	<?php the_showcase(); ?>
-
-	<?php the_thumb_showcase(); ?>
+	<?php 
+	if ( have_posts() ) :
+		while ( have_posts() ) : the_post(); ?>
+	<div class="large-title bg-teal">
+		<div class="wrap">
+			<div class="large-title-text">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</div>
+	</div>
 
 	<div id="content" class="wrap group content-two-column <?php print $color; ?>" role="main">
 		<div class="quarter sidebar">
@@ -25,17 +30,13 @@ if ( empty( $color ) ) $color = 'navy';
 			    }
 			    ?>
 			</div>
-			<?php 
-			if ( have_posts() ) :
-				while ( have_posts() ) : the_post(); 
-					the_content();
-				endwhile;
-			endif;
-
-			the_accordion();
-			?>
+			<?php the_content(); ?>
 		</div>
 	</div><!-- #content -->
+			<?php
+		endwhile;
+	endif;
+	?>
 
 <?php
 
