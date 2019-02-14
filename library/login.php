@@ -206,7 +206,7 @@ function wp_new_user_notification ( $user_id, $pass = '' ) {
 // let's create a shortcode that displays a login form on the front-end.
 function login_form_shortcode( $atts, $content = null ) {
  	
- 	$form = '';
+ 	$form = '<div class="lscu-login-form">';
 
  	if ( isset( $_REQUEST['login-error'] ) ) {
  		$form = '<div class="login-error">The credentials you entered do not match our records.</div>';
@@ -230,6 +230,7 @@ function login_form_shortcode( $atts, $content = null ) {
 	} else {
 		$form .= "You are currently logged in, please visit <a href='" . $account_url . "'>your account</a> for more options.";
 	}
+	$form .= "</div>";
 
 	return $form;
 

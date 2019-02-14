@@ -197,6 +197,13 @@ input, textarea {
   border-radius: 10px;
   text-decoration: none; }
 
+.lscu-login-form input[type=text], .lscu-login-form input[type=password] {
+  padding: 5px 10px;
+  font-size: 15px;
+  line-height: 17px;
+  border: 1px solid #ccc;
+  display: block; }
+
 .bg-sky {
   background-color: #A7DAE9;
   color: white; }

@@ -131,3 +131,14 @@ input, textarea {
 }
 
 
+.lscu-login-form {
+	input[type=text], input[type=password] {
+		padding: 5px 10px;
+		font-size: 15px;
+		line-height: 17px;
+		border: 1px solid #ccc;
+		display: block;
+	}
+
+}
+
