@@ -8,6 +8,8 @@ function lscu_login_stylesheet() {
 add_action( 'login_enqueue_scripts', 'lscu_login_stylesheet' );
 
 
+
+// redirect our account pages.
 function redirect_account_pages() {
 
 	if ( $_SERVER['SCRIPT_NAME'] == "/wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET' && isset( $_GET['action'] ) ) {

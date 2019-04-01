@@ -69,7 +69,7 @@ include( "library/interstitial.php" );
 
 
 // api adjustments to jwt-auth endpoint
-include( "library/auth.php" );
+include( "library/api.php" );
 
 
 // [anchor] shortcode
