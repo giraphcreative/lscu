@@ -68,6 +68,10 @@ include( "library/twitter-aggregator/widget.php" );
 include( "library/interstitial.php" );
 
 
+// api adjustments to jwt-auth endpoint
+include( "library/auth.php" );
+
+
 // [anchor] shortcode
 function p_anchor( $atts, $content = null, $code = "" ) {
     return '<a name="'.$content.'"></a>';
