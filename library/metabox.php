@@ -9,7 +9,7 @@ require_once( 'cmb2/init.php' );
 // add metabox(es)
 function page_metaboxes( $meta_boxes ) {
 
-
+    // Add user metabox for the cu_name and cu_charter_id fields.
     $cmb_user = new_cmb2_box( array(
         'id'               => CMB_PREFIX . 'edit',
         'title'            => __( 'CU Information', 'cmb2' ), // Doesn't output for user boxes
@@ -34,6 +34,7 @@ function page_metaboxes( $meta_boxes ) {
         'id'   => 'cu_charter_id',
         'type' => 'text',
     ) );
+
 
 
     global $colors, $event_types;
