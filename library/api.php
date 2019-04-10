@@ -13,6 +13,8 @@ function jwt_auth_function( $data, $user ) {
 	$data['user_is_member'] = ( in_array( 'member', $user_data->roles ) ? true : false );
 	$data['user_fname'] = $user_meta['first_name'][0];
 	$data['user_lname'] = $user_meta['last_name'][0];
+	$data['cu_name'] = $user_meta['cu_name'][0];
+	$data['cu_charter_id'] = $user_meta['cu_charter_id'][0];
 
 	return $data;
 }
