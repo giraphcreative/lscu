@@ -65,17 +65,16 @@ function account_toolbox() {
 
 
 // hide the admin toolbar for all users except administrators
-add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
 	if ( !current_user_can( 'administrator' ) && !is_admin() ) {
 		show_admin_bar( false );
 	}
 }
+add_action('after_setup_theme', 'remove_admin_bar');
 
 
 
 // add a new password encryption schema that includes the username.
-add_filter( 'authenticate', 'lscu_signon', 30, 3 );
 function lscu_signon( $user, $username, $password ) {
 
 	$creds = array(
@@ -97,15 +96,31 @@ function lscu_signon( $user, $username, $password ) {
     return $user;
 
 }
+add_filter( 'authenticate', 'lscu_signon', 30, 3 );
 
 
 
 // when the user authenticates on LSCU, also authenticate them on InfoSight
 function infosight_authenticate() {
+	global $user;
+	
+	$has_cu = 0;
 
-	// let's redirect to infosight's login endpoint so that it can authenticate us on there as well.
-    header( "Location: http://fl.leagueinfosight.com/Security__Login_6169.htm?email=" . $_POST['log'] . "&password=" . urlencode( $_POST['pwd'] ) . "&action=login&return_to=" . urlencode( $_POST['redirect_to'] ) );
-    exit;
+	$meta = get_user_meta( $user->ID );
+	if ( isset( $meta['Credit Union'] ) ) {
+		if ( $meta['Credit Union'][0] != 0 ) {
+			$has_cu = 1;
+		}
+	}
+
+	if ( $has_cu ) {
+		// let's redirect to infosight's login endpoint so that it can authenticate us on there as well.
+	    header( "Location: http://fl.leagueinfosight.com/Security__Login_6169.htm?email=" . $_POST['log'] . "&password=" . urlencode( $_POST['pwd'] ) . "&action=login&return_to=" . urlencode( $_POST['redirect_to'] ) );
+	    exit;
+	} else {
+		header( 'Location: /account' );
+		exit;
+	}
 
 }
 add_action('wp_login', 'infosight_authenticate');
