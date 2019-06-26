@@ -477,4 +477,9 @@ function user_role_update( $user_id, $new_role ) {
 add_action( 'set_user_role', 'user_role_update', 10, 2);
 
 
-?>
+// if the user is logged in, and this is the account reset interface, lets just send them to the account page to change their password there.
+if ( $_SERVER["REQUEST_URI"] == '/account/reset/' && is_user_logged_in() ) {
+	wp_redirect( "/account/" );
+}
+
+

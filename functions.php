@@ -51,10 +51,6 @@ include( "library/showcase.php" );
 include( "library/accordion.php" );
 
 
-// include custom login stylesheet
-include( "library/login.php" );
-
-
 // post types
 include( "library/post-type/job.php" );
 include( "library/post-type/event.php" );
@@ -70,6 +66,10 @@ include( "library/interstitial.php" );
 
 // api adjustments to jwt-auth endpoint
 include( "library/api.php" );
+
+
+// include custom login stylesheet
+include( "library/login.php" );
 
 
 // [anchor] shortcode
@@ -115,4 +115,3 @@ function pagination($prev = '&laquo;', $next = '&raquo;') {
 }
 
 
-?>
