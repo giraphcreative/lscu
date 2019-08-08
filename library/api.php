@@ -12,6 +12,10 @@ function jwt_auth_function( $data, $user ) {
 	$is_member = false;
 	if ( in_array( 'member', $user_data->roles ) ) $is_member = true;
 	if ( in_array( 'administrator', $user_data->roles ) ) $is_member = true;
+	if ( in_array( 'editor', $user_data->roles ) ) $is_member = true;
+	if ( in_array( 'author', $user_data->roles ) ) $is_member = true;
+	if ( in_array( 'boardofdirectors', $user_data->roles ) ) $is_member = true;
+	if ( in_array( 'lscustaff', $user_data->roles ) ) $is_member = true;
 
 	// add our actual fields.
 	$data['user_id'] = $user->data->ID;
